@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "title": "Mathe DEUTSCH",
+      "qType": "BIG_de_1",
+      "content": [
+        {
+          "tag_line": "Mathe Object",
+          "qType": "SMALL_de_1",
+          "details": [
+            "<h2>Objekte</h2>\n\n<p>Java ist eine objektorientierte Sprache. Das verlangt vom Entwickler neben dem Erlernen neuer Sprachelemente auch eine neue &laquo;objektorientierte&raquo; Denkweise. In Form eines Tutorials soll hier mit dieser Denkweise vertraut gemacht werden. Die folgenden Ausf&uuml;hrungen sind dabei im wesentlichen eine Adaption des Tutorials <a href=\"https://www.kompf.de/cplus/tutor.html\">Objektorientiertes Programmieren mit C++</a> auf die Programmiersprache Java.</p>\n\n<p>Herk&ouml;mmliche Softwareentwicklung bestand oftmals darin, zur L&ouml;sung eines vorgegebenen Problems Algorithmen zu entwerfen und diese in Prozeduren zu gie&szlig;en, die in einer Programmiersprache - wie zum Beispiel C - formuliert sind. Man spricht daher auch von prozeduraler Programmierung.</p>\n\n<p>Betrachtet man jedoch die reale Welt, so stellt man fest, dass die Dinge sich hier nicht in einer abstrakten prozeduralen Weise bewegen. Diesen Bruch zwischen realer Welt und Softwareentwicklung versucht der objektorientierte Ansatz zu &uuml;berwinden. Analysiert man seine materielle Umgebung, so stellt man fest, dass diese im wesentlichen aus Objekten besteht, die in verschiedener Art und Weise miteinander agieren. So k&ouml;nnte es hier zum Beispiel gerade ein Objekt Fahrrad geben.</p>\n\n<p><img align=\"left\" alt=\"Objekt\" height=\"160\" src=\"https://www.kompf.de/java/images/java-tutor-1.gif\" width=\"165\" /> Nimmt man das Fahrrad noch weiter unter die Lupe, erkennt man, dass dieses Fahrrad bestimmte <em>Eigenschaften</em> bzw. <em>Attribute</em> (wie Farbe, Gr&ouml;&szlig;e, momentane Geschwindigkeit) besitzt und dass es <em>Methoden</em> gibt, diese Eigenschaften zu ver&auml;ndern (z.B. die Methode &quot;Tritt schneller&quot;, die zu einer Erh&ouml;hung der Geschwindigkeit f&uuml;hren wird oder die Methode &quot;Bremse&quot;, die das Gegenteil bewirken sollte).</p>\n\n<p>Transformiert man diese Erkenntnis aus der realen in die Software Welt, so kann man formulieren:</p>\n\n<p class=\"definition\">Ein Software Objekt ist ein B&uuml;ndel aus Attributen und darauf bezogenen Methoden.</p>\n"
+          ]
+        }
+      ]
+    }, {
+      "title": "MATHE DEUTSCH 2",
+      "qType": "BIG_de_2",
+      "content": [
+        {
+          "tag_line": "Objekte 33",
+          "qType": "SMALL_de_6",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    }
+  ]
+}
