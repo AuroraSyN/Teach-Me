@@ -15,13 +15,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import de.hsworms.inf3032.R;
+import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
 public class SplashActivity extends AppCompatActivity {
 
     // Constants
-    private static final int SPLASH_DURATION = 1000;
+    private static final int SPLASH_DURATION = 750;
     private Context mContext;
     private Activity mActivity;
     private ImageView mImageView;
@@ -53,9 +54,9 @@ public class SplashActivity extends AppCompatActivity {
         versionView = findViewById(R.id.versionView);
 
         versionView.setText("" +
-                "Engine: 1.0.5 " +
-                "Content: 0.3.7 " +
-                "Questions: 0.3.2");
+                AppConstant.ENGINE_VERSION +
+                AppConstant.CONTENT_VERSION +
+                AppConstant.QUESTION_VERSION);
         mImageView = findViewById(R.id.splashIcon);
         mAnimation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 

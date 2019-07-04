@@ -133,7 +133,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.action_quiz) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
         } else if (id == R.id.action_fav) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteListActivity.class, false);
         } else if (id == R.id.action_settings) {

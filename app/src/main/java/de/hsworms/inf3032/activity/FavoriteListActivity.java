@@ -59,7 +59,11 @@ public class FavoriteListActivity extends BaseActivity {
         setContentView(R.layout.activity_favorite_list);
 
         mRecycler = findViewById(R.id.rvFavorite);
-        mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        if (!AppConstant.LAYOUT_MANAGER){
+            mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        }else{
+            mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        }
         mFavoriteAdapter = new FavoriteAdapter(mContext, mActivity, mDetailsList);
         mRecycler.setAdapter(mFavoriteAdapter);
 

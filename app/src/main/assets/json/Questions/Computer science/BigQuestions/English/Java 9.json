@@ -1,0 +1,103 @@
+{
+  "questionnaires": [
+    {
+      "question": " Java 9 main goals are",
+      "answers": [
+        "To make build process and maintainance of java code libraries and large applications easy for for JAVA SE and EE platforms.",
+        "To design and implement a standard module system for the Java Platform which can be applied on both Platform and JDK easily.",
+        "Both of the above",
+        "None of the above."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which of the following is correct w.r.t Java Documentation?",
+      "answers": [
+        "Java documentation can be generated using javadoc tool.",
+        "Java currently generates documentation in html 4.0 format.",
+        "In java 9, we can generate documentation in html 5 format by using -html5 option in command line arguments.",
+        "All of the above."
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which of the following method is correct about Set in Java 9?",
+      "answers": [
+        "For Set interfaces, of(...) method is overloaded to have 0 to 10 parameters.",
+        "For Set interfaces, of(...) method is overloaded to have var arg as parameter.",
+        "Both of the above.",
+        "None of the above."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which of the following is a not valid member of interface till Java 8?",
+      "answers": [
+        "Private method",
+        "Default method",
+        "Static method.",
+        "All of the above."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following is a correct statement about takeWhile() method of Stream class in Java 9?",
+      "answers": [
+        "takeWhile method takes all the values until the predicate returns false.",
+        "It returns, in case of ordered stream, a stream consisting of the longest prefix of elements taken from this stream matching the given predicate.",
+        "Both of the above",
+        "None of the above"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Explain the following allocation algorithms: Best fit",
+      "answers": [
+        "In the best fit approach is to allocate the first free partition or hole large enough which can accommodate the process. It finishes after finding the first suitable free partition.",
+        "In best fit approach is to locate largest available free portion so that the portion left will be big enough to be useful. It is the reverse of best fit.",
+        "The best fit deals with allocating the smallest free partition which meets the requirement of the requesting process. "
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which of the following is a correct statement about try-with-resources statement in Java 9?",
+      "answers": [
+        "Prior to Java 9, resources are to be declared before try or inside try statment.",
+        "In Java 9, resources are not required to be declared before try or inside try statment.",
+        "Both of the above.",
+        "None of the above"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "What is the purpose of Optional Class?",
+      "answers": [
+        "To avoid null checks",
+        "To avoid NullPointerException issues",
+        "Both of the above",
+        "None of the above"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Which of the following correctly describes the getResolutionVariants() method of MultiresolutionImage Interface?",
+      "answers": [
+        "Gets a specific image which is best variant to represent this logical image at the indicated size.",
+        "Gets a readable list of all resolution variants.",
+        "Both of the above",
+        "None of the above"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Which of the following correctly describes the defaultExecutor() method of CompletableFuture Interface?",
+      "answers": [
+        "This method completes this CompletableFuture with the given value if not otherwise completed before the given timeout.",
+        "This method exceptionally completes this CompletableFuture with a TimeoutException if not otherwise completed before the given timeout.",
+        "Returns a new incomplete CompletableFuture of the type to be returned by a CompletionStage method.",
+        "None of the above"
+      ],
+      "correct_answer": 2
+    }
+  ]
+}

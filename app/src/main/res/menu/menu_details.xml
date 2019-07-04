@@ -6,16 +6,9 @@
         android:id="@+id/menus_read_article"
         android:title="@string/site_menu_read_article"
         app:showAsAction="never" />
-    <ListPreference
-        android:defaultValue="@string/default_text"
-        android:dialogTitle="@string/select_size"
-        android:entries="@array/text_entries"
-        android:entryValues="@array/text_entries"
-        android:key="pref_font_size"
-        android:title="@string/pref_text_title" />
     <item
         android:id="@+id/start_test"
         android:title="@string/start_test"
+        android:visible="false"
         app:showAsAction="never" />
-
 </menu>

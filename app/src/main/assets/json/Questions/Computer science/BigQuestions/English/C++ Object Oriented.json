@@ -1,0 +1,182 @@
+{
+  "questionnaires": [
+    {
+      "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; int i = 13, j = 60;<br />\n&nbsp;&nbsp; i^=j;<br />\n&nbsp;&nbsp; j^=i;<br />\n&nbsp;&nbsp; i^=j;<br />\n&nbsp;&nbsp; cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j;<br />\n}</p>\n",
+      "answers": [
+        "73 73",
+        "60 13",
+        "13 60",
+        "60 60"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is a generic class.",
+      "answers": [
+        "Function template",
+        "Class template",
+        "Inherited class",
+        "None of the above."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nvoid f() {<br />\n&nbsp;&nbsp; cout&lt;&lt;&quot;Hello&quot;&lt;&lt;endl;<br />\n}<br />\nmain() {<br />\n}</p>\n",
+      "answers": [
+        "No output",
+        "Error, as the function is not called.",
+        "Error, as the function is defined without its declaration",
+        "Error, as the main() function is left empty"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Objects created using new operator are stored in __ memory.",
+      "answers": [
+        "Cache",
+        "Heap",
+        "Stack",
+        "None of the above"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Class function which is called automatically as soon as the object is created is called as __",
+      "answers": [
+        "Constructor",
+        "Destructor",
+        "Friend function",
+        "Inline function"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; char s[] = &quot;Fine&quot;;<br />\n&nbsp;&nbsp; &nbsp;*s = &#39;N&#39;;<br />\n&nbsp; &nbsp;<br />\n&nbsp;&nbsp; cout&lt;&lt;s&lt;&lt;endl;<br />\n}</p>\n",
+      "answers": [
+        "a) Fine",
+        "b) Nine",
+        "c) Compile error",
+        "d) Runtime error"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "How can we make an class act as an interface in C++?",
+      "answers": [
+        "By only providing all the functions as virtual functions in the class.",
+        "Defining the class following with the keyword virtual",
+        "Defining the class following with the keyword interface",
+        "Defining the class following with the keyword abstract"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "One of the following is true for an inline function.",
+      "answers": [
+        "It executes faster as it is treated as a macro internally",
+        "It executes faster because it priority is more than normal function",
+        "It doesn’t executes faster compared to a normal function",
+        "None of the above holds true for an inline function"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Escape sequence character '\\0' occupies __ amount of memory.",
+      "answers": [
+        "0",
+        "1",
+        "2",
+        "4"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "‘cin’ is an __",
+      "answers": [
+        "Class",
+        "Object",
+        "Package",
+        "Namespace"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; short unsigned int i = 0;<br />\n&nbsp;&nbsp; cout&lt;&lt;i--;<br />\n}</p>\n",
+      "answers": [
+        "0",
+        "Compile error",
+        "65535",
+        "32767"
+      ],
+      "correct_answer": 0
+    },    {
+      "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; class student {<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int rno = 10;<br />\n&nbsp;&nbsp; } v;<br />\n&nbsp;<br />\n&nbsp;&nbsp; cout&lt;&lt;v.rno;<br />\n}</p>\n",
+      "answers": [
+        "10",
+        "Garbage",
+        "Runtime error",
+        "Compile error"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "i) single file can be opened by several streams simultaneously.\n\n ii) several files simultaneously can be opened by a single stream",
+      "answers": [
+        "(i) and (ii) are true",
+        "(i) and (ii) are false",
+        "Only (i) is true",
+        "Only (ii) is true"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Choose the pure virtual function definition from the following.",
+      "answers": [
+        "virtual void f()=0 { }",
+        "void virtual f()=0 { }",
+        "virtual void f() {} = 0;",
+        "None of the above."
+      ],
+      "correct_answer": 3
+    },    {
+      "question": "Choose the operator which cannot be overloaded.",
+      "answers": [
+        "/",
+        "()",
+        "::",
+        "%"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": " i) Exception handling technically provides multi branching.\n\n ii) Exception handling can be mimicked using ‘goto’ construct.",
+      "answers": [
+        "Only (i) is true",
+        "Only (ii) is true",
+        "Both (i) & (ii) are true",
+        "Both (i) && (ii) are false"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "A C++ program statements can be commented using",
+      "answers": [
+        "Single line comment",
+        "Multi line comment",
+        "Multi line commentEither (a) or (b)",
+        "Both (a) and (b)"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Which is the storage specifier used to modify the member variable even though the class object is a constant object?",
+      "answers": [
+        "auto",
+        "register",
+        "static",
+        "mutable"
+      ],
+      "correct_answer": 3
+    }
+  ]
+}

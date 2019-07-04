@@ -48,7 +48,7 @@ public class DetailsActivity extends BaseActivity {
     private boolean mIsTtsPlaying = false;
     private String mTtsText;
     private MenuItem menuItemTTS;
-    private MenuItem startTest;
+    public static MenuItem startTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -241,7 +241,7 @@ public class DetailsActivity extends BaseActivity {
                 currentItem = mItemList.get(mViewPager.getCurrentItem());
                 currentItem = currentItem.substring(0, currentItem.indexOf("</h2>"));
                 currentItem = currentItem.substring(4);
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionActivity.class, true);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -289,7 +289,6 @@ public class DetailsActivity extends BaseActivity {
 
         menuItemTTS = menu.findItem(R.id.menus_read_article);
         startTest = menu.findItem(R.id.start_test);
-
         return true;
     }
 

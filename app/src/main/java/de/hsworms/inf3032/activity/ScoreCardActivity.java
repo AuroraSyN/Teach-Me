@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -71,8 +72,11 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         setContentView(R.layout.activity_score_card);
 
         mRecyclerResult = findViewById(R.id.rvContent);
-        mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
+        if (!AppConstant.LAYOUT_MANAGER) {
+            mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        }else{
+            mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        }
 
         mBtnShare = findViewById(R.id.btn_share);
         mBtnPlayAgain = findViewById(R.id.btn_play_again);
@@ -96,16 +100,12 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
 
         float actualScore = ((float) mScore / (float) (mScore + mWrongAns + mSkip)) * AppConstant.MULTIPLIER_GRADE;
         switch (Math.round(actualScore)) {
-            case 10:
+            case 10: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text6))); break;
             case 9:
-            case 8:
-                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text3)));
-                break;
-            case 7:
-            case 6:
-            case 5:
-                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text2)));
-                break;
+            case 8: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text5))); break;
+            case 7: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text4))); break;
+            case 5: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text3))); break;
+            case 3: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text2))); break;
             default:
                 mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text1)));
                 break;
@@ -132,7 +132,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         mBtnPlayAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
             }
         });
     }
@@ -158,7 +158,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         xVals.add(getString(R.string.wrong));
         xVals.add(getString(R.string.skipped));
         PieData data = new PieData(xVals, dataSet);
-
+        data.setValueTextSize(12f);
         // In percentage Term
         data.setValueFormatter(new PercentFormatter());
         mPieChart.setData(data);

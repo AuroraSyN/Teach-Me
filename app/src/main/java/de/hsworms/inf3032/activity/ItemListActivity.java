@@ -56,7 +56,11 @@ public class ItemListActivity extends BaseActivity {
         setContentView(R.layout.activity_item_list);
 
         mRecycler = findViewById(R.id.rvContent);
-        mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.VERTICAL, false));
+        if (!AppConstant.LAYOUT_MANAGER){
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.VERTICAL, false));
+        }else{
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 5, GridLayoutManager.HORIZONTAL, false));
+        }
 
         initLoader();
         initToolbar(true);

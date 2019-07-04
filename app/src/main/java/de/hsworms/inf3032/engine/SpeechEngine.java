@@ -11,7 +11,7 @@ import java.util.Locale;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.activity.MainActivity;
-import de.hsworms.inf3032.data.constant.ContentConstant;
+import de.hsworms.inf3032.data.constant.GlobalContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
 public class SpeechEngine {
@@ -25,15 +25,15 @@ public class SpeechEngine {
     public SpeechEngine(Activity activity) {
         mActivity = activity;
         if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.ENGLISH))) {
-            mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
+            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_EN);
         } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.GERMAN))) {
-            mLocale = new Locale(ContentConstant.TTS_LOCALE_DE);
+            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_DE);
         } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.RUSSIAN))) {
-            mLocale = new Locale(ContentConstant.TTS_LOCALE_RU);
+            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_RU);
         }
         //Default
         else {
-            mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
+            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_EN);
         }
     }
 
@@ -60,7 +60,7 @@ public class SpeechEngine {
         mIsInstallingPackage = false;
         mTextToSpeech.setLanguage(mLocale);
 
-        int dividerLimit = 3900;
+        int dividerLimit = 3750;
         if (textForReading.length() >= dividerLimit) {
             int textLength = textForReading.length();
             ArrayList<String> texts = new ArrayList<String>();
@@ -100,7 +100,6 @@ public class SpeechEngine {
 
         releaseEngine();
         if (mTextToSpeech == null) {
-
             mTextToSpeech = new TextToSpeech(mActivity.getApplicationContext(), new TextToSpeech.OnInitListener() {
                 @Override
                 public void onInit(int status) {
@@ -112,7 +111,6 @@ public class SpeechEngine {
                     } else {
                         invokePacInstaller();
                     }
-
                 }
             });
         }

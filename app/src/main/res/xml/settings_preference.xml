@@ -9,7 +9,6 @@
         android:key="pref_font_size"
         android:title="@string/pref_text_title" />
     <ListPreference
-        android:defaultValue="@string/content_default_text"
         android:entries="@array/language"
         android:entryValues="@array/language"
         android:key="pref_language"

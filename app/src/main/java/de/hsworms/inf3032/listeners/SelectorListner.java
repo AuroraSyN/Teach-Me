@@ -43,7 +43,7 @@ public class SelectorListner implements OnItemClickListener {
                 mainActivity.contentSelector.setText(selectedItemText);
                 break;
 
-            case "Maths":
+            case "Mobile Computing":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();
                 mainActivity.contentSelector.setText(selectedItemText);
@@ -56,7 +56,7 @@ public class SelectorListner implements OnItemClickListener {
                 break;
 
                 // RUSSIAN
-            case "Математика":
+            case "Мобильная информатика":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();
                 mainActivity.contentSelector.setText(selectedItemText);
@@ -81,7 +81,7 @@ public class SelectorListner implements OnItemClickListener {
                 mainActivity.contentSelector.setText(selectedItemText);
                 break;
 
-            case "Mathematik":
+            case "Mobile Computing ":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();
                 mainActivity.contentSelector.setText(selectedItemText);

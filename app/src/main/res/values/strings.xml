@@ -76,15 +76,24 @@
     <string name="removed_from_fav">This topic is removed from Favorite List!</string>
 
     <string name="close_prompt">Are you sure you want to close the app?</string>
-    <string name="yes">Go</string>
+    <string name="yes">Yes</string>
     <string name="no">Abort</string>
     <string name="failed">Failed</string>
+    <string name="failed_dialog_title">U has failed</string>
+    <string name="failed_dialog_text">Try ur skill next time</string>
+
+    <string name="skipAll_dialog_title">Skip all questions?</string>
+    <string name="skipAll_dialog_text">Do you wanna skip all questions?</string>
+
     <string name="skip_prompt">Do you want to skip this question?</string>
     <string name="quiz_close_prompt">Do you want to quit the game?</string>
 
     <string name="greeting_text1">Oops!! Your score is not very good!! You need to study more.</string>
     <string name="greeting_text2">Not bad!! Keep learning and make yourself better.</string>
-    <string name="greeting_text3">Excellent!! You are the boss!!</string>
+    <string name="greeting_text3">Not bad, not bad</string>
+    <string name="greeting_text4">Not bad, not bad, but keep learning a little bit more</string>
+    <string name="greeting_text5">Good, but you can do it better</string>
+    <string name="greeting_text6">Excellent!! Bravo!!!</string>
 
     <string name="score_card">Score Card</string>
     <string name="score">Score</string>
@@ -106,7 +115,7 @@
     <string name="item_counter" formatted="false">%d / %d</string>
     <string name="welcome_text">Select Thema to test your skills:</string>
     <string name="ready_prompt">Are You Ready?</string>
-    <string name="quiz_prompt">Quiz Prompt</string>
+    <string name="question_prompt">Quiz Prompt</string>
     <string name="cancel_prompt">Do you want to quit the game?</string>
     <string name="watch_video_prompt">Watch video to increase lives!</string>
     <string name="no_internet">No internet connection is available!</string>
@@ -120,7 +129,7 @@
 
     <string name="pref_notification_title">Notification</string>
     <string name="pref_notification_summ">Turn On / Off notification</string>
-    <string name="pref_experimantal_title">Experimantal Feature</string>
+    <string name="pref_experimantal_title">Widescreen / Experimantal Feature</string>
     <string name="pref_experimantal_summ">Turn On / Off</string>
     <string name="pref_language_perm_title">Set selected language for permanent?</string>
     <string name="pref_language_perm_summ"> Yes / No </string>
@@ -150,7 +159,8 @@
 
     <string name="study">Study:</string>
     <string name="computer_science">Computer science::1</string>
-    <string name="maths">Maths::2</string>
+    <string name="maths">Mobile Computing::2</string>
     <string name="linguistics">Linguistics::3</string>
+    <string name="btn_skipAllQuestions">Skip All</string>
 
 </resources>

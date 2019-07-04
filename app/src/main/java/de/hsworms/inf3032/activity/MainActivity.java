@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,19 +28,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ContentAdapter;
 import de.hsworms.inf3032.adapters.ContentLoaderAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.ContentConstant;
-import de.hsworms.inf3032.data.preference.AppPreference;
+import de.hsworms.inf3032.data.constant.GlobalContentConstant;
 import de.hsworms.inf3032.data.sqlite.NotificationDbController;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.listeners.SelectorListner;
@@ -93,7 +87,7 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(getApplicationContext(),"Try Conten in Other Language",
                         Toast.LENGTH_SHORT).show();
             }
-        }, 25000);
+        }, 250000);
 
     }
 
@@ -131,7 +125,7 @@ public class MainActivity extends BaseActivity {
         if (!AppConstant.LAYOUT_MANAGER){
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
         }else{
-            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.HORIZONTAL, false));
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 4, GridLayoutManager.HORIZONTAL, false));
         }
         mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
         mRecycler.setAdapter(mAdapter);
@@ -184,7 +178,7 @@ public class MainActivity extends BaseActivity {
         mQuizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
             }
         });
 
@@ -217,17 +211,17 @@ public class MainActivity extends BaseActivity {
     public static void parseJson(String jsonData) {
         try {
             JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
+            JSONArray jsonArray1 = jsonObjMain.getJSONArray(GlobalContentConstant.JSON_KEY_ITEMS);
             for (int i = 0; i < jsonArray1.length(); i++) {
                 JSONObject jsonObj = jsonArray1.getJSONObject(i);
-                String title = jsonObj.getString(ContentConstant.JSON_KEY_TITLE);
+                String title = jsonObj.getString(GlobalContentConstant.JSON_KEY_TITLE);
                 ArrayList<Item> items = new ArrayList<>();
-                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
+                JSONArray jsonArray2 = jsonObj.getJSONArray(GlobalContentConstant.JSON_KEY_CONTENT);
                 for (int j = 0; j < jsonArray2.length(); j++) {
                     JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
-                    String tag_line = jsonObj2.getString(ContentConstant.JSON_KEY_TAG_LINE);
+                    String tag_line = jsonObj2.getString(GlobalContentConstant.JSON_KEY_TAG_LINE);
                     ArrayList<String> detailList = new ArrayList<>();
-                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
+                    JSONArray jsonArray3 = jsonObj2.getJSONArray(GlobalContentConstant.JSON_KEY_DETAILS);
                     for (int k = 0; k < jsonArray3.length(); k++) {
                         String details = jsonArray3.get(k).toString();
                         detailList.add(details);
@@ -289,7 +283,7 @@ public class MainActivity extends BaseActivity {
         listViewDogs.setAdapter(listViewAdapter(popUpContents));
         listViewDogs.setOnItemClickListener(new SelectorListner());
         popupWindow.setFocusable(true);
-        popupWindow.setWidth(1000);
+        popupWindow.setWidth(850);
         popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
         popupWindow.setContentView(listViewDogs);
         return popupWindow;

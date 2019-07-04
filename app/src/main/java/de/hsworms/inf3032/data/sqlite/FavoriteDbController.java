@@ -21,8 +21,6 @@ public class FavoriteDbController {
 
         ContentValues values = new ContentValues();
         values.put(DbConstants.POST_DETAILS, postDetails);
-
-        // Insert the new row, returning the primary key value of the new row
         return (int) db.insert(
                 DbConstants.FAVORITE_TABLE_NAME,
                 DbConstants.COLUMN_NAME_NULLABLE,

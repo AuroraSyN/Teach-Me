@@ -76,12 +76,12 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="de.hsworms.inf3032.activity.QuizPromptActivity"
+            android:name="de.hsworms.inf3032.activity.QuestionSelectActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="de.hsworms.inf3032.activity.QuizActivity"
+            android:name="de.hsworms.inf3032.activity.QuestionActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 

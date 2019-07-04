@@ -25,6 +25,10 @@
     <dimen name="margin_120dp">223.2dp</dimen>
     <dimen name="margin_180dp">334.8dp</dimen>
     <dimen name="margin_250dp">465dp</dimen>
+    <dimen name="margin_275dp">511.5dp</dimen>
+    <dimen name="margin_300dp">558dp</dimen>
+    <dimen name="margin_350dp">651dp</dimen>
+    <dimen name="margin_400dp">744dp</dimen>
 
 
 </resources>

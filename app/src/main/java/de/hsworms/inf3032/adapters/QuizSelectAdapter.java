@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
 
 import de.hsworms.inf3032.activity.BaseActivity;
 import de.hsworms.inf3032.activity.DetailsActivity;
-import de.hsworms.inf3032.activity.QuizPromptActivity;
-import de.hsworms.inf3032.data.constant.EnglishConstant;
-import de.hsworms.inf3032.data.constant.GermanConstant;
-import de.hsworms.inf3032.data.constant.RussianConstant;
+import de.hsworms.inf3032.activity.QuestionSelectActivity;
+import de.hsworms.inf3032.data.constant.EnglishContentConstant;
+import de.hsworms.inf3032.data.constant.GermanContentConstant;
+import de.hsworms.inf3032.data.constant.RussianContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
 public class QuizSelectAdapter extends BaseActivity {
@@ -29,102 +29,108 @@ public class QuizSelectAdapter extends BaseActivity {
                 switch (DetailsActivity.currentItem) {
 
                     case "C++ Overview":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_OVERVIEW)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_OVERVIEW)));
                         DetailsActivity.currentItem = null;
                         break;
 
                     case "C++ Environment Setup":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_ENVIRONMENT_SETUP)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_ENVIRONMENT_SETUP)));
                         DetailsActivity.currentItem = null;
                         break;
 
                     case "C++ Basic Syntax":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_BASIS_SYNTAX)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_BASIS_SYNTAX)));
                         DetailsActivity.currentItem = null;
                         break;
 
 
                     //CONTENT FROM BIG_DE_1
                     case "Objekte":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.OBJEKTE)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.OBJEKTE)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Klassen":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.KLASSEN)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.KLASSEN)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Objektlebenszyklus":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.OBJEKTLEBENSZYKLUS)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.OBJEKTLEBENSZYKLUS)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Vererbung":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.VERERBUNG)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.VERERBUNG)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Interfaces":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.INTERFACES)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.INTERFACES)));
                         DetailsActivity.currentItem = null;
                         break;
 
                     //CONTENT FROM BIG_DE_1
                     case "Objekte C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.SMALL_6)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.SMALL_6)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Klassen C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.SMALL_7)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.SMALL_7)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Objektlebenszyklus C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.SMALL_8)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.SMALL_8)));
                         DetailsActivity.currentItem = null;
                         break;
                     case "Vererbung C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.SMALL_9)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.SMALL_9)));
                         DetailsActivity.currentItem = null;
                         break;
 
                     default:
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_OVERVIEW)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_OVERVIEW)));
                         DetailsActivity.currentItem = null;
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 "Kein Test", Toast.LENGTH_LONG);
                         toast.show();
                 }
             } else { // BIG TEST
-                switch (QuizPromptActivity.selectedItem) {
-                    //en_US
+                switch (QuestionSelectActivity.selectedItem) {
+                    //English
                     case "C++ Basics":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_BASICS)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_BASICS)));
                         break;
                     case "C++ Object Oriented":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.C_OBJECT_ORIENTED)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_OBJECT_ORIENTED)));
+                        break;
+                    case "Operating System":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.OPERATING_SYSTEM)));
+                        break;
+                    case "Java 9":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.JAVA_9)));
                         break;
 
-                    //de_DE
+                    //German
                     case "Objektorientiertes Programmieren in Java":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.JAVA_PROG)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.JAVA_PROG)));
                         break;
                     case "Objektorientiertes Programmieren mit C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.C_PROG)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.C_PROG)));
                         break;
 
-                    //ru_RU
+                    //Russian
                     case "  ":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_1)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianContentConstant.BIG_1)));
                         break;
                     case "   ":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_2)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianContentConstant.BIG_2)));
                         break;
                     case "    ":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_3)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianContentConstant.BIG_3)));
                         break;
 
 
                     default:
-                        br = new BufferedReader(new InputStreamReader(getAssets().open(EnglishConstant.C_BASICS)));
+                        br = new BufferedReader(new InputStreamReader(getAssets().open(EnglishContentConstant.C_BASICS)));
                         Toast toast = Toast.makeText(getApplicationContext(),
-                                "Error, -> QuizPromptActivity.selectedItem", Toast.LENGTH_SHORT);
+                                "Error, -> QuestionSelectActivity.selectedItem", Toast.LENGTH_SHORT);
                         toast.show();
                 }
             }

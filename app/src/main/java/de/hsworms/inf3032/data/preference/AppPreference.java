@@ -24,7 +24,16 @@ public class AppPreference{
         mEditor = mSharedPreferences.edit();
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                AppConstant.DEVICE_LANGUAGE_FLAG = true;
+                if (key == "pref_language"){
+                    AppConstant.DEVICE_LANGUAGE_FLAG = true;
+                }
+                if (key == "pref_experimental"){
+                    if (AppPreference.getInstance(AppPreference.mContext).isExperimentalOn() == true ){
+                        AppConstant.LAYOUT_MANAGER = true;
+                    }else{
+                        AppConstant.LAYOUT_MANAGER = false;
+                    }
+                }
             }
         };
         mSettingsPreferences.registerOnSharedPreferenceChangeListener(preferenceChangeListener);

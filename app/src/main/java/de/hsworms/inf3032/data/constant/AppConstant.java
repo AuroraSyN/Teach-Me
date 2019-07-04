@@ -24,7 +24,7 @@ public class AppConstant {
     public static final String BUNDLE_KEY_EXIT_OPTION = "exit";
     public static final String BUNDLE_KEY_CLOSE_OPTION = "close";
     public static final String BUNDLE_KEY_SKIP_OPTION = "skip";
-    public static final String BUNDLE_KEY_REWARD_OPTION = "reward";
+    public static final String BUNDLE_KEY_FAILED = "Oh, u has failed";
     public static final String BUNDLE_KEY_DELETE_EACH_FAV = "delete_each_fav";
     public static final String BUNDLE_KEY_DELETE_ALL_FAV = "delete_all_fav";
 
@@ -41,7 +41,7 @@ public class AppConstant {
     public static final String DIRECTORY = "drawable/" + "result_";
 
     // pie chart constants
-    public static final float TRANSPARENT_CIRCLE_RADIUS = 65f;
+    public static final float TRANSPARENT_CIRCLE_RADIUS = 40f;
     public static final int ANIMATION_VALUE = 1400;
 
     // notification constants
@@ -57,4 +57,8 @@ public class AppConstant {
     public static boolean DEVICE_LANGUAGE_FLAG = false;
     public static boolean LAYOUT_MANAGER = false;
     public static boolean DEVICE_LANGUAGE_PERF = false;
+
+    public static String ENGINE_VERSION = "ENGINE: 1.1.3 ";
+    public static String CONTENT_VERSION = "CONTENT: 0.5.8 ";
+    public static String QUESTION_VERSION = "QUEST: 0.4.4 ";
 }
