@@ -731,42 +731,6 @@
     },
 
     {
-      "title": "TEMPLATE",
-      "content": [
-        {
-          "tag_line": "TEMPLATE_ITEM",
-          "details": [
-            ""
-          ]
-        },
-        {
-          "tag_line": "TEMPLATE_ITEM",
-          "details": [
-            ""
-          ]
-        },
-        {
-          "tag_line": "TEMPLATE_ITEM",
-          "details": [
-            ""
-          ]
-        },
-        {
-          "tag_line": "TEMPLATE_ITEM",
-          "details": [
-            ""
-          ]
-        },
-        {
-          "tag_line": "TEMPLATE_ITEM",
-          "details": [
-            ""
-          ]
-        }
-      ]
-    },
-
-    {
       "title": "Linux Basic ( Video Tutorial )",
       "content": [
         {
@@ -798,8 +762,31 @@
           "details": [
             "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embed/ODYVXpUlzyY\",>\n</object>\n\n"
           ]
+        },
+        {
+          "tag_line": "Linux - Copy,Move & Rename Files",
+          "details": [
+            "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embedMOJWE_57nH0\",>\n</object>\n\n"
+          ]
+        },
+        {
+          "tag_line": "Linux - Display File Content",
+          "details": [
+            "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embed/95p2bC7FcSU\",>\n</object>\n\n"
+          ]
+        },
+        {
+          "tag_line": "Standard Linux Streams",
+          "details": [
+            "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embed/3hT0enlwW5Y\",>\n</object>\n\n"
+          ]
+        },
+        {
+          "tag_line": "",
+          "details": [
+            "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embed/ODYVXpUlzyY\",>\n</object>\n\n"
+          ]
         }
-
       ]
     }
   ]

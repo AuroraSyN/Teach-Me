@@ -136,7 +136,7 @@ public class MainActivity extends BaseActivity {
         studyList = new ArrayList<String>();
         studyList.add(getString(R.string.computer_science));
         studyList.add(getString(R.string.mobile_computing));
-        studyList.add(getString(R.string.linguistics));
+        //studyList.add(getString(R.string.linguistics));
         popUpContents = new String[studyList.size()];
         studyList.toArray(popUpContents);
         listWindow = viewWindow();
