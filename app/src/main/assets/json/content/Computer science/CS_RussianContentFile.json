@@ -1,14 +1,16 @@
 {
   "items": [
     {
-      "title": "РУССКИЙ",
+      "title": "МАТЕМАТИКА РУССКИЙ",
       "content": [
         {
           "tag_line": "НАЧАЛЬНЫЙ КОНТЕНТ",
           "qType": "ru_1",
           "details": [
-            "РУССКИЙ НАЧАЛЬНЫЙ КОНТЕНТ"
+            "<p>https://www.tutorialspoint.com/cprogramming/pdf/cprogramming_mock_test_i.pdf</p>\n"
           ]
         }
+      ]
+    }
   ]
 }

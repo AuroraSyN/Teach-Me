@@ -7,11 +7,14 @@ import java.io.InputStreamReader;
 
 import de.hsworms.inf3032.activity.BaseActivity;
 import de.hsworms.inf3032.activity.DetailsActivity;
+import de.hsworms.inf3032.activity.InterviewQuestionsActivity;
 import de.hsworms.inf3032.activity.QuestionSelectActivity;
+import de.hsworms.inf3032.activity.SettingsActivity;
 import de.hsworms.inf3032.data.constant.EnglishContentConstant;
 import de.hsworms.inf3032.data.constant.GermanContentConstant;
 import de.hsworms.inf3032.data.constant.RussianContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
+import de.hsworms.inf3032.utility.ActivityUtilities;
 
 public class QuizSelectAdapter extends BaseActivity {
 
@@ -27,7 +30,7 @@ public class QuizSelectAdapter extends BaseActivity {
             //SMAL TEST
             if (DetailsActivity.currentItem != null) {
                 switch (DetailsActivity.currentItem) {
-
+                    /*
                     case "C++ Overview":
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_OVERVIEW)));
                         DetailsActivity.currentItem = null;
@@ -42,7 +45,6 @@ public class QuizSelectAdapter extends BaseActivity {
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_BASIS_SYNTAX)));
                         DetailsActivity.currentItem = null;
                         break;
-
 
                     //CONTENT FROM BIG_DE_1
                     case "Objekte":
@@ -83,6 +85,7 @@ public class QuizSelectAdapter extends BaseActivity {
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanContentConstant.SMALL_9)));
                         DetailsActivity.currentItem = null;
                         break;
+                    */
 
                     default:
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.C_OVERVIEW)));
@@ -105,6 +108,18 @@ public class QuizSelectAdapter extends BaseActivity {
                         break;
                     case "Java 9":
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.JAVA_9)));
+                        break;
+                    case "Java Basics":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.JAVA_BASICS)));
+                        break;
+                    case "Java Advanced":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.JAVA_ADVANCED)));
+                        break;
+                    case "DSA Basics":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.DSA_ADVANCED)));
+                        break;
+                    case "DSA Advanced":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishContentConstant.DSA_ADVANCED)));
                         break;
 
                     //German

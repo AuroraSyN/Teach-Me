@@ -24,7 +24,8 @@
                 android:id="@+id/first_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:layout_alignTop="@+id/toolbarTop"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="@dimen/margin_15dp"
                 android:gravity="center"
                 android:text="@string/welcome_text"
@@ -34,9 +35,9 @@
             <ListView
                 android:id="@+id/lv"
                 android:layout_width="wrap_content"
-                android:layout_height="356dp"
+                android:layout_height="355dp"
                 android:layout_alignBottom="@+id/third_text"
-                android:layout_marginBottom="-9dp"
+                android:layout_marginBottom="-10dp"
                 android:choiceMode="singleChoice"
                 android:listSelector="@drawable/list_view_selector">
             </ListView>
@@ -46,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/first_text"
-                android:layout_marginTop="321dp"
+                android:layout_marginTop="320dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -57,9 +58,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/third_text"
-                android:layout_marginTop="33dp"
-                android:background="@color/green"
-                android:text="@string/yes"
+                android:layout_marginTop="30dp"
+                android:background="#00897B"
+                android:text="@string/quiz_button_yes"
                 android:textColor="@color/white" />
 
             <Button
@@ -68,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btn_yes"
                 android:layout_marginTop="@dimen/margin_20dp"
-                android:background="@drawable/rectangle_red"
+                android:background="@color/red"
                 android:text="@string/no"
                 android:textColor="@color/white" />
 

@@ -34,7 +34,6 @@ public class SettingsActivity extends BaseActivity {
         initToolbar(true);
         setToolbarTitle(getString(R.string.settings));
         enableUpButton();
-        final String _done = getString(R.string.done);
         settingsApplyButton = findViewById(R.id.settingsApplyButton);
         settingsApplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +45,7 @@ public class SettingsActivity extends BaseActivity {
                 }
                 AppConstant.DEVICE_LANGUAGE_FLAG = true;
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        _done, Toast.LENGTH_SHORT); toast.show();
+                        getString(R.string.done), Toast.LENGTH_SHORT); toast.show();
                 ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
             }
         });

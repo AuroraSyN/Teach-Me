@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -49,8 +50,7 @@ import de.hsworms.inf3032.utility.RateItDialogFragment;
 public class MainActivity extends BaseActivity {
 
     private RelativeLayout mNotificationView;
-    private ImageButton mImgBtnSearch;
-    private ImageButton mQuizButton;
+    private ImageButton mImgBtnSearch, mQuizButton, mInterviewButton;
     private static ArrayList<Contents> mContentList;
     private static ContentAdapter mAdapter = null;
     private RecyclerView mRecycler;
@@ -122,6 +122,7 @@ public class MainActivity extends BaseActivity {
         mImgBtnSearch = findViewById(R.id.imgBtnSearch);
         mRecycler = findViewById(R.id.rvContent);
         mQuizButton = findViewById(R.id.quizMainMenuButton);
+        mInterviewButton = findViewById(R.id.interviewMainMenuButton);
         if (!AppConstant.LAYOUT_MANAGER){
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
         }else{
@@ -176,6 +177,13 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
+            }
+        });
+
+        mInterviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, InterviewQuestionsActivity.class, true);
             }
         });
 
@@ -250,8 +258,8 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private ArrayAdapter<String> listViewAdapter(String[] dogsArray) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, dogsArray) {
+    private ArrayAdapter<String> listViewAdapter(String[] array) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -265,7 +273,7 @@ public class MainActivity extends BaseActivity {
                 TextView listItem = new TextView(MainActivity.this);
                 listItem.setText(text);
                 listItem.setTag(id);
-                listItem.setTextSize(22);
+                listItem.setTextSize(20);
                 listItem.setPadding(5, 15, 10, 10);
                 listItem.setTextColor(Color.WHITE);
                 return listItem;
@@ -276,13 +284,13 @@ public class MainActivity extends BaseActivity {
 
     public PopupWindow viewWindow() {
         PopupWindow popupWindow = new PopupWindow(this);
-        ListView listViewDogs = new ListView(this);
-        listViewDogs.setAdapter(listViewAdapter(popUpContents));
-        listViewDogs.setOnItemClickListener(new SelectorListner());
+        ListView _listView = new ListView(this);
+        _listView.setAdapter(listViewAdapter(popUpContents));
+        _listView.setOnItemClickListener(new SelectorListner());
         popupWindow.setFocusable(true);
-        popupWindow.setWidth(850);
+        popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
         popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(listViewDogs);
+        popupWindow.setContentView(_listView);
         return popupWindow;
     }
 }

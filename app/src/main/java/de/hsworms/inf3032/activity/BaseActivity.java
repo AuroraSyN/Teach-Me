@@ -25,14 +25,12 @@ import de.hsworms.inf3032.utility.DialogUtilities;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
 
-    private Context mContext;
     private Activity mActivity;
-
+    private Context mContext;
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
     private static LinearLayout mLoadingView, mNoDataView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,8 +130,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_quiz) {
+        if (id == R.id.action_questions) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
+        } else if (id == R.id.action_interview_questions) {
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, InterviewQuestionsActivity.class, false);
         } else if (id == R.id.action_fav) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteListActivity.class, false);
         } else if (id == R.id.action_settings) {
@@ -145,7 +145,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         // others
         else if (id == R.id.action_share) {
             AppUtilities.shareApp(mActivity);
-        } else if (id == R.id.action_rate_app) {
+        } else if (id == R.id.notification) {
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationListActivity.class, false);
+        }else if (id == R.id.action_rate_app) {
             AppUtilities.rateThisApp(mActivity);
         } else if (id == R.id.privacy_policy) {
             ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class, getResources().getString(R.string.privacy), getResources().getString(R.string.privacy_url), false);

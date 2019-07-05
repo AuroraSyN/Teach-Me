@@ -45,19 +45,32 @@
 
                 <Button
                     android:id="@+id/contentSelector"
-                    android:layout_width="140dp"
+                    android:layout_width="100dp"
                     android:layout_height="34dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="140dp"
-                    android:background="@color/fullTransparent"
+                    android:layout_marginEnd="180dp"
+                    android:background="@color/colorPrimaryDark"
                     android:clickable="true"
                     android:contentDescription="@string/app_name"
                     android:focusable="true"
                     android:text="@string/study"
+                    android:textColor="@android:color/white"
                     android:textSize="12dp" />
 
+                <ImageButton
+                    android:id="@+id/interviewMainMenuButton"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="145dp"
+                    android:background="@drawable/ic_book_multiple_white_48dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/app_name"
+                    android:focusable="true" />
 
                 <ImageButton
                     android:id="@+id/quizMainMenuButton"

@@ -4,7 +4,11 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/action_quiz"
+            android:id="@+id/action_interview_questions"
+            android:icon="@drawable/ic_book_multiple_black_48dp"
+            android:title="@string/interview_questions_title" />
+        <item
+            android:id="@+id/action_questions"
             android:icon="@drawable/ic_accusoft_black_48dp"
             android:title="@string/site_menu_quiz" />
 
@@ -22,10 +26,13 @@
     <item android:title="@string/others">
         <menu>
             <item
+                android:id="@+id/notification"
+                android:icon="@drawable/ic_bell_black_48dp"
+                android:title="@string/notifications" />
+            <item
                 android:id="@+id/privacy_policy"
                 android:icon="@drawable/ic_shield_key_black_48dp"
                 android:title="@string/privacy" />
-
             <item
                 android:id="@+id/action_share"
                 android:icon="@drawable/ic_share_variant_black_48dp"

@@ -116,7 +116,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/margin_8dp"
-            android:background="@drawable/rectangle_deep_blue"
+            android:background="#193535"
             android:text="@string/next_question"
             android:textColor="@color/white" />
 

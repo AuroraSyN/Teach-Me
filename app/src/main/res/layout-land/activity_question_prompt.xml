@@ -75,8 +75,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_6dp"
                     android:layout_weight="0.5"
-                    android:background="@drawable/rectangle_blue"
-                    android:text="@string/yes"
+                    android:background="@android:color/holo_green_dark"
+                    android:text="@string/quiz_button_yes"
                     android:textColor="@color/white" />
 
                 <Button
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_6dp"
                     android:layout_weight="0.5"
-                    android:background="@drawable/rectangle_red"
+                    android:background="@color/red"
                     android:text="@string/no"
                     android:textColor="@color/white" />
 

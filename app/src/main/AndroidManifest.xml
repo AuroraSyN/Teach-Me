@@ -44,6 +44,10 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name="de.hsworms.inf3032.activity.InterviewQuestionsActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name="de.hsworms.inf3032.activity.CustomUrlActivity"

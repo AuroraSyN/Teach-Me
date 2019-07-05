@@ -9,19 +9,44 @@ public class GlobalContentConstant {
             "C++ Basics",
             "C++ Object Oriented",
             "Operating System",
+            "Java Basics",
+            "Java Advanced",
+            "DSA Basics",
+            "DSA Advanced",
             "Java 9"
+
     );
+
+    public static final List<String> ENGLISH_INTERVIEW_TREE = Arrays.asList(
+            "Java Interview Questions",
+            "C++ Interview Questions",
+            "Operating System Questions",
+            "DSA Interview Questions"
+    );
+
 
     public static final List<String> GERMAN_TREE = Arrays.asList(
             "Objektorientiertes Programmieren in Java",
             "Objektorientiertes Programmieren mit C++"
     );
 
+    public static final List<String> GERMAN_INTERVIEW_TREE = Arrays.asList(
+            "C++ Basics"
+
+    );
+
+
     public static final List<String> RUSSIAN_TREE = Arrays.asList(
             "Russian 1",
             "Russian 2",
             "Russian 3"
     );
+
+    public static final List<String> RUSSIAN_INTERVIEW_TREE = Arrays.asList(
+            "C++ Basics"
+
+    );
+
 
     // content file
     public static final String COMPUTER_SCINCE_CONTENT_FILE_EN = "json/content/Computer science/CS_EnglishContentFile.json";

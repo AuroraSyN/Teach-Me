@@ -100,14 +100,12 @@ public class QuestionActivity extends BaseActivity implements DialogUtilities.On
         mSkipAllQuestions = findViewById(R.id.skip_questions);
         mQuestionTextView = findViewById(R.id.question_text);
         mRecyclerQuiz = findViewById(R.id.rvQuiz);
-        mRecyclerQuiz.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        /*
         if (!AppConstant.LAYOUT_MANAGER){
             mRecyclerQuiz.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         }else{
             mRecyclerQuiz.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         }
-        */
+
         mAdapter = new QuizAdapter(mContext, mActivity, mOptionList, mBackgroundColorList);
         mRecyclerQuiz.setAdapter(mAdapter);
     }

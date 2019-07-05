@@ -33,7 +33,6 @@ public class QuestionSelectActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initVar();
         initView();
         initListener();
@@ -42,6 +41,7 @@ public class QuestionSelectActivity extends BaseActivity {
     private void initVar() {
         mActivity = QuestionSelectActivity.this;
         mContext = mActivity.getApplicationContext();
+        selectedItem = null;
     }
 
     private void initView() {
@@ -56,7 +56,6 @@ public class QuestionSelectActivity extends BaseActivity {
         setToolbarTitle(getString(R.string.site_menu_quiz));
         enableUpButton();
         initLoader();
-
         initToolbar(true);
         setToolbarTitle(getString(R.string.question_prompt));
         enableUpButton();
