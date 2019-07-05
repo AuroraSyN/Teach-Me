@@ -110,7 +110,11 @@ public class QuestionSelectActivity extends BaseActivity {
         mBtnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionActivity.class, true);
+                if (selectedItem == null){
+                    Toast.makeText(mContext, getString(R.string.quest_selected), Toast.LENGTH_SHORT).show();
+                }else {
+                    ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionActivity.class, true);
+                }
             }
         });
         mBtnNo.setOnClickListener(new View.OnClickListener() {

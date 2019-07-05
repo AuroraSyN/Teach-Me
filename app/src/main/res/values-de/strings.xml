@@ -150,14 +150,17 @@
     <string name="GERMAN">German</string>
 
     <string name="mSpeakButtonText">TODO</string>
-    <string name="appVersion">App Version 0.9.5x</string>
-    <string name="contentVersion">Content Version : 0.2.2</string>
-    <string name="quizVersion">QuizVersion: 0.0.1</string>
+
+    <string name="engineVersion">ENGINE: 1.2.4 </string>
+    <string name="contentVersion">CONTENT: 0.6.3 </string>
+    <string name="questionsVersion">QUEST: 0.4.4 </string>
+
 
     <string name="study">Fach:</string>
     <string name="computer_science">Angewandte Informatik::1</string>
-    <string name="maths">Mobile Computing ::2</string>
+    <string name="mobile_computing">Mobile Computing ::2</string>
     <string name="linguistics">Sprachwissenschaft::3</string>
     <string name="btn_skipAllQuestions">Skip All</string>
+    <string name="quest_selected">Please, select a questions file</string>
 
 </resources>

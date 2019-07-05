@@ -1,13 +1,89 @@
 {
   "items": [
     {
-      "title": "MATHS ENGLISH",
+      "title": "Android",
       "content": [
         {
-          "tag_line": "BASE CONTENT",
-          "qType": "en_1",
+          "tag_line": "Template",
           "details": [
-            "ENGLISH BASE CONTENT"
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "iOS",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Kotlin",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Cordova",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "jQuery Mobile",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "React Native",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Ionic",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Xamarin",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
           ]
         }
       ]

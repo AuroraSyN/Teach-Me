@@ -57,8 +57,4 @@ public class AppConstant {
     public static boolean DEVICE_LANGUAGE_FLAG = false;
     public static boolean LAYOUT_MANAGER = false;
     public static boolean DEVICE_LANGUAGE_PERF = false;
-
-    public static String ENGINE_VERSION = "ENGINE: 1.1.3 ";
-    public static String CONTENT_VERSION = "CONTENT: 0.5.8 ";
-    public static String QUESTION_VERSION = "QUEST: 0.4.4 ";
 }

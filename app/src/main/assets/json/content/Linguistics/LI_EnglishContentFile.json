@@ -1,13 +1,59 @@
 {
   "items": [
     {
-      "title": "MATHS ENGLISH",
+      "title": "Pragmatics",
       "content": [
         {
-          "tag_line": "BASE CONTENT",
-          "qType": "en_1",
+          "tag_line": "Introduction",
           "details": [
-            "ENGLISH BASE CONTENT"
+            "<p><img align=\"right\" name=\"introPict\" src=\"https://linguistics.online.uni-marburg.de/php/lecturehall/common/disp_img.php?db=units&amp;table=units&amp;id=unit_ID&amp;value=65&amp;MIME=image/jpeg&amp;blob=7\" /> <img height=\"20\" src=\"https://linguistics.online.uni-marburg.de/secure/genpicts/definit.gif\" width=\"125\" /></p>\n\n<p>Pragmatics is the branch of linguistics that studies the use of language and its effects.</p>\n\n<p><img height=\"20\" src=\"https://linguistics.online.uni-marburg.de/secure/genpicts/goals.gif\" width=\"125\" /></p>\n\n<p>This unit introduces three aspects of pragmatic analysis. It will be shown how words or phrases can relate an utterance to time, space or person(s), what speakers do with their utterances (e.g. warn, praise, criticize, etc.), and how speakers organize conversations.</p>\n\n<p><img height=\"20\" src=\"https://linguistics.online.uni-marburg.de/secure/genpicts/centop.gif\" width=\"125\" /></p>\n\n<p>&nbsp;</p>\n\n<ul>\n\t<li>Conversation</li>\n\t<li>Deixis</li>\n\t<li>Speech Act Theory</li>\n\t<li>The Cooperative Principle</li>\n</ul>\n\n<p>&nbsp;</p>\n"
+          ]
+        },
+        {
+          "tag_line": "Introduction - Video tutorial",
+          "details": [
+            "\n\n<object style=\"width:100%;height:100%;width: device-width,initial-scale=1; height: 575px; float: none; clear: both; margin: 2px auto;\" data=\"https://www.youtube.com/embed/FC0-yNBz9ng\",>\n</object>\n\n"
+          ]
+        },
+        {
+          "tag_line": "Pragmatics - Overview",
+          "details": [
+            "<h1>Pragmatics - Overview</h1>\n\n<p><img align=\"right\" border=\"0\" height=\"270\" name=\"introPict\" src=\"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/general/virtualsession/vspicts/pragmatics_branches.gif\" usemap=\"#introPictMap\" width=\"200\" /></p>\n\n<p>Any semantic theory must give an account of word and sentence meaning, explaining their nature and the relations between them. Yet, such a semantic theory has little to say about any structures other than standard declarative sentences or about semantic aspects involved in conversation. It cannot explain the anomalies in sentences such as:</p>\n\n<ul>\n\t<li>?? <a class=\"hlink10\"> 1. Come there please!</a></li>\n\t<li>?? <a class=\"hlink10\"> 2. I hereby run to the station.</a></li>\n\t<li>?? <a class=\"hlink10\"> 3. I promise to punish you.</a></li>\n\t<li>?? <a class=\"hlink10\"> 4. The table is under the ash-tray.</a></li>\n</ul>\n\n<p>The goal of pragmaticsis therefore to define these and other non-truth functional aspects of meaning; hence, a more general approach towards meaning.</p>\n\n<p>Answers</p>\n\n<ul>\n\t<li>1. Explanation: The adverb there is illegal in this context, rather, it should be: come here please, i.e. from an external position to the position of the interlocutor.</li>\n\t<li>2. Explanation: The adverbial hereby requires a so-called performative verb, i.e. a verb that performs a certain action, such as promise, declare, etc.</li>\n\t<li>3. The term &#39;promise&#39; normally involves that the addressee wants the promise to be realized. Is that the case with punishing someone?</li>\n\t<li>4. Explanation: Small objects are mentioned first if they are related to larger objects. Thus, The table is under the ash-tray is only acceptable if the ash-tray is at least as big as the table.</li>\n</ul>\n"
+          ]
+        },
+        {
+          "tag_line": "Goals of Pragmatics",
+          "details": [
+            "<h1>Pragmatics - Overview</h1>\n\n<p><img align=\"right\" height=\"270\" src=\"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/general/virtualsession/vspicts/pragmatics_definition.gif\" width=\"200\" /> The modern use of the term pragmatics goes back to the American philosopher Charles William Morris (1901-1979) who defined pragmatics as the study of the relation of signs to interpreters. Thus, we need to make a distinction between the usual meaning of a word or a sentence and the meaning it has in specific circumstances; i.e. we need to differentiate between meaning and use. Here is an example:</p>\n\n<p><a class=\"hlink10\"> It&#39;s fairly hot in here!</a></p>\n\n<p>The dichotomy between semantics (meaning) and pragmatics (use) is controversial among linguists. Perhaps the most useful distinction is made in terms of sentence meaning vs. utterance meaning where the latter includes all secondary aspects of meaning.</p>\n"
+          ]
+        },
+        {
+          "tag_line": "Utterances",
+          "details": [
+            "<h1>Utterances</h1>\n<p><img align=\"right\" border=\"0\" class=\"rlink10\" height=\"270\" src=\"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/general/virtualsession/vspicts/utterances.jpg\" usemap=\"#Map\" width=\"200\" />In his famous little book &#39;How to do things with words&#39;, which was posthumously published in 1962, <a class=\"hlink10\"> John L. Austin</a> pointed out that a large number of utterances are part of an action; they are performative:</p>\n\n<ul class=\"font10\">\n\t<li><a class=\"hlink10\"> I hereby name this ship H.M.S. Titanic.</a></li>\n\t<li><a class=\"hlink10\"> There is a dog in the field!</a></li>\n\t<li><a class=\"hlink10\"> Don&#39;t do that!</a></li>\n</ul>\n\n<p class=\"font10\">The peculiar thing about these sentences is that they are not used to state things, i.e. they are not just constative, but rather actively do things. Furthermore, such utterances cannot be assessed as true or false but as appropriate or inappropriate. How this is done has been manifested in <a class=\"link10\"  \"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/pragmatics_overview/virtualsession/vslessons/speech_acts_1.html\">speech act theory</a>.</p>\n"
+          ]
+        },
+        {
+          "tag_line": "Utterances - Speech Act Theory I",
+          "details": [
+            "<h1>Utterances - Speech Act Theory I</h1>\n<hr align=\"center\" noshade=\"noshade\" size=\"1\" width=\"700\" />\n<p><img align=\"right\" height=\"270\" src=\"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/general/virtualsession/vspicts/speechacts1.jpg\" width=\"200\" /> Besides the insight that utterances are used to perform actions, speech act theory assumes that speakers are simultaneously involved in three different speech acts when uttering a sentence:</p>\n\n<ul class=\"font10\">\n\t<li><a class=\"hlink10\">the locutionary act</a></li>\n\t<li><a class=\"hlink10\">the illocutionary act</a></li>\n\t<li><a class=\"hlink10\">the perlocutionary act</a></li>\n</ul>\n\n<p class=\"font10\">The illocutionary act is at the center of interest and the term speech act has come to refer exclusively to this act.</p>\n\n<p>Illocutionary acts can be <a class=\"hlink10\"> explicit</a>, in which case they contain an expression naming the act, or <a class=\"hlink10\"> implicit</a> with no specific expression for the act itself.</p>\n\n<p>Austin&#39;s work gave rise to several developments in pragmatics. One is the<a class=\"link10\" \"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/pragmatics_overview/virtualsession/vslessons/speech_acts_2.html\"> systematization of speech acts </a>by <a class=\"hlink10\"> John Searle</a>.</p>\n"
+          ]
+        },
+        {
+          "tag_line": "Utterances - Speech Act Theory II",
+          "details": [
+            "<h1>Utterances - Speech Act Theory II</h1>\n\n<hr align=\"center\" noshade=\"noshade\" size=\"1\" width=\"700\" />\n<p class=\"font10\"><img align=\"right\" border=\"0\" height=\"270\" src=\"https://linguistics.online.uni-marburg.de/secure/generalmodules/semantics/general/virtualsession/vspicts/speechacts2.jpg\" width=\"200\" /> Austin was primarily concerned with performative verbs and their corresponding <a class=\"hlink10\">felicity conditions</a>. <a class=\"hlink10\"> John Searle&#39;s</a> approach sallies into the general theory of meaning and establishes connections to various philosophical issues. He seeks more abstract schemes based on a new typology of actions that can be performed in speaking:</p>\n\n<ul>\n\t<li><a class=\"hlink10\"> representatives</a></li>\n\t<li><a class=\"hlink10\"> directives</a></li>\n\t<li><a class=\"hlink10\"> commissives</a></li>\n\t<li><a class=\"hlink10\"> expressives</a></li>\n\t<li><a class=\"hlink10\"> declarations</a></li>\n</ul>\n\n<p>Further extensions concern a more precise definition of the locutionary act and the formulation of rules and conditions to differentiate illocutionary acts from one another.</p>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Template",
+      "content": [
+        {
+          "tag_line": "",
+          "details": [
+            ""
           ]
         }
       ]

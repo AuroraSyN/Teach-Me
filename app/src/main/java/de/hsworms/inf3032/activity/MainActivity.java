@@ -131,14 +131,11 @@ public class MainActivity extends BaseActivity {
         mRecycler.setAdapter(mAdapter);
         contentSelector = findViewById(R.id.contentSelector);
 
-        String _science = getString(R.string.computer_science);
-        String _maths = getString(R.string.maths);
-        String _linguistics = getString(R.string.linguistics);
         // format is Name::ID
         studyList = new ArrayList<String>();
-        studyList.add(_science);
-        studyList.add(_maths);
-        studyList.add(_linguistics);
+        studyList.add(getString(R.string.computer_science));
+        studyList.add(getString(R.string.mobile_computing));
+        studyList.add(getString(R.string.linguistics));
         popUpContents = new String[studyList.size()];
         studyList.toArray(popUpContents);
         listWindow = viewWindow();
@@ -269,7 +266,7 @@ public class MainActivity extends BaseActivity {
                 listItem.setText(text);
                 listItem.setTag(id);
                 listItem.setTextSize(22);
-                listItem.setPadding(10, 10, 10, 10);
+                listItem.setPadding(5, 15, 10, 10);
                 listItem.setTextColor(Color.WHITE);
                 return listItem;
             }

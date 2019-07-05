@@ -119,7 +119,7 @@
                 android:layout_marginTop="@dimen/margin_15dp"
                 android:layout_marginBottom="@dimen/margin_15dp"
                 android:gravity="center"
-                android:text="@string/quizVersion"
+                android:text="@string/questionsVersion"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_marginTop="@dimen/margin_15dp"
                 android:layout_marginBottom="@dimen/margin_15dp"
                 android:gravity="center"
-                android:text="@string/appVersion"
+                android:text="@string/engineVersion"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
