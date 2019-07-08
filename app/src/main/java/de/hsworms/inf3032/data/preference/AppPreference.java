@@ -54,7 +54,7 @@ public class AppPreference {
 
     public static String getLanguage() {
         return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE,
-                null);
+                AppPreference.mContext.getApplicationContext().getResources().getString(R.string.default_language));
     }
 
     public String getString(String key) {

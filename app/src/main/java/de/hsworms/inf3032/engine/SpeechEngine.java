@@ -24,11 +24,11 @@ public class SpeechEngine {
 
     public SpeechEngine(Activity activity) {
         mActivity = activity;
-        if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.english))) {
+        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
-        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.german))) {
+        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))) {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_DE);
-        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.russian))) {
+        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_RU);
         }
         //Default
