@@ -56,9 +56,9 @@ public class DetailsListActivity extends BaseActivity {
         setContentView(R.layout.activity_details_list);
 
         mRecycler = findViewById(R.id.rvContent);
-        if (!AppConstant.LAYOUT_MANAGER){
+        if (!AppConstant.LAYOUT_MANAGER) {
             mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
-        }else{
+        } else {
             mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
         }
 

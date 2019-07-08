@@ -100,9 +100,9 @@ public class QuestionActivity extends BaseActivity implements DialogUtilities.On
         mSkipAllQuestions = findViewById(R.id.skip_questions);
         mQuestionTextView = findViewById(R.id.question_text);
         mRecyclerQuiz = findViewById(R.id.rvQuiz);
-        if (!AppConstant.LAYOUT_MANAGER){
+        if (!AppConstant.LAYOUT_MANAGER) {
             mRecyclerQuiz.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        }else{
+        } else {
             mRecyclerQuiz.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         }
 
@@ -199,7 +199,7 @@ public class QuestionActivity extends BaseActivity implements DialogUtilities.On
             @Override
             public void onClick(View view) {
                 FragmentManager manager = getSupportFragmentManager();
-                DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.skipAll_dialog_title), getString(R.string.skipAll_dialog_text), null ,getString(R.string.yes) , AppConstant.BUNDLE_KEY_FAILED);
+                DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.skipAll_dialog_title), getString(R.string.skipAll_dialog_text), null, getString(R.string.yes), AppConstant.BUNDLE_KEY_FAILED);
                 dialog.show(manager, AppConstant.BUNDLE_KEY_DIALOG_FRAGMENT);
             }
         });

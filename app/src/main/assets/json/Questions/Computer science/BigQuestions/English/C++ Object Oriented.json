@@ -109,7 +109,8 @@
         "32767"
       ],
       "correct_answer": 0
-    },    {
+    },
+    {
       "question": "What is the output of the following program? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; class student {<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int rno = 10;<br />\n&nbsp;&nbsp; } v;<br />\n&nbsp;<br />\n&nbsp;&nbsp; cout&lt;&lt;v.rno;<br />\n}</p>\n",
       "answers": [
         "10",
@@ -138,7 +139,8 @@
         "None of the above."
       ],
       "correct_answer": 3
-    },    {
+    },
+    {
       "question": "Choose the operator which cannot be overloaded.",
       "answers": [
         "/",

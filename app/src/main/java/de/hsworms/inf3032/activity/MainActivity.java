@@ -50,10 +50,15 @@ import de.hsworms.inf3032.utility.RateItDialogFragment;
 
 public class MainActivity extends BaseActivity {
 
-    private RelativeLayout mNotificationView;
-    private ImageButton mImgBtnSearch, mQuizButton, mInterviewButton;
+    public static Context mContext;
+    public static Activity mActivity;
+    public static Button mContentSelectorButton, mLanguageSelectorButton;
     private static ArrayList<Contents> mContentList;
     private static ContentAdapter mAdapter = null;
+    public PopupWindow content_listWindow;
+    public PopupWindow language_listWindow;
+    private RelativeLayout mNotificationView;
+    private ImageButton mImgBtnSearch, mQuizButton, mInterviewButton;
     private RecyclerView mRecycler;
     private String[] contentString;
     private String[] languageString;
@@ -69,12 +74,43 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-    public PopupWindow content_listWindow;
-    public PopupWindow language_listWindow;
-    public static Context mContext;
-    public static Activity mActivity;
+    public static void loadJson() {
+        if (mContentList != null) {
+            mContentList.clear();
+        }
+        ContentLoaderAdapter contentLoaderAdapter = new ContentLoaderAdapter();
+        contentLoaderAdapter.loadData();
+        parseJson(contentLoaderAdapter.getStringBuffer().toString());
+    }
 
-    public static Button mContentSelectorButton, mLanguageSelectorButton;
+    public static void parseJson(String jsonData) {
+        try {
+            JSONObject jsonObjMain = new JSONObject(jsonData);
+            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
+            for (int i = 0; i < jsonArray1.length(); i++) {
+                JSONObject jsonObj = jsonArray1.getJSONObject(i);
+                String title = jsonObj.getString(ContentConstant.JSON_KEY_TITLE);
+                ArrayList<Item> items = new ArrayList<>();
+                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
+                for (int j = 0; j < jsonArray2.length(); j++) {
+                    JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
+                    String tag_line = jsonObj2.getString(ContentConstant.JSON_KEY_TAG_LINE);
+                    ArrayList<String> detailList = new ArrayList<>();
+                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
+                    for (int k = 0; k < jsonArray3.length(); k++) {
+                        String details = jsonArray3.get(k).toString();
+                        detailList.add(details);
+                    }
+                    items.add(new Item(tag_line, detailList));
+                }
+                mContentList.add(new Contents(title, items));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        hideLoader();
+        mAdapter.notifyDataSetChanged();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +125,7 @@ public class MainActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getApplicationContext(),"Try Conten in Other Language",
+                Toast.makeText(getApplicationContext(), "Try Conten in Other Language",
                         Toast.LENGTH_SHORT).show();
             }
         }, 250000);
@@ -131,9 +167,9 @@ public class MainActivity extends BaseActivity {
         mLanguageSelectorButton = findViewById(R.id.mainmenu_language_selector_button);
         mContentSelectorButton = findViewById(R.id.mainmenu_content_selector_button);
 
-        if (!AppConstant.LAYOUT_MANAGER){
+        if (!AppConstant.LAYOUT_MANAGER) {
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
-        }else{
+        } else {
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 4, GridLayoutManager.HORIZONTAL, false));
         }
         mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
@@ -206,7 +242,7 @@ public class MainActivity extends BaseActivity {
         mLanguageSelectorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                language_listWindow.showAsDropDown(v, -5,0);
+                language_listWindow.showAsDropDown(v, -5, 0);
             }
         });
     }
@@ -214,44 +250,6 @@ public class MainActivity extends BaseActivity {
     private void loadData() {
         showLoader();
         loadJson();
-    }
-
-    public static void loadJson() {
-        if (mContentList != null){
-            mContentList.clear();
-        }
-        ContentLoaderAdapter contentLoaderAdapter = new ContentLoaderAdapter();
-        contentLoaderAdapter.loadData();
-        parseJson(contentLoaderAdapter.getStringBuffer().toString());
-    }
-
-    public static void parseJson(String jsonData) {
-        try {
-            JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
-            for (int i = 0; i < jsonArray1.length(); i++) {
-                JSONObject jsonObj = jsonArray1.getJSONObject(i);
-                String title = jsonObj.getString(ContentConstant.JSON_KEY_TITLE);
-                ArrayList<Item> items = new ArrayList<>();
-                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
-                for (int j = 0; j < jsonArray2.length(); j++) {
-                    JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
-                    String tag_line = jsonObj2.getString(ContentConstant.JSON_KEY_TAG_LINE);
-                    ArrayList<String> detailList = new ArrayList<>();
-                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
-                    for (int k = 0; k < jsonArray3.length(); k++) {
-                        String details = jsonArray3.get(k).toString();
-                        detailList.add(details);
-                    }
-                    items.add(new Item(tag_line, detailList));
-                }
-                mContentList.add(new Contents(title, items));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        hideLoader();
-        mAdapter.notifyDataSetChanged();
     }
 
     public void initNotification() {
@@ -297,10 +295,10 @@ public class MainActivity extends BaseActivity {
     public PopupWindow viewWindow(boolean flag) {
         PopupWindow popupWindow = new PopupWindow(this);
         ListView listView = new ListView(this);
-        if (flag == true){
+        if (flag == true) {
             listView.setAdapter(listViewAdapter(contentString));
             listView.setOnItemClickListener(new MainActivityContentSelectorListner());
-        }else{
+        } else {
             listView.setAdapter(listViewAdapter(languageString));
             listView.setOnItemClickListener(new MainActivityLanguageSelectorListner());
         }

@@ -15,36 +15,37 @@ import de.hsworms.inf3032.data.preference.AppPreference;
 public class ContentLoaderAdapter extends BaseActivity {
 
     StringBuffer stringBuffer;
-    public ContentLoaderAdapter(){
+
+    public ContentLoaderAdapter() {
         loadData();
     }
 
-    public void loadData(){
+    public void loadData() {
         stringBuffer = new StringBuffer();
         BufferedReader br = null;
         try {
             if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
                 switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                     case 1:
-                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))){
+                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_EN)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
-                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))){
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_DE)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
-                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))){
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_RU)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
                         }
                         break;
                     case 2:
-                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))){
+                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_EN)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
-                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))){
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_RU)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
-                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))){
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
                             br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_DE)));
                             MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
                         }
@@ -53,7 +54,7 @@ public class ContentLoaderAdapter extends BaseActivity {
                 String temp;
                 while ((temp = br.readLine()) != null)
                     stringBuffer.append(temp);
-            }else{
+            } else {
                 AppPreference.getInstance(MainActivity.mContext).getLanguage();
                 switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                     case 1:
@@ -93,20 +94,19 @@ public class ContentLoaderAdapter extends BaseActivity {
                 while ((temp = br.readLine()) != null)
                     stringBuffer.append(temp);
             }
-        }
-            catch(IOException e){
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (Exception e) {
                 e.printStackTrace();
-            } finally{
-                try {
-                    br.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
+        }
 
     }
 
-    public StringBuffer getStringBuffer(){
+    public StringBuffer getStringBuffer() {
         return this.stringBuffer;
     }
 

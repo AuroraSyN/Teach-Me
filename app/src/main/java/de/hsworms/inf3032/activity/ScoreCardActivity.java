@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -74,7 +73,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         mRecyclerResult = findViewById(R.id.rvContent);
         if (!AppConstant.LAYOUT_MANAGER) {
             mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        }else{
+        } else {
             mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         }
 
@@ -100,12 +99,22 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
 
         float actualScore = ((float) mScore / (float) (mScore + mWrongAns + mSkip)) * AppConstant.MULTIPLIER_GRADE;
         switch (Math.round(actualScore)) {
-            case 10: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text6))); break;
+            case 10:
+                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text6)));
+                break;
             case 9:
-            case 8: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text5))); break;
-            case 7: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text4))); break;
-            case 5: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text3))); break;
-            case 3: mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text2))); break;
+            case 8:
+                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text5)));
+                break;
+            case 7:
+                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text4)));
+                break;
+            case 5:
+                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text3)));
+                break;
+            case 3:
+                mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text2)));
+                break;
             default:
                 mGreetingTextView.setText(Html.fromHtml(getResources().getString(R.string.greeting_text1)));
                 break;

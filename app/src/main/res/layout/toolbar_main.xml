@@ -51,9 +51,9 @@
                     android:clickable="true"
                     android:contentDescription="@string/app_name"
                     android:focusable="true"
+                    android:textAlignment="center"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp"
-                    android:textAlignment="center"/>
+                    android:textSize="12dp" />
 
 
                 <Button
@@ -68,10 +68,9 @@
                     android:contentDescription="@string/app_name"
                     android:focusable="true"
                     android:text="@string/study"
-                    android:textColor="@android:color/white"
-                    android:textSize="12dp"
                     android:textAlignment="center"
-                    />
+                    android:textColor="@android:color/white"
+                    android:textSize="12dp" />
 
                 <ImageButton
                     android:id="@+id/mainmenu_interview_button"

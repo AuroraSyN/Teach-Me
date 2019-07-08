@@ -1,4 +1,5 @@
 package de.hsworms.inf3032.adapters;
+
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -16,7 +17,8 @@ import de.hsworms.inf3032.data.preference.AppPreference;
 public class QuizSelectAdapter extends BaseActivity {
 
     public StringBuffer sb;
-    public QuizSelectAdapter(){
+
+    public QuizSelectAdapter() {
         loadJson();
     }
 
@@ -160,7 +162,7 @@ public class QuizSelectAdapter extends BaseActivity {
         }
     }
 
-    public StringBuffer getStringBuffer(){
+    public StringBuffer getStringBuffer() {
         return sb;
     }
 }

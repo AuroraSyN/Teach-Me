@@ -8,7 +8,6 @@
     android:layout_height="match_parent">
 
 
-
     <include
         android:id="@+id/toolbarTop"
         layout="@layout/toolbar"
@@ -53,9 +52,9 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="@string/interview_questions_textView"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textAlignment="center"
             android:verticalScrollbarPosition="defaultPosition"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,8 +1,5 @@
 package de.hsworms.inf3032.data.constant;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class ContentConstant {
 
     // content file

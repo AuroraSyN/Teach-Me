@@ -1,8 +1,6 @@
 package de.hsworms.inf3032.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.preference.ListPreference;
 import android.preference.PreferenceFragment;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,8 +8,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.preference.AppPreference;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
@@ -39,7 +35,8 @@ public class SettingsActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        getString(R.string.done), Toast.LENGTH_SHORT); toast.show();
+                        getString(R.string.done), Toast.LENGTH_SHORT);
+                toast.show();
                 ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
             }
         });

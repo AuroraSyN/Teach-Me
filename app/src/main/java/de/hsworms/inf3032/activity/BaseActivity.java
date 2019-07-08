@@ -25,12 +25,21 @@ import de.hsworms.inf3032.utility.DialogUtilities;
 
 public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
 
+    private static LinearLayout mLoadingView, mNoDataView;
     private Activity mActivity;
     private Context mContext;
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private static LinearLayout mLoadingView, mNoDataView;
+
+    public static void hideLoader() {
+        if (mLoadingView != null) {
+            mLoadingView.setVisibility(View.GONE);
+        }
+        if (mNoDataView != null) {
+            mNoDataView.setVisibility(View.GONE);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,27 +100,16 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-
     public void initLoader() {
         mLoadingView = findViewById(R.id.loadingView);
         mNoDataView = findViewById(R.id.noDataView);
     }
-
 
     public void showLoader() {
         if (mLoadingView != null) {
             mLoadingView.setVisibility(View.VISIBLE);
         }
 
-        if (mNoDataView != null) {
-            mNoDataView.setVisibility(View.GONE);
-        }
-    }
-
-    public static void hideLoader() {
-        if (mLoadingView != null) {
-            mLoadingView.setVisibility(View.GONE);
-        }
         if (mNoDataView != null) {
             mNoDataView.setVisibility(View.GONE);
         }

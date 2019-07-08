@@ -39,8 +39,7 @@
                 android:layout_alignBottom="@+id/third_text"
                 android:layout_marginBottom="-10dp"
                 android:choiceMode="singleChoice"
-                android:listSelector="@drawable/list_view_selector">
-            </ListView>
+                android:listSelector="@drawable/list_view_selector"></ListView>
 
             <de.hsworms.inf3032.engine.TextViewEngine
                 android:id="@+id/third_text"

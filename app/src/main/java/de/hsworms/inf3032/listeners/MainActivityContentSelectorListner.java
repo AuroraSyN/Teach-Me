@@ -25,8 +25,8 @@ public class MainActivityContentSelectorListner implements OnItemClickListener {
         mainActivity.mContentSelectorButton.setText(selectedItemText);
         String selectedItemID = v.getTag().toString();
 
-        switch (selectedItemText){
-                // ENGLISH
+        switch (selectedItemText) {
+            // ENGLISH
             case "Computer science":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();
@@ -45,7 +45,7 @@ public class MainActivityContentSelectorListner implements OnItemClickListener {
                 mainActivity.mContentSelectorButton.setText(selectedItemText);
                 break;
 
-                // RUSSIAN
+            // RUSSIAN
             case "Мобильная информатика":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();
@@ -64,7 +64,7 @@ public class MainActivityContentSelectorListner implements OnItemClickListener {
                 mainActivity.mContentSelectorButton.setText(selectedItemText);
                 break;
 
-                // GERMAN
+            // GERMAN
             case "Angewandte Informatik":
                 AppConstant.CONTENT_SELECTOR_FLAG = Short.parseShort(selectedItemID);
                 MainActivity.loadJson();

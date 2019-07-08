@@ -15,7 +15,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
@@ -55,8 +54,8 @@ public class SplashActivity extends AppCompatActivity {
 
         versionView.setText(
                 getString(R.string.engineVersion) +
-                getString(R.string.contentVersion) +
-                getString(R.string.questionsVersion));
+                        getString(R.string.contentVersion) +
+                        getString(R.string.questionsVersion));
         mImageView = findViewById(R.id.splashIcon);
         mAnimation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 

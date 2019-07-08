@@ -14,7 +14,6 @@ import java.util.Locale;
 import de.hsworms.inf3032.activity.BaseActivity;
 import de.hsworms.inf3032.activity.MainActivity;
 import de.hsworms.inf3032.data.preference.AppPreference;
-import de.hsworms.inf3032.utility.ActivityUtilities;
 
 public class MainActivityLanguageSelectorListner extends BaseActivity implements OnItemClickListener {
 
@@ -34,7 +33,7 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
         Locale locale = new Locale(lang);
         Configuration config = new Configuration();
 
-        switch (selectedItemText){
+        switch (selectedItemText) {
             case "English":
                 AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
                 AppPreference.mEditor.putString("pref_language", "English");

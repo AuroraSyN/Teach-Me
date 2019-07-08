@@ -66,9 +66,9 @@ public class SearchActivity extends BaseActivity {
         setContentView(R.layout.activity_details_list);
         mSpeakButton = findViewById(R.id.mSpeakButton);
         mRecyclerContent = findViewById(R.id.rvContent);
-        if (!AppConstant.LAYOUT_MANAGER){
+        if (!AppConstant.LAYOUT_MANAGER) {
             mRecyclerContent.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
-        }else{
+        } else {
             mRecyclerContent.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
         }
         initLoader();

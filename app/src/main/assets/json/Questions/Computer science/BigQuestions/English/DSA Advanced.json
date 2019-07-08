@@ -105,7 +105,8 @@
         "not defined"
       ],
       "correct_answer": 0
-    },    {
+    },
+    {
       "question": "Is an empty .java file a valid source file?",
       "answers": [
         "True",
@@ -132,7 +133,8 @@
         "None of the above."
       ],
       "correct_answer": 0
-    },    {
+    },
+    {
       "question": "Can be constructor be made private?",
       "answers": [
         "True",

@@ -24,7 +24,6 @@
       "answers": [
         "Thus buffering proves useful for those jobs that have a balance between computational work and I/O operations. In other cases, buffering scheme may not work well.",
         "Network and Distributed Operating systems have a common hardware base, but the difference lies in software."
-
       ],
       "correct_answer": 1
     },

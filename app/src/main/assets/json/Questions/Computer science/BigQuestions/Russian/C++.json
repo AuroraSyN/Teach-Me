@@ -97,7 +97,8 @@
         "str_compare()"
       ],
       "correct_answer": 1
-    },{
+    },
+    {
       "question": "Каков вывод следующей программы? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; int i = 13, j = 60;<br />\n&nbsp;&nbsp; i^=j;<br />\n&nbsp;&nbsp; j^=i;<br />\n&nbsp;&nbsp; i^=j;<br />\n&nbsp;&nbsp; cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;j;<br />\n}</p>\n",
       "answers": [
         "73 73",
@@ -206,7 +207,8 @@
         "32767"
       ],
       "correct_answer": 0
-    },    {
+    },
+    {
       "question": "Каков вывод следующей программы? <p>#include&lt;iostream&gt;</p>\n\n<p>using namespace std;<br />\nmain() {<br />\n&nbsp;&nbsp; class student {<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int rno = 10;<br />\n&nbsp;&nbsp; } v;<br />\n&nbsp;<br />\n&nbsp;&nbsp; cout&lt;&lt;v.rno;<br />\n}</p>\n",
       "answers": [
         "10",
@@ -235,7 +237,8 @@
         "None of the above."
       ],
       "correct_answer": 3
-    },    {
+    },
+    {
       "question": "Выберите оператора, который не может быть перегружен.",
       "answers": [
         "/",

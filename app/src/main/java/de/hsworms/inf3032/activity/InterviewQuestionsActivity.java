@@ -32,16 +32,14 @@ import de.hsworms.inf3032.utility.ActivityUtilities;
 
 public class InterviewQuestionsActivity extends BaseActivity {
 
-    String popUpContents[];
     public PopupWindow listView;
     public Button selectButton;
     public TextView text, title;
-
+    String popUpContents[];
+    List<String> contentList = null;
     private String selectedItem = ".";
     private ListView mListView;
     private List<String> trees = null;
-    List<String> contentList = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +51,7 @@ public class InterviewQuestionsActivity extends BaseActivity {
         enableUpButton();
 
         if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
-            switch (AppConstant.CONTENT_SELECTOR_FLAG){
+            switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                 case 1:
                     switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
                         case "English":
@@ -65,7 +63,8 @@ public class InterviewQuestionsActivity extends BaseActivity {
                         case "Russian":
                             trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
                             break;
-                } break;
+                    }
+                    break;
                 case 2:
                     switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
                         case "English":
@@ -77,11 +76,12 @@ public class InterviewQuestionsActivity extends BaseActivity {
                         case "Russian":
                             trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
                             break;
-                    } break;
+                    }
+                    break;
             }
 
-        }else{
-            switch (AppConstant.CONTENT_SELECTOR_FLAG){
+        } else {
+            switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                 case 1:
                     switch (Locale.getDefault().getLanguage()) {
                         case "en":
@@ -93,7 +93,8 @@ public class InterviewQuestionsActivity extends BaseActivity {
                         case "ru":
                             trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
                             break;
-                    } break;
+                    }
+                    break;
                 case 2:
                     switch (Locale.getDefault().getLanguage()) {
                         case "en":
@@ -105,7 +106,8 @@ public class InterviewQuestionsActivity extends BaseActivity {
                         case "ru":
                             trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
                             break;
-                    } break;
+                    }
+                    break;
             }
         }
         initListView();
@@ -149,32 +151,36 @@ public class InterviewQuestionsActivity extends BaseActivity {
 
     }
 
-    public void checkSelectedItem(){
-        if(selectedItem != null ){
+    public void checkSelectedItem() {
+        if (selectedItem != null) {
             contentList = new ArrayList<String>();
             int i = 0;
-            switch (selectedItem){
+            switch (selectedItem) {
                 case "Java Interview Questions":
-                    while (i <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length -1 ){
-                        contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.JAVA_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
+                        contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[i]);
                         i++;
-                    } break;
+                    }
+                    break;
                 case "C++ Interview Questions":
-                    while (i <= EnglishTree.C_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.C_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.C_INERVIEW_QUESTIONS.length - 1) {
+                        contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[i]);
                         i++;
-                    } break;
+                    }
+                    break;
 
                 case "Operating System Questions":
-                    while (i <= EnglishTree.OS_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.OS_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.OS_INERVIEW_QUESTIONS.length - 1) {
+                        contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[i]);
                         i++;
-                    } break;
+                    }
+                    break;
                 case "DSA Interview Questions":
-                    while (i <= EnglishTree.DSA_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.DSA_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.DSA_INERVIEW_QUESTIONS.length - 1) {
+                        contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[i]);
                         i++;
-                    } break;
+                    }
+                    break;
             }
             popUpContents = new String[contentList.size()];
             contentList.toArray(popUpContents);
@@ -216,11 +222,11 @@ public class InterviewQuestionsActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-            switch (item.getItemId()) {
-                case android.R.id.home:
-                    ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
-                    return true;
-            }
-            return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
+                return true;
         }
+        return super.onOptionsItemSelected(item);
+    }
 }

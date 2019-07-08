@@ -1,6 +1,5 @@
 package de.hsworms.inf3032.data.preference;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -9,16 +8,14 @@ import android.widget.Toast;
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
 
-public class AppPreference{
+public class AppPreference {
 
     public static Context mContext;
-
+    public static SharedPreferences.Editor mEditor;
+    public static SharedPreferences mSettingsPreferences;
     private static AppPreference mAppPreference = null;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
-
-    public static SharedPreferences.Editor mEditor;
-    public static SharedPreferences mSettingsPreferences;
 
     private AppPreference() {
         mSharedPreferences = mContext.getSharedPreferences(PrefKey.APP_PREF_NAME, Context.MODE_PRIVATE);
@@ -26,19 +23,19 @@ public class AppPreference{
         mEditor = mSharedPreferences.edit();
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                if (key.equals("pref_language")){
+                if (key.equals("pref_language")) {
                     AppConstant.DEVICE_LANGUAGE_FLAG = true;
-                    Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                    Toast.makeText(AppPreference.mContext.getApplicationContext(), "done",
                             Toast.LENGTH_SHORT).show();
                 }
-                if (key.equals("pref_experimental")){
-                    if (AppPreference.getInstance(AppPreference.mContext).isExperimentalOn() == true ){
+                if (key.equals("pref_experimental")) {
+                    if (AppPreference.getInstance(AppPreference.mContext).isExperimentalOn() == true) {
                         AppConstant.LAYOUT_MANAGER = true;
-                        Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                        Toast.makeText(AppPreference.mContext.getApplicationContext(), "done",
                                 Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         AppConstant.LAYOUT_MANAGER = false;
-                        Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                        Toast.makeText(AppPreference.mContext.getApplicationContext(), "done",
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -53,6 +50,11 @@ public class AppPreference{
             mAppPreference = new AppPreference();
         }
         return mAppPreference;
+    }
+
+    public static String getLanguage() {
+        return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE,
+                null);
     }
 
     public String getString(String key) {
@@ -76,16 +78,11 @@ public class AppPreference{
         return mSettingsPreferences.getString(AppConstant.PREF_FONT_SIZE, mContext.getResources().getString(R.string.default_text));
     }
 
-    public static String getLanguage() {
-        return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE,
-               null);
-    }
-
     public boolean isLanguageSelectedOn() {
         return mSettingsPreferences.getBoolean(AppConstant.PREF_LANGUAGE_FLAG, false);
     }
 
-    public boolean isExperimentalOn(){
+    public boolean isExperimentalOn() {
         return mSettingsPreferences.getBoolean(AppConstant.PREF_EXPERIMENTAL, false);
     }
 

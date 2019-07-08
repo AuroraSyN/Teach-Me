@@ -75,7 +75,7 @@ public class QuestionSelectActivity extends BaseActivity {
                     break;
 
             }
-        }else{
+        } else {
             switch (Locale.getDefault().getLanguage()) {
                 case "en":
                     trees = EnglishTree.ENGLISH_TREE;
@@ -112,9 +112,9 @@ public class QuestionSelectActivity extends BaseActivity {
         mBtnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (selectedItem == null){
+                if (selectedItem == null) {
                     Toast.makeText(mContext, getString(R.string.quest_selected), Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionActivity.class, true);
                 }
             }

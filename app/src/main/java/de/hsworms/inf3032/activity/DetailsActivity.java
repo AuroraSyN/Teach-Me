@@ -30,6 +30,7 @@ import de.hsworms.inf3032.utility.ActivityUtilities;
 
 public class DetailsActivity extends BaseActivity {
     public static String currentItem;
+    public static MenuItem startTest;
     private Activity mActivity;
     private Context mContext;
     private ArrayList<String> mItemList;
@@ -48,7 +49,6 @@ public class DetailsActivity extends BaseActivity {
     private boolean mIsTtsPlaying = false;
     private String mTtsText;
     private MenuItem menuItemTTS;
-    public static MenuItem startTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
