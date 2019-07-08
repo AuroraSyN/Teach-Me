@@ -1,23 +1,34 @@
-package de.hsworms.inf3032.data.constant;
+package de.hsworms.inf3032.data.trees;
 
-public class EnglishContentConstant {
+import java.util.Arrays;
+import java.util.List;
 
-    // BIG question file en
-    public static final String C_BASICS = "json/Questions/Computer science/BigQuestions/English/C++ Basics.json";
-    public static final String C_OBJECT_ORIENTED = "json/Questions/Computer science/BigQuestions/English/C++ Object Oriented.json";
-    public static final String OPERATING_SYSTEM = "json/Questions/Computer science/BigQuestions/English/Operating System.json";
-    public static final String JAVA_9 = "json/Questions/Computer science/BigQuestions/English/Java 9.json";
-    public static final String JAVA_BASICS = "json/Questions/Computer science/BigQuestions/English/Java Basics.json";
-    public static final String JAVA_ADVANCED = "json/Questions/Computer science/BigQuestions/English/Java Advanced.json";
-    public static final String DSA_BASICS = "json/Questions/Computer science/BigQuestions/English/DSA Basics.json";
-    public static final String DSA_ADVANCED = "json/Questions/Computer science/BigQuestions/English/DSA Advanced.json";
+//TODO QU_CONTENT
 
-    // small question file en
-    public static final String C_OVERVIEW = "json/Questions/Computer science/SmallQuestions/en_US/C++ Overview.json";
-    public static final String C_ENVIRONMENT_SETUP = "json/Questions/Computer science/SmallQuestions/en_US/C++ Environment Setup.json";
-    public static final String C_BASIS_SYNTAX = "json/Questions/Computer science/SmallQuestions/en_US/C++ Basic Syntax.json.json";
+public class EnglishTree {
 
-    public static final String _KEY_ = "::";
+    public static final List<String> ENGLISH_TREE = Arrays.asList(
+            "C++ Basics",
+            "C++ Object Oriented",
+            "Operating System",
+            "Java Basics",
+            "Java Advanced",
+            "DSA Basics",
+            "DSA Advanced",
+            "Java 9"
+
+    );
+
+    public static final List<String> CS_ENGLISH_INTERVIEW_TREE = Arrays.asList(
+            "Java Interview Questions",
+            "C++ Interview Questions",
+            "Operating System Questions",
+            "DSA Interview Questions"
+    );
+
+    public static final List<String> MC_ENGLISH_INTERVIEW_TREE = Arrays.asList(
+            "MC Interview Questions"
+    );
 
     public static final String[] JAVA_INERVIEW_QUESTIONS = new String[]{
             "What do you know about Java?",
@@ -88,7 +99,7 @@ public class EnglishContentConstant {
     };
 
     public static final String[] C_INERVIEW_QUESTIONS = new String[]{
-            "",
+            "dksjg",
             "",
             "",
             "",
@@ -108,7 +119,7 @@ public class EnglishContentConstant {
     };
 
     public static final String[] C_INERVIEW_QUESTIONS_A = new String[]{
-            "",
+            "dfgsjlk",
             "",
             "",
             "",
@@ -452,5 +463,4 @@ public class EnglishContentConstant {
             "Both sorting techniques maintains two sub-lists, sorted and unsorted and both take one element at a time and places it into sorted sub-list. Insertion sort works on the current element in hand and places it in the sorted array at appropriate location maintaining the properties of insertion sort. Whereas, selection sort searches the minimum from the unsorted sub-list and replaces it with the current element in hand.",
             "Merge sort is sorting algorithm based on divide and conquer programming approach. It keeps on dividing the list into smaller sub-list until all sub-list has only 1 element. And then it merges them in a sorted way until all sub-lists are consumed. It has run-time complexity of Ο(n log n) and it needs Ο(n) auxiliary space."
     };
-
 }

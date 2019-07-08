@@ -23,6 +23,15 @@
             android:title="@string/settings" />
     </group>
 
+    <item android:title="@string/assist_title">
+        <menu>
+            <item
+                android:id="@+id/assistant"
+                android:icon="@drawable/ic_google_assistant_black_48dp"
+                android:title="@string/notifications" />
+        </menu>
+    </item>
+
     <item android:title="@string/others">
         <menu>
             <item

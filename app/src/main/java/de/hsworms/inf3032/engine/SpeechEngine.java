@@ -11,7 +11,7 @@ import java.util.Locale;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.activity.MainActivity;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
+import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
 public class SpeechEngine {
@@ -24,16 +24,16 @@ public class SpeechEngine {
 
     public SpeechEngine(Activity activity) {
         mActivity = activity;
-        if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.ENGLISH))) {
-            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_EN);
-        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.GERMAN))) {
-            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_DE);
-        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.RUSSIAN))) {
-            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_RU);
+        if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.english))) {
+            mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
+        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.german))) {
+            mLocale = new Locale(ContentConstant.TTS_LOCALE_DE);
+        } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(MainActivity.mContext.getResources().getString(R.string.russian))) {
+            mLocale = new Locale(ContentConstant.TTS_LOCALE_RU);
         }
         //Default
         else {
-            mLocale = new Locale(GlobalContentConstant.TTS_LOCALE_EN);
+            mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
         }
     }
 

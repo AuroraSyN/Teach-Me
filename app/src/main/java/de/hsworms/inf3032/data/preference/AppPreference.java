@@ -69,7 +69,8 @@ public class AppPreference{
     }
 
     public String getLanguage() {
-        return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE, mContext.getResources().getString(R.string.default_language));
+        return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE,
+                null);
     }
 
     public boolean isLanguageSelectedOn() {

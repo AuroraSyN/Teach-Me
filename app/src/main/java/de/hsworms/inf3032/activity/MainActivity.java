@@ -36,10 +36,11 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ContentAdapter;
 import de.hsworms.inf3032.adapters.ContentLoaderAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
+import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.sqlite.NotificationDbController;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
-import de.hsworms.inf3032.listeners.SelectorListner;
+import de.hsworms.inf3032.listeners.MainActivityContentSelectorListner;
+import de.hsworms.inf3032.listeners.MainActivityLanguageSelectorListner;
 import de.hsworms.inf3032.models.content.Contents;
 import de.hsworms.inf3032.models.content.Item;
 import de.hsworms.inf3032.models.notification.NotificationModel;
@@ -54,8 +55,10 @@ public class MainActivity extends BaseActivity {
     private static ArrayList<Contents> mContentList;
     private static ContentAdapter mAdapter = null;
     private RecyclerView mRecycler;
-    private String[] popUpContents;
-    private List<String> studyList;
+    private String[] contentString;
+    private String[] languageString;
+    private List<String> contentList;
+    private List<String> languageList;
     private ArrayList<Item> items;
     // received new broadcast
     private BroadcastReceiver newNotificationReceiver = new BroadcastReceiver() {
@@ -66,10 +69,12 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-    public PopupWindow listWindow;
-    public Button contentSelector;
+    public PopupWindow content_listWindow;
+    public PopupWindow language_listWindow;
     public static Context mContext;
     public static Activity mActivity;
+
+    public static Button mContentSelectorButton, mLanguageSelectorButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +82,9 @@ public class MainActivity extends BaseActivity {
         RateItDialogFragment.show(this, getSupportFragmentManager());
         initVar();
         initView();
-        loadData();
         initListener();
 
+        loadData();
         //TODO STRING
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -119,10 +124,13 @@ public class MainActivity extends BaseActivity {
     private void initView() {
         setContentView(R.layout.activity_main);
         mNotificationView = findViewById(R.id.notificationView);
-        mImgBtnSearch = findViewById(R.id.imgBtnSearch);
+        mImgBtnSearch = findViewById(R.id.mainmenu_search_button);
         mRecycler = findViewById(R.id.rvContent);
-        mQuizButton = findViewById(R.id.quizMainMenuButton);
-        mInterviewButton = findViewById(R.id.interviewMainMenuButton);
+        mQuizButton = findViewById(R.id.mainmenu_question_button);
+        mInterviewButton = findViewById(R.id.mainmenu_interview_button);
+        mLanguageSelectorButton = findViewById(R.id.mainmenu_language_selector_button);
+        mContentSelectorButton = findViewById(R.id.mainmenu_content_selector_button);
+
         if (!AppConstant.LAYOUT_MANAGER){
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
         }else{
@@ -130,16 +138,26 @@ public class MainActivity extends BaseActivity {
         }
         mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
         mRecycler.setAdapter(mAdapter);
-        contentSelector = findViewById(R.id.contentSelector);
 
-        // format is Name::ID
-        studyList = new ArrayList<String>();
-        studyList.add(getString(R.string.computer_science));
-        studyList.add(getString(R.string.mobile_computing));
-        //studyList.add(getString(R.string.linguistics));
-        popUpContents = new String[studyList.size()];
-        studyList.toArray(popUpContents);
-        listWindow = viewWindow();
+
+        contentList = new ArrayList<String>();
+        contentList.add(getString(R.string.computer_science));
+        contentList.add(getString(R.string.mobile_computing));
+        //contentList.add(getString(R.string.linguistics));
+
+        languageList = new ArrayList<>();
+        languageList.add(getString(R.string.mainmenu_English));
+        languageList.add(getString(R.string.mainmenu_German));
+        languageList.add(getString(R.string.mainmenu_Russian));
+
+        contentString = new String[contentList.size()];
+        languageString = new String[languageList.size()];
+
+        contentList.toArray(contentString);
+        languageList.toArray(languageString);
+
+        content_listWindow = viewWindow(true);
+        language_listWindow = viewWindow(false);
 
         initToolbar(false);
         initDrawer();
@@ -147,23 +165,18 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initListener() {
-        //notification view click listener
         mNotificationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationListActivity.class, false);
             }
         });
-
-        // Search button click listener
         mImgBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, SearchActivity.class, false);
             }
         });
-
-        // recycler list item click listener
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
@@ -172,31 +185,30 @@ public class MainActivity extends BaseActivity {
             }
 
         });
-
         mQuizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
             }
         });
-
         mInterviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity, InterviewQuestionsActivity.class, true);
             }
         });
-
-        View.OnClickListener handler = new View.OnClickListener() {
+        mContentSelectorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.contentSelector:
-                        listWindow.showAsDropDown(v, -5, 0);
-                        break;
-                }
+                content_listWindow.showAsDropDown(v, -5, 0);
             }
-        };
-        contentSelector.setOnClickListener(handler);
+        });
+        mLanguageSelectorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                language_listWindow.showAsDropDown(v, -5,0);
+            }
+        });
     }
 
     private void loadData() {
@@ -216,17 +228,17 @@ public class MainActivity extends BaseActivity {
     public static void parseJson(String jsonData) {
         try {
             JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.getJSONArray(GlobalContentConstant.JSON_KEY_ITEMS);
+            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
             for (int i = 0; i < jsonArray1.length(); i++) {
                 JSONObject jsonObj = jsonArray1.getJSONObject(i);
-                String title = jsonObj.getString(GlobalContentConstant.JSON_KEY_TITLE);
+                String title = jsonObj.getString(ContentConstant.JSON_KEY_TITLE);
                 ArrayList<Item> items = new ArrayList<>();
-                JSONArray jsonArray2 = jsonObj.getJSONArray(GlobalContentConstant.JSON_KEY_CONTENT);
+                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
                 for (int j = 0; j < jsonArray2.length(); j++) {
                     JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
-                    String tag_line = jsonObj2.getString(GlobalContentConstant.JSON_KEY_TAG_LINE);
+                    String tag_line = jsonObj2.getString(ContentConstant.JSON_KEY_TAG_LINE);
                     ArrayList<String> detailList = new ArrayList<>();
-                    JSONArray jsonArray3 = jsonObj2.getJSONArray(GlobalContentConstant.JSON_KEY_DETAILS);
+                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
                     for (int k = 0; k < jsonArray3.length(); k++) {
                         String details = jsonArray3.get(k).toString();
                         detailList.add(details);
@@ -273,7 +285,7 @@ public class MainActivity extends BaseActivity {
                 TextView listItem = new TextView(MainActivity.this);
                 listItem.setText(text);
                 listItem.setTag(id);
-                listItem.setTextSize(20);
+                listItem.setTextSize(22);
                 listItem.setPadding(5, 15, 10, 10);
                 listItem.setTextColor(Color.WHITE);
                 return listItem;
@@ -282,15 +294,21 @@ public class MainActivity extends BaseActivity {
         return adapter;
     }
 
-    public PopupWindow viewWindow() {
+    public PopupWindow viewWindow(boolean flag) {
         PopupWindow popupWindow = new PopupWindow(this);
-        ListView _listView = new ListView(this);
-        _listView.setAdapter(listViewAdapter(popUpContents));
-        _listView.setOnItemClickListener(new SelectorListner());
+        ListView listView = new ListView(this);
+        if (flag == true){
+            listView.setAdapter(listViewAdapter(contentString));
+            listView.setOnItemClickListener(new MainActivityContentSelectorListner());
+        }else{
+            listView.setAdapter(listViewAdapter(languageString));
+            listView.setOnItemClickListener(new MainActivityLanguageSelectorListner());
+        }
         popupWindow.setFocusable(true);
         popupWindow.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
         popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(_listView);
+        popupWindow.setContentView(listView);
         return popupWindow;
     }
+
 }

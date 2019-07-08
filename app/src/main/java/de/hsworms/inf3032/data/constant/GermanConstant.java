@@ -1,6 +1,6 @@
 package de.hsworms.inf3032.data.constant;
 
-public class GermanContentConstant {
+public class GermanConstant {
 
     // BIG question file de
     public static final String JAVA_PROG = "json/Questions/Computer science/BigQuestions/German/Java.json";

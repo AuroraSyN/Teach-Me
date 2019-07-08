@@ -1,6 +1,6 @@
 package de.hsworms.inf3032.data.constant;
 
-public class RussianContentConstant {
+public class RussianConstant {
 
     // BIG question file ru
     public static final String BIG_1 = "json/Questions/Computer science/BigQuestions/Russian/C++.json";

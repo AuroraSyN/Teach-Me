@@ -77,19 +77,21 @@
     <string name="removed_from_fav">This topic is removed from Favorite List!</string>
 
     <string name="close_prompt">Are you sure you want to close the app?</string>
-    <string name="yes">Go</string>
+    <string name="yes">Yes</string>
     <string name="no">Abort</string>
     <string name="failed">Failed</string>
     <string name="failed_dialog_title">U has failed</string>
     <string name="failed_dialog_text">Try ur skill next time</string>
+
     <string name="skipAll_dialog_title">Skip all questions?</string>
     <string name="skipAll_dialog_text">Do you wanna skip all questions?</string>
+
     <string name="skip_prompt">Do you want to skip this question?</string>
     <string name="quiz_close_prompt">Do you want to quit the game?</string>
 
     <string name="greeting_text1">Oops!! Your score is not very good!! You need to study more.</string>
     <string name="greeting_text2">Not bad!! Keep learning and make yourself better.</string>
-    <string name="greeting_text3">Excellent!! You are the boss!!</string>
+    <string name="greeting_text3">Not bad, not bad</string>
     <string name="greeting_text4">Not bad, not bad, but keep learning a little bit more</string>
     <string name="greeting_text5">Good, but you can do it better</string>
     <string name="greeting_text6">Excellent!! Bravo!!!</string>
@@ -128,7 +130,7 @@
 
     <string name="pref_notification_title">Notification</string>
     <string name="pref_notification_summ">Turn On / Off notification</string>
-    <string name="pref_experimantal_title">Experimantal Feature</string>
+    <string name="pref_experimantal_title">Widescreen / Experimantal Feature</string>
     <string name="pref_experimantal_summ">Turn On / Off</string>
     <string name="pref_language_perm_title">Set selected language for permanent?</string>
     <string name="pref_language_perm_summ"> Yes / No </string>
@@ -146,24 +148,39 @@
     <string name="start_test">Start Test</string>
     <string name="speech_hit">Touch me</string>
 
-    <string name="ENGLISH">English</string>
-    <string name="RUSSIAN">Russian</string>
-    <string name="GERMAN">German</string>
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
+    <string name="german">German</string>
 
     <string name="mSpeakButtonText">TODO</string>
-    
-    <string name="engineVersion">ENGINE: 1.3.10 </string>
+
+    <string name="engineVersion">ENGINE: 1.4.7 </string>
     <string name="contentVersion">CONTENT: 0.7.7 </string>
     <string name="questionsVersion">QUEST: 0.5.1 </string>
 
-    <string name="study">Предмет:</string>
-    <string name="computer_science">Информатика::1</string>
-    <string name="mobile_computing">Мобильная информатика::2</string>
-    <string name="linguistics">Лингвистика::3</string>
+    <string name="study">Study:</string>
+
     <string name="btn_skipAllQuestions">Skip All</string>
+
     <string name="quest_selected">Please, select a questions file</string>
     <string name="quiz_button_yes">Start</string>
-    <string name="interview_question_button_text">Press Me to se Q</string>
+    <string name="interview_question_button_text">Press me to see questions</string>
     <string name="interview_questions_textView"></string>
+
+
+    <string name="computer_science">Computer science::1</string>
+    <string name="mobile_computing">Mobile Computing::2</string>
+    <string name="linguistics">Linguistics::3</string>
+
+    <string name="mainmenu_language_title">language</string>
+    <string name="mainmenu_English">English::1</string>
+    <string name="mainmenu_German">German::2</string>
+    <string name="mainmenu_Russian">Russian::3</string>
+
+    <string name="en">EN</string>
+    <string name="de">DE</string>
+    <string name="ru">RU</string>
+    <string name="assist_title">Assistant</string>
+
 
 </resources>

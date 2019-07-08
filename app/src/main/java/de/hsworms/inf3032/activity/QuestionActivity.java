@@ -27,7 +27,7 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.QuizAdapter;
 import de.hsworms.inf3032.adapters.QuizSelectAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
+import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 import de.hsworms.inf3032.data.preference.PrefKey;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
@@ -331,15 +331,15 @@ public class QuestionActivity extends BaseActivity implements DialogUtilities.On
         try {
 
             JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray = jsonObjMain.getJSONArray(GlobalContentConstant.JSON_KEY_QUESTIONNAIRY);
+            JSONArray jsonArray = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_QUESTIONNAIRY);
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObj = jsonArray.getJSONObject(i);
 
-                String question = jsonObj.getString(GlobalContentConstant.JSON_KEY_QUESTION);
-                int correctAnswer = Integer.parseInt(jsonObj.getString(GlobalContentConstant.JSON_KEY_CORRECT_ANS));
+                String question = jsonObj.getString(ContentConstant.JSON_KEY_QUESTION);
+                int correctAnswer = Integer.parseInt(jsonObj.getString(ContentConstant.JSON_KEY_CORRECT_ANS));
 
-                JSONArray jsonArray2 = jsonObj.getJSONArray(GlobalContentConstant.JSON_KEY_ANSWERS);
+                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_ANSWERS);
                 ArrayList<String> contents = new ArrayList<>();
                 ArrayList<String> backgroundColors = new ArrayList<>();
                 for (int j = 0; j < jsonArray2.length(); j++) {

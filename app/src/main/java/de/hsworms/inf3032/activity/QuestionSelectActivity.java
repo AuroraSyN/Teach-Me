@@ -16,8 +16,10 @@ import java.util.Locale;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
+import de.hsworms.inf3032.data.trees.EnglishTree;
+import de.hsworms.inf3032.data.trees.GermanTree;
+import de.hsworms.inf3032.data.trees.RussianTree;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 public class QuestionSelectActivity extends BaseActivity {
@@ -63,25 +65,26 @@ public class QuestionSelectActivity extends BaseActivity {
         if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
             switch (AppPreference.getInstance(mContext).getLanguage()) {
                 case "English":
-                    trees = GlobalContentConstant.ENGLISH_TREE;
-                    break;
-                case "Russian":
-                    trees = GlobalContentConstant.RUSSIAN_TREE;
+                    trees = EnglishTree.ENGLISH_TREE;
                     break;
                 case "German":
-                    trees = GlobalContentConstant.GERMAN_TREE;
+                    trees = GermanTree.GERMAN_TREE;
                     break;
+                case "Russian":
+                    trees = RussianTree.RUSSIAN_TREE;
+                    break;
+
             }
         }else{
             switch (Locale.getDefault().getLanguage()) {
                 case "en":
-                    trees = GlobalContentConstant.ENGLISH_TREE;
-                    break;
-                case "ru":
-                    trees = GlobalContentConstant.RUSSIAN_TREE;
+                    trees = EnglishTree.ENGLISH_TREE;
                     break;
                 case "de":
-                    trees = GlobalContentConstant.GERMAN_TREE;
+                    trees = GermanTree.GERMAN_TREE;
+                    break;
+                case "ru":
+                    trees = RussianTree.RUSSIAN_TREE;
                     break;
             }
         }

@@ -28,7 +28,7 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ContentLoaderAdapter;
 import de.hsworms.inf3032.adapters.DetailsAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
+import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
@@ -217,16 +217,16 @@ public class SearchActivity extends BaseActivity {
         try {
 
             JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.getJSONArray(GlobalContentConstant.JSON_KEY_ITEMS);
+            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
 
             for (int i = 0; i < jsonArray1.length(); i++) {
                 JSONObject jsonObj = jsonArray1.getJSONObject(i);
 
-                JSONArray jsonArray2 = jsonObj.getJSONArray(GlobalContentConstant.JSON_KEY_CONTENT);
+                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
                 for (int j = 0; j < jsonArray2.length(); j++) {
                     JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
 
-                    JSONArray jsonArray3 = jsonObj2.getJSONArray(GlobalContentConstant.JSON_KEY_DETAILS);
+                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
                     for (int k = 0; k < jsonArray3.length(); k++) {
                         String details = jsonArray3.get(k).toString();
                         mItemList.add(details);

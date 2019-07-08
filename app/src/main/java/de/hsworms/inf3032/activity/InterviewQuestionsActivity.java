@@ -21,9 +21,11 @@ import java.util.Locale;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.data.constant.EnglishContentConstant;
-import de.hsworms.inf3032.data.constant.GlobalContentConstant;
+import de.hsworms.inf3032.data.constant.EnglishConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
+import de.hsworms.inf3032.data.trees.EnglishTree;
+import de.hsworms.inf3032.data.trees.GermanTree;
+import de.hsworms.inf3032.data.trees.RussianTree;
 import de.hsworms.inf3032.listeners.InterviewQuestionsListner;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
@@ -51,37 +53,65 @@ public class InterviewQuestionsActivity extends BaseActivity {
         enableUpButton();
 
         if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
-            switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
-                case "English":
-                    trees = GlobalContentConstant.ENGLISH_INTERVIEW_TREE;
-                    break;
-                case "Russian":
-                    trees = GlobalContentConstant.RUSSIAN_INTERVIEW_TREE;
-                    break;
-                case "German":
-                    trees = GlobalContentConstant.GERMAN_INTERVIEW_TREE;
-                    break;
+            switch (AppConstant.CONTENT_SELECTOR_FLAG){
+                case 1:
+                    switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
+                        case "English":
+                            trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
+                            break;
+                        case "German":
+                            trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
+                            break;
+                        case "Russian":
+                            trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
+                            break;
+                } break;
+                case 2:
+                    switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
+                        case "English":
+                            trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
+                            break;
+                        case "German":
+                            trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
+                            break;
+                        case "Russian":
+                            trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
+                            break;
+                    } break;
             }
+
         }else{
-            switch (Locale.getDefault().getLanguage()) {
-                case "en":
-                    trees = GlobalContentConstant.ENGLISH_INTERVIEW_TREE;
-                    break;
-                case "ru":
-                    trees = GlobalContentConstant.RUSSIAN_INTERVIEW_TREE;
-                    break;
-                case "de":
-                    trees = GlobalContentConstant.GERMAN_INTERVIEW_TREE;
-                    break;
+            switch (AppConstant.CONTENT_SELECTOR_FLAG){
+                case 1:
+                    switch (Locale.getDefault().getLanguage()) {
+                        case "en":
+                            trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
+                            break;
+                        case "de":
+                            trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
+                            break;
+                        case "ru":
+                            trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
+                            break;
+                    } break;
+                case 2:
+                    switch (Locale.getDefault().getLanguage()) {
+                        case "en":
+                            trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
+                            break;
+                        case "de":
+                            trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
+                            break;
+                        case "ru":
+                            trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
+                            break;
+                    } break;
             }
         }
-
         initListView();
     }
 
     private void initListView() {
-
-
         contentList = new ArrayList<String>();
         popUpContents = new String[contentList.size()];
         contentList.toArray(popUpContents);
@@ -100,7 +130,7 @@ public class InterviewQuestionsActivity extends BaseActivity {
         selectButton = findViewById(R.id.inteview_questions_selectButton);
         selectButton.setOnClickListener(handler);
         text = findViewById(R.id.interview_textView);
-        title = findViewById(R.id.interview_textView3);
+        title = findViewById(R.id.interview_interview_question_title);
 
         ArrayAdapter<String> adapter = new ArrayAdapter(this,
                 android.R.layout.simple_list_item_1, trees);
@@ -125,24 +155,24 @@ public class InterviewQuestionsActivity extends BaseActivity {
             int i = 0;
             switch (selectedItem){
                 case "Java Interview Questions":
-                    while (i <= EnglishContentConstant.JAVA_INERVIEW_QUESTIONS.length -1 ){
-                        contentList.add(EnglishContentConstant.JAVA_INERVIEW_QUESTIONS[i]+ EnglishContentConstant._KEY_+EnglishContentConstant.JAVA_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length -1 ){
+                        contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.JAVA_INERVIEW_QUESTIONS_A[i]);
                         i++;
                     } break;
                 case "C++ Interview Questions":
-                    while (i <= EnglishContentConstant.C_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishContentConstant.C_INERVIEW_QUESTIONS[i]+ EnglishContentConstant._KEY_+EnglishContentConstant.C_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.C_INERVIEW_QUESTIONS.length -1){
+                        contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.C_INERVIEW_QUESTIONS_A[i]);
                         i++;
                     } break;
 
                 case "Operating System Questions":
-                    while (i <= EnglishContentConstant.OS_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishContentConstant.OS_INERVIEW_QUESTIONS[i]+ EnglishContentConstant._KEY_+EnglishContentConstant.OS_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.OS_INERVIEW_QUESTIONS.length -1){
+                        contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.OS_INERVIEW_QUESTIONS_A[i]);
                         i++;
                     } break;
                 case "DSA Interview Questions":
-                    while (i <= EnglishContentConstant.DSA_INERVIEW_QUESTIONS.length -1){
-                        contentList.add(EnglishContentConstant.DSA_INERVIEW_QUESTIONS[i]+ EnglishContentConstant._KEY_+EnglishContentConstant.DSA_INERVIEW_QUESTIONS_A[i]);
+                    while (i <= EnglishTree.DSA_INERVIEW_QUESTIONS.length -1){
+                        contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[i]+ EnglishConstant._KEY_+EnglishTree.DSA_INERVIEW_QUESTIONS_A[i]);
                         i++;
                     } break;
             }
