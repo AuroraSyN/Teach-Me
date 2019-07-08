@@ -154,7 +154,7 @@
 
     <string name="mSpeakButtonText">TODO</string>
 
-    <string name="engineVersion">ENGINE: 1.4.7 </string>
+    <string name="engineVersion">ENGINE: 1.4.8 </string>
     <string name="contentVersion">CONTENT: 0.7.7 </string>
     <string name="questionsVersion">QUEST: 0.5.1 </string>
 
@@ -181,6 +181,7 @@
     <string name="de">DE</string>
     <string name="ru">RU</string>
     <string name="assist_title">Assistant</string>
+    <string name="settings_title">Settings</string>
 
 
 </resources>

@@ -15,7 +15,6 @@ import de.hsworms.inf3032.data.preference.AppPreference;
 public class ContentLoaderAdapter extends BaseActivity {
 
     StringBuffer stringBuffer;
-
     public ContentLoaderAdapter(){
         loadData();
     }
@@ -27,35 +26,27 @@ public class ContentLoaderAdapter extends BaseActivity {
             if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
                 switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                     case 1:
-                        switch (AppPreference.getInstance(MainActivity.mContext).getLanguage()) {
-                            case "English":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_EN)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
-                                break;
-                            case "Russian":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_RU)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
-                                break;
-                            case "German":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_DE)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
-                                break;
+                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_EN)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_DE)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_RU)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
                         }
                         break;
                     case 2:
-                        switch (AppPreference.getInstance(MainActivity.mContext).getLanguage()) {
-                            case "English":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_EN)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
-                                break;
-                            case "Russian":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_RU)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
-                                break;
-                            case "German":
-                                br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_DE)));
-                                MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
-                                break;
+                        if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_EN)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.en));
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_RU)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.de));
+                        } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))){
+                            br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.MATHS_CONTENT_FILE_DE)));
+                            MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
                         }
                         break;
                 }
@@ -78,7 +69,6 @@ public class ContentLoaderAdapter extends BaseActivity {
                             case "ru":
                                 br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(ContentConstant.COMPUTER_SCINCE_CONTENT_FILE_RU)));
                                 MainActivity.mLanguageSelectorButton.setText(AppPreference.mContext.getString(R.string.ru));
-
                                 break;
                         }
                         break;

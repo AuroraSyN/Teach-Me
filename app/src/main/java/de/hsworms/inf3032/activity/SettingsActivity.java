@@ -38,12 +38,6 @@ public class SettingsActivity extends BaseActivity {
         settingsApplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (AppPreference.getInstance(AppPreference.mContext).isExperimentalOn() == true ){
-                    AppConstant.LAYOUT_MANAGER = true;
-                }else{
-                    AppConstant.LAYOUT_MANAGER = false;
-                }
-                AppConstant.DEVICE_LANGUAGE_FLAG = true;
                 Toast toast = Toast.makeText(getApplicationContext(),
                         getString(R.string.done), Toast.LENGTH_SHORT); toast.show();
                 ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);

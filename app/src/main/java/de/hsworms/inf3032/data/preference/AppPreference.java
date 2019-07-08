@@ -14,9 +14,11 @@ public class AppPreference{
     public static Context mContext;
 
     private static AppPreference mAppPreference = null;
-    private SharedPreferences mSharedPreferences, mSettingsPreferences;
+    private SharedPreferences mSharedPreferences;
     private SharedPreferences.OnSharedPreferenceChangeListener preferenceChangeListener;
-    private SharedPreferences.Editor mEditor;
+
+    public static SharedPreferences.Editor mEditor;
+    public static SharedPreferences mSettingsPreferences;
 
     private AppPreference() {
         mSharedPreferences = mContext.getSharedPreferences(PrefKey.APP_PREF_NAME, Context.MODE_PRIVATE);
@@ -24,14 +26,20 @@ public class AppPreference{
         mEditor = mSharedPreferences.edit();
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                if (key == "pref_language"){
+                if (key.equals("pref_language")){
                     AppConstant.DEVICE_LANGUAGE_FLAG = true;
+                    Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                            Toast.LENGTH_SHORT).show();
                 }
-                if (key == "pref_experimental"){
+                if (key.equals("pref_experimental")){
                     if (AppPreference.getInstance(AppPreference.mContext).isExperimentalOn() == true ){
                         AppConstant.LAYOUT_MANAGER = true;
+                        Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                                Toast.LENGTH_SHORT).show();
                     }else{
                         AppConstant.LAYOUT_MANAGER = false;
+                        Toast.makeText(AppPreference.mContext.getApplicationContext(),"done",
+                                Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -68,9 +76,9 @@ public class AppPreference{
         return mSettingsPreferences.getString(AppConstant.PREF_FONT_SIZE, mContext.getResources().getString(R.string.default_text));
     }
 
-    public String getLanguage() {
+    public static String getLanguage() {
         return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE,
-                null);
+               null);
     }
 
     public boolean isLanguageSelectedOn() {

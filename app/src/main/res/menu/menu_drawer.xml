@@ -5,30 +5,25 @@
 
         <item
             android:id="@+id/action_interview_questions"
-            android:icon="@drawable/ic_book_multiple_black_48dp"
+            android:icon="@drawable/book_multiple"
             android:title="@string/interview_questions_title" />
         <item
             android:id="@+id/action_questions"
-            android:icon="@drawable/ic_accusoft_black_48dp"
+            android:icon="@drawable/accusoft"
             android:title="@string/site_menu_quiz" />
 
         <item
             android:id="@+id/action_fav"
             android:icon="@drawable/ic_heart_multiple_black_48dp"
             android:title="@string/site_menu_fav" />
-
-        <item
-            android:id="@+id/action_settings"
-            android:icon="@drawable/ic_settings_black_48dp"
-            android:title="@string/settings" />
     </group>
 
-    <item android:title="@string/assist_title">
+    <item android:title="@string/settings_title">
         <menu>
             <item
-                android:id="@+id/assistant"
-                android:icon="@drawable/ic_google_assistant_black_48dp"
-                android:title="@string/notifications" />
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings_black_48dp"
+                android:title="@string/settings" />
         </menu>
     </item>
 

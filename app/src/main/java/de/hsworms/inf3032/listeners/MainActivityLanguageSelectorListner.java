@@ -36,6 +36,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
 
         switch (selectedItemText){
             case "English":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "English");
+                AppPreference.mEditor.apply();
                 lang = "en";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -46,6 +49,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "German":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "German");
+                AppPreference.mEditor.apply();
                 lang = "de";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -56,6 +62,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Russian":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Russian");
+                AppPreference.mEditor.apply();
                 lang = "ru";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -66,6 +75,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Englisch":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "English");
+                AppPreference.mEditor.apply();
                 lang = "en";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -76,6 +88,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Deutsch":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Deutsch");
+                AppPreference.mEditor.apply();
                 lang = "de";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -86,6 +101,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Russisch":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Russisch");
+                AppPreference.mEditor.apply();
                 lang = "ru";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -96,6 +114,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Английский":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Английский");
+                AppPreference.mEditor.apply();
                 lang = "en";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -106,6 +127,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Немецкий":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Немецкий");
+                AppPreference.mEditor.apply();
                 lang = "de";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);
@@ -116,6 +140,9 @@ public class MainActivityLanguageSelectorListner extends BaseActivity implements
                 MainActivity.loadJson();
                 break;
             case "Русский":
+                AppPreference.mEditor = AppPreference.mSettingsPreferences.edit();
+                AppPreference.mEditor.putString("pref_language", "Русский");
+                AppPreference.mEditor.apply();
                 lang = "ru";
                 locale = new Locale(lang);
                 Locale.setDefault(locale);

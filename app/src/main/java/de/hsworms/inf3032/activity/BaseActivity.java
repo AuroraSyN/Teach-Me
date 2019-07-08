@@ -140,8 +140,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, SettingsActivity.class, false);
         } else if (id == R.id.action_about_dev) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, AboutDevActivity.class, false);
-        } else if (id == R.id.assistant) {
-
         } else if (id == R.id.action_share) {
             AppUtilities.shareApp(mActivity);
         } else if (id == R.id.notification) {
