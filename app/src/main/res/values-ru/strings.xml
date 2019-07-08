@@ -1,30 +1,17 @@
 <resources>
-
-    <!-- app name -->
     <string name="app_name">Teach Me</string>
     <string name="tagline">Learn -- Fun -- Tutorial</string>
-
-    <!-- app ad section -->
     <string name="app_ad_id">ca-app-pub-3940256099942544~3347511713</string>
-    <!-- end of the ad section -->
-
-
-    <!-- terms and conditions, privacy policy and faq url -->
     <string name="terms_url">https://github.com/AuroraSyN/ThesisApp</string>
     <string name="privacy_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
     <string name="faq_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
-
-    <!-- developer page: replace the developer id by yours -->
     <string name="developer_page"></string>
     <string name="alternate_dev_page"></string>
-
-    <!-- about developer text  -->
     <string name="developer_name">Soloninov Aleksandr</string>
     <string name="developer_detail">Worms, Deutschland</string>
     <string name="developer_message">This App is are Thesis App for Mobile Computing at Hochschule Worms.
-    This App is are Thesis App for Mobile Computing at Hochschule Worms.
-    This App is are Thesis App for Mobile Computing at Hochschule Worms.</string>
-
+        This App is are Thesis App for Mobile Computing at Hochschule Worms.
+        This App is are Thesis App for Mobile Computing at Hochschule Worms.</string>
     <string name="site_menu_fav">Favorites</string>
     <string name="site_menu_copy">Copy</string>
     <string name="site_menu_share">Share</string>
@@ -37,13 +24,11 @@
     <string name="delete_fav_item">Do you want to remove this item from the Favorite list?</string>
     <string name="delete_all_notification">Do you want to Delete all the Notifications?</string>
     <string name="site_menu_quiz">Quiz</string>
-
     <string name="support">Support</string>
     <string name="call">Call</string>
     <string name="message">Message</string>
     <string name="messenger">Messenger</string>
     <string name="email">Email</string>
-
     <string name="others">Others</string>
     <string name="terms">Terms and Conditions</string>
     <string name="privacy">Privacy Policy</string>
@@ -55,11 +40,10 @@
     <string name="about_dev">About App / Developer</string>
     <string name="exit">Exit</string>
     <string name="done">Done</string>
-
     <string name="search">Search</string>
     <string name="rate_title">Rate This App</string>
     <string name="rate_message">If you enjoy using this app, would you mind taking a moment to rate it 5 stars?
-    It won\'t take more than a minute. Thank you for your support!</string>
+        It won\'t take more than a minute. Thank you for your support!</string>
     <string name="rate_positive">rate now</string>
     <string name="rate_remind_later">Later</string>
     <string name="rate_never">No, Thanks</string>
@@ -69,33 +53,27 @@
     <string name="tapAgain">Tap again to exit!</string>
     <string name="install_messenger">Install facebook messenger</string>
     <string name="permission_not_granted">Permission not granted!</string>
-
     <string name="share_text">Install Tutorial App from:</string>
     <string name="send_to">Send To: </string>
     <string name="copy_to_clipboard">Copied to Clipboard!</string>
     <string name="added_to_fav">This topic is added to Favorite list!</string>
     <string name="removed_from_fav">This topic is removed from Favorite List!</string>
-
     <string name="close_prompt">Are you sure you want to close the app?</string>
     <string name="yes">Yes</string>
     <string name="no">Abort</string>
     <string name="failed">Failed</string>
     <string name="failed_dialog_title">U has failed</string>
     <string name="failed_dialog_text">Try ur skill next time</string>
-
     <string name="skipAll_dialog_title">Skip all questions?</string>
     <string name="skipAll_dialog_text">Do you wanna skip all questions?</string>
-
     <string name="skip_prompt">Do you want to skip this question?</string>
     <string name="quiz_close_prompt">Do you want to quit the game?</string>
-
     <string name="greeting_text1">Oops!! Your score is not very good!! You need to study more.</string>
     <string name="greeting_text2">Not bad!! Keep learning and make yourself better.</string>
     <string name="greeting_text3">Not bad, not bad</string>
     <string name="greeting_text4">Not bad, not bad, but keep learning a little bit more</string>
     <string name="greeting_text5">Good, but you can do it better</string>
     <string name="greeting_text6">Excellent!! Bravo!!!</string>
-
     <string name="score_card">Score Card</string>
     <string name="score">Score</string>
     <string name="wrong">Wrong</string>
@@ -106,7 +84,6 @@
     <string name="play_again">Play Again</string>
     <string name="your_ans">Your Ans:</string>
     <string name="correct_ans">Correct Ans:</string>
-
     <string name="details_text">Details</string>
     <string name="previous_text">Previous</string>
     <string name="next_text">Next</string>
@@ -120,14 +97,12 @@
     <string name="cancel_prompt">Do you want to quit the game?</string>
     <string name="watch_video_prompt">Watch video to increase lives!</string>
     <string name="no_internet">No internet connection is available!</string>
-
     <string name="matches">matches</string>
     <string name="placeholder">..</string>
     <string name="notifications">Notifications</string>
     <string name="read_post">Read Post</string>
     <string name="notification_title">Notification title: </string>
     <string name="notification_details">Notification details: </string>
-
     <string name="pref_notification_title">Notification</string>
     <string name="pref_notification_summ">Turn On / Off notification</string>
     <string name="pref_experimantal_title">Widescreen</string>
@@ -138,7 +113,6 @@
     <string name="pref_zoom_summ">Enable zoom controller to zoom in/out pages</string>
     <string name="pref_text_title">Text size</string>
     <string name="select_size">Select text size</string>
-
     <string name="small_text">Small</string>
     <string name="default_text">Normal</string>
     <string name="large_text">Large</string>
@@ -147,41 +121,29 @@
     <string name="content_default_text">English</string>
     <string name="start_test">Start Test</string>
     <string name="speech_hit">Touch me</string>
-
     <string name="english">English</string>
     <string name="russian">Russian</string>
     <string name="german">German</string>
-
     <string name="mSpeakButtonText">TODO</string>
-
-    <string name="engineVersion">ENGINE: 1.4.11 </string>
+    <string name="engineVersion">ENGINE: 1.4.12 </string>
     <string name="contentVersion">CONTENT: 0.7.7 </string>
     <string name="questionsVersion">QUEST: 0.5.1 </string>
-
     <string name="study">Study:</string>
-
     <string name="btn_skipAllQuestions">Skip All</string>
-
     <string name="quest_selected">Please, select a questions file</string>
     <string name="quiz_button_yes">Start</string>
     <string name="interview_question_button_text">Press me to see questions</string>
     <string name="interview_questions_textView"></string>
-
-
     <string name="computer_science">Computer science::1</string>
     <string name="mobile_computing">Mobile Computing::2</string>
     <string name="linguistics">Linguistics::3</string>
-
     <string name="mainmenu_language_title">language</string>
     <string name="mainmenu_English">English::1</string>
     <string name="mainmenu_German">German::2</string>
     <string name="mainmenu_Russian">Russian::3</string>
-
     <string name="en">EN</string>
     <string name="de">DE</string>
     <string name="ru">RU</string>
     <string name="assist_title">Assistant</string>
     <string name="settings_title">Settings</string>
-
-
 </resources>

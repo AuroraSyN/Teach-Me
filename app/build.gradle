@@ -7,8 +7,8 @@ android {
         applicationId "de.hsworms.inf3032.TeachMe"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 5
-        versionName "Version: 1.0.5 (stable)"
+        versionCode 1
+        versionName "1.4.12"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -22,9 +22,9 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     implementation 'androidx.cardview:cardview:1.0.0'
     //firebase
     implementation 'com.google.firebase:firebase-core:17.0.0'
