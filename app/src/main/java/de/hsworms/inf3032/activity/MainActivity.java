@@ -50,13 +50,14 @@ import de.hsworms.inf3032.utility.RateItDialogFragment;
 
 public class MainActivity extends BaseActivity {
 
+
     public static Context mContext;
     public static Activity mActivity;
     public static Button mContentSelectorButton, mLanguageSelectorButton;
+    public static PopupWindow content_listWindow;
+    public static PopupWindow language_listWindow;
     private static ArrayList<Contents> mContentList;
     private static ContentAdapter mAdapter = null;
-    public PopupWindow content_listWindow;
-    public PopupWindow language_listWindow;
     private RelativeLayout mNotificationView;
     private ImageButton mImgBtnSearch, mQuizButton, mInterviewButton;
     private RecyclerView mRecycler;
@@ -65,7 +66,6 @@ public class MainActivity extends BaseActivity {
     private List<String> contentList;
     private List<String> languageList;
     private ArrayList<Item> items;
-    // received new broadcast
     private BroadcastReceiver newNotificationReceiver = new BroadcastReceiver() {
 
         @Override

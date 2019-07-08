@@ -13,21 +13,14 @@ public class InterviewQuestionsListner implements AdapterView.OnItemClickListene
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View v, int arg2, long arg3) {
-
-        // get the context and main activity to access variables
         Context mContext = v.getContext();
         InterviewQuestionsActivity activity = ((InterviewQuestionsActivity) mContext);
-
-        // add some animation when a list item was clicked
         Animation fadeInAnimation = AnimationUtils.loadAnimation(v.getContext(), android.R.anim.fade_in);
         fadeInAnimation.setDuration(10);
         v.startAnimation(fadeInAnimation);
-
         activity.listView.dismiss();
-
         String selectedItemText = ((TextView) v).getText().toString();
         String selectedItemTag = ((TextView) v).getTag().toString();
-
         activity.text.setText(selectedItemTag);
         activity.title.setText(selectedItemText);
     }

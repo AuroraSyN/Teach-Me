@@ -56,6 +56,4 @@ public class AppConstant {
     public static short CONTENT_SELECTOR_FLAG = 1;
     public static boolean DEVICE_LANGUAGE_FLAG = false;
     public static boolean LAYOUT_MANAGER = false;
-    public static boolean DEVICE_LANGUAGE_PERF = false;
-    public static short CONTENT_LANGUAGE_FLAG = 1;
 }

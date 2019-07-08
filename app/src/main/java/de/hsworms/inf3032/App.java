@@ -10,9 +10,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        FirebaseMessaging.getInstance().subscribeToTopic("offlinetutorialsnotification");
+        FirebaseMessaging.getInstance().subscribeToTopic("Teach-Me-Notification");
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-
     }
 }

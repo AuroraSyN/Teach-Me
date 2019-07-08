@@ -53,59 +53,42 @@ public class InterviewQuestionsActivity extends BaseActivity {
         if (AppConstant.DEVICE_LANGUAGE_FLAG == true) {
             switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                 case 1:
-                    switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
-                        case "English":
-                            trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
-                            break;
-                        case "German":
-                            trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
-                            break;
-                        case "Russian":
-                            trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
-                            break;
+                    if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
+                        trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
+                    } else if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))) {
+                        trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
+                    } else if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
+                        trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
                     }
                     break;
                 case 2:
-                    switch (AppPreference.getInstance(AppPreference.mContext).getLanguage()) {
-                        case "English":
-                            trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
-                            break;
-                        case "German":
-                            trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
-                            break;
-                        case "Russian":
-                            trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
-                            break;
+                    if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
+                        trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
+                    } else if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.german))) {
+                        trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
+                    } else if (AppPreference.getInstance(AppPreference.mContext).getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
+                        trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
                     }
                     break;
             }
-
         } else {
             switch (AppConstant.CONTENT_SELECTOR_FLAG) {
                 case 1:
-                    switch (Locale.getDefault().getLanguage()) {
-                        case "en":
-                            trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
-                            break;
-                        case "de":
-                            trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
-                            break;
-                        case "ru":
-                            trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
-                            break;
+                    if (Locale.getDefault().getLanguage().equals("en")) {
+                        trees = EnglishTree.CS_ENGLISH_INTERVIEW_TREE;
+                    } else if (Locale.getDefault().getLanguage().equals("de")) {
+                        trees = GermanTree.CS_GERMAN_INTERVIEW_TREE;
+                    } else if (Locale.getDefault().getLanguage().equals("ru")) {
+                        trees = RussianTree.CS_RUSSIAN_INTERVIEW_TREE;
                     }
                     break;
                 case 2:
-                    switch (Locale.getDefault().getLanguage()) {
-                        case "en":
-                            trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
-                            break;
-                        case "de":
-                            trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
-                            break;
-                        case "ru":
-                            trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
-                            break;
+                    if (Locale.getDefault().getLanguage().equals("en")) {
+                        trees = EnglishTree.MC_ENGLISH_INTERVIEW_TREE;
+                    } else if (Locale.getDefault().getLanguage().equals("de")) {
+                        trees = GermanTree.MC_GERMAN_INTERVIEW_TREE;
+                    } else if (Locale.getDefault().getLanguage().equals("ru")) {
+                        trees = RussianTree.MC_RUSSIAN_INTERVIEW_TREE;
                     }
                     break;
             }
@@ -154,33 +137,27 @@ public class InterviewQuestionsActivity extends BaseActivity {
     public void checkSelectedItem() {
         if (selectedItem != null) {
             contentList = new ArrayList<String>();
-            int i = 0;
-            switch (selectedItem) {
-                case "Java Interview Questions":
-                    while (i <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
-                        contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[i]);
-                        i++;
-                    }
-                    break;
-                case "C++ Interview Questions":
-                    while (i <= EnglishTree.C_INERVIEW_QUESTIONS.length - 1) {
-                        contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[i]);
-                        i++;
-                    }
-                    break;
-
-                case "Operating System Questions":
-                    while (i <= EnglishTree.OS_INERVIEW_QUESTIONS.length - 1) {
-                        contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[i]);
-                        i++;
-                    }
-                    break;
-                case "DSA Interview Questions":
-                    while (i <= EnglishTree.DSA_INERVIEW_QUESTIONS.length - 1) {
-                        contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[i] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[i]);
-                        i++;
-                    }
-                    break;
+            short counter = 0;
+            if (selectedItem.equals("Java Interview Questions")) {
+                while (counter <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("C++ Interview Questions")) {
+                while (counter <= EnglishTree.C_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("Operating System Questions")) {
+                while (counter <= EnglishTree.OS_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("DSA Interview Questions")) {
+                while (counter <= EnglishTree.DSA_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
             }
             popUpContents = new String[contentList.size()];
             contentList.toArray(popUpContents);

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.activity.MainActivity;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
@@ -30,9 +29,7 @@ public class SpeechEngine {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_DE);
         } else if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.russian))) {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_RU);
-        }
-        //Default
-        else {
+        } else {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
         }
     }

@@ -130,7 +130,7 @@
 
     <string name="pref_notification_title">Notification</string>
     <string name="pref_notification_summ">Turn On / Off notification</string>
-    <string name="pref_experimantal_title">Widescreen / Experimantal Feature</string>
+    <string name="pref_experimantal_title">Widescreen</string>
     <string name="pref_experimantal_summ">Turn On / Off</string>
     <string name="pref_language_perm_title">Set selected language for permanent?</string>
     <string name="pref_language_perm_summ"> Yes / No </string>
@@ -154,7 +154,7 @@
 
     <string name="mSpeakButtonText">TODO</string>
 
-    <string name="engineVersion">ENGINE: 1.4.10 </string>
+    <string name="engineVersion">ENGINE: 1.4.11 </string>
     <string name="contentVersion">CONTENT: 0.7.7 </string>
     <string name="questionsVersion">QUEST: 0.5.1 </string>
 
