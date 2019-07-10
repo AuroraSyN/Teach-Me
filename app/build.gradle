@@ -7,8 +7,8 @@ android {
         applicationId "de.hsworms.inf3032.TeachMe"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.4.12"
+        versionCode 2
+        versionName "1.4.13"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

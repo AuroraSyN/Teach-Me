@@ -230,7 +230,7 @@ public class MainActivity extends BaseActivity {
         mInterviewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, InterviewQuestionsActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionsInterviewActivity.class, true);
             }
         });
         mContentSelectorButton.setOnClickListener(new View.OnClickListener() {

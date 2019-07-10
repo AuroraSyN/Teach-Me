@@ -131,9 +131,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_questions) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionSelectActivity.class, true);
         } else if (id == R.id.action_interview_questions) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, InterviewQuestionsActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuestionsInterviewActivity.class, false);
         } else if (id == R.id.action_fav) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteListActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteActivity.class, false);
         } else if (id == R.id.action_settings) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, SettingsActivity.class, false);
         } else if (id == R.id.action_about_dev) {

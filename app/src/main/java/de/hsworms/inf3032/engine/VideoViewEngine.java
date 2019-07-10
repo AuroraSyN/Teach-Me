@@ -12,16 +12,16 @@ import android.widget.ProgressBar;
 
 import de.hsworms.inf3032.R;
 
-public class VideoViewerEngine {
+public class VideoViewEngine {
 
-    private static VideoViewerEngine videoViewer = null;
+    private static VideoViewEngine videoViewer = null;
     private AlertDialog dialog;
     private FrameLayout videoLayout;
     private ProgressBar progressBar;
 
-    public static VideoViewerEngine getInstance() {
+    public static VideoViewEngine getInstance() {
         if (videoViewer == null) {
-            videoViewer = new VideoViewerEngine();
+            videoViewer = new VideoViewEngine();
         }
         return videoViewer;
     }

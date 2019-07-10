@@ -41,14 +41,14 @@ public class WebEngine {
 
     private WebListener mWebListener;
     private String mDownloadUrl;
-    private VideoViewerEngine mVideoViewer;
+    private VideoViewEngine mVideoViewer;
     private WebChromeClient.CustomViewCallback mVideoViewCallback;
 
     public WebEngine(WebView webView, Activity activity) {
         this.webView = webView;
         this.mActivity = activity;
         this.mContext = mActivity.getApplicationContext();
-        mVideoViewer = VideoViewerEngine.getInstance();
+        mVideoViewer = VideoViewEngine.getInstance();
     }
 
     public void initWebView() {

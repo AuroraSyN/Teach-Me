@@ -20,14 +20,14 @@ public class EnglishTree {
     );
 
     public static final List<String> CS_ENGLISH_INTERVIEW_TREE = Arrays.asList(
-            "Java Interview Questions",
-            "C++ Interview Questions",
-            "Operating System Questions",
-            "DSA Interview Questions"
+            "Java Interview questions",
+            "C++ Interview questions",
+            "Operating System questions",
+            "DSA Interview questions"
     );
 
     public static final List<String> MC_ENGLISH_INTERVIEW_TREE = Arrays.asList(
-            "MC Interview Questions"
+            "MC Interview questions"
     );
 
     public static final String[] JAVA_INERVIEW_QUESTIONS = new String[]{

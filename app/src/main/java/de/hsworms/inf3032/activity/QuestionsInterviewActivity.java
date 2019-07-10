@@ -30,7 +30,7 @@ import de.hsworms.inf3032.listeners.InterviewQuestionsListner;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
-public class InterviewQuestionsActivity extends BaseActivity {
+public class QuestionsInterviewActivity extends BaseActivity {
 
     public PopupWindow listView;
     public Button selectButton;
@@ -138,22 +138,22 @@ public class InterviewQuestionsActivity extends BaseActivity {
         if (selectedItem != null) {
             contentList = new ArrayList<String>();
             short counter = 0;
-            if (selectedItem.equals("Java Interview Questions")) {
+            if (selectedItem.equals("Java Interview questions")) {
                 while (counter <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
                     contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
-            } else if (selectedItem.equals("C++ Interview Questions")) {
+            } else if (selectedItem.equals("C++ Interview questions")) {
                 while (counter <= EnglishTree.C_INERVIEW_QUESTIONS.length - 1) {
                     contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
-            } else if (selectedItem.equals("Operating System Questions")) {
+            } else if (selectedItem.equals("Operating System questions")) {
                 while (counter <= EnglishTree.OS_INERVIEW_QUESTIONS.length - 1) {
                     contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
-            } else if (selectedItem.equals("DSA Interview Questions")) {
+            } else if (selectedItem.equals("DSA Interview questions")) {
                 while (counter <= EnglishTree.DSA_INERVIEW_QUESTIONS.length - 1) {
                     contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
@@ -185,7 +185,7 @@ public class InterviewQuestionsActivity extends BaseActivity {
                 String[] itemArr = item.split("::");
                 String text = itemArr[0];
                 String id = itemArr[1];
-                TextView listItem = new TextView(InterviewQuestionsActivity.this);
+                TextView listItem = new TextView(QuestionsInterviewActivity.this);
                 listItem.setText(text);
                 listItem.setTag(id);
                 listItem.setTextSize(20);

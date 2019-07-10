@@ -24,7 +24,7 @@ import de.hsworms.inf3032.utility.ActivityUtilities;
 import de.hsworms.inf3032.utility.DialogUtilities;
 
 
-public class FavoriteListActivity extends BaseActivity {
+public class FavoriteActivity extends BaseActivity {
 
     private Activity mActivity;
     private Context mContext;
@@ -48,7 +48,7 @@ public class FavoriteListActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = FavoriteListActivity.this;
+        mActivity = FavoriteActivity.this;
         mContext = mActivity.getApplicationContext();
 
         mFavouriteList = new ArrayList<>();

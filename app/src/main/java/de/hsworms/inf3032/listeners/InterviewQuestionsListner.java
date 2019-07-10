@@ -7,14 +7,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
-import de.hsworms.inf3032.activity.InterviewQuestionsActivity;
+import de.hsworms.inf3032.activity.QuestionsInterviewActivity;
 
 public class InterviewQuestionsListner implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View v, int arg2, long arg3) {
         Context mContext = v.getContext();
-        InterviewQuestionsActivity activity = ((InterviewQuestionsActivity) mContext);
+        QuestionsInterviewActivity activity = ((QuestionsInterviewActivity) mContext);
         Animation fadeInAnimation = AnimationUtils.loadAnimation(v.getContext(), android.R.anim.fade_in);
         fadeInAnimation.setDuration(10);
         v.startAnimation(fadeInAnimation);
