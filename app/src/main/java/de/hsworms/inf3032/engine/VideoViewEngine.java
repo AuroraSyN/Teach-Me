@@ -28,22 +28,15 @@ public class VideoViewEngine {
 
 
     public void show(final Activity activity) {
-
         dismiss();
-
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, R.style.DialogTheme);
-
         LayoutInflater layoutInflater = LayoutInflater.from(activity);
         View promptsView = layoutInflater.inflate(R.layout.layout_video_view, null);
         alertDialogBuilder.setView(promptsView);
         alertDialogBuilder.setCancelable(true);
-
         videoLayout = promptsView.findViewById(R.id.videoView);
         progressBar = promptsView.findViewById(R.id.progressBar);
-
-
         dialog = alertDialogBuilder.create();
-
         dialog.show();
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         Window window = dialog.getWindow();
