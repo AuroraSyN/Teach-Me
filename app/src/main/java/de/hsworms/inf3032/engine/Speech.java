@@ -13,7 +13,7 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
-public class SpeechEngine {
+public class Speech {
 
     private TextToSpeech mTextToSpeech;
     private Locale mLocale;
@@ -21,7 +21,7 @@ public class SpeechEngine {
     private boolean mIsInstallingPackage = false, mInstallerInvoked = false;
     private PlayStatusListener playStatusListener;
 
-    public SpeechEngine(Activity activity) {
+    public Speech(Activity activity) {
         mActivity = activity;
         if (AppPreference.getLanguage().equals(AppPreference.mContext.getApplicationContext().getString(R.string.english))) {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
@@ -31,6 +31,35 @@ public class SpeechEngine {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_RU);
         } else {
             mLocale = new Locale(ContentConstant.TTS_LOCALE_EN);
+        }
+    }
+
+    public void releaseEngine() {
+        if (mTextToSpeech != null) {
+            if (mTextToSpeech.isSpeaking()) {
+                mTextToSpeech.stop();
+            }
+            mTextToSpeech.shutdown();
+            mTextToSpeech = null;
+        }
+    }
+
+    public void startEngine(final String text) {
+        releaseEngine();
+        if (mTextToSpeech == null) {
+            mTextToSpeech = new TextToSpeech(mActivity.getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+
+                    boolean isStarted = isLangPacAvailable(status);
+                    if (isStarted) {
+                        Toast.makeText(mActivity, mActivity.getApplicationContext().getResources().getString(R.string.tts_wait_msg), Toast.LENGTH_LONG).show();
+                        speak(text);
+                    } else {
+                        invokePacInstaller();
+                    }
+                }
+            });
         }
     }
 
@@ -82,36 +111,7 @@ public class SpeechEngine {
 
     }
 
-    public void releaseEngine() {
-        if (mTextToSpeech != null) {
-            if (mTextToSpeech.isSpeaking()) {
-                mTextToSpeech.stop();
-            }
-            mTextToSpeech.shutdown();
-            mTextToSpeech = null;
-        }
-    }
 
-
-    public void startEngine(final String text) {
-
-        releaseEngine();
-        if (mTextToSpeech == null) {
-            mTextToSpeech = new TextToSpeech(mActivity.getApplicationContext(), new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int status) {
-
-                    boolean isStarted = isLangPacAvailable(status);
-                    if (isStarted) {
-                        Toast.makeText(mActivity, mActivity.getApplicationContext().getResources().getString(R.string.tts_wait_msg), Toast.LENGTH_LONG).show();
-                        speak(text);
-                    } else {
-                        invokePacInstaller();
-                    }
-                }
-            });
-        }
-    }
 
     public boolean isSpeaking() {
         if (mTextToSpeech != null) {

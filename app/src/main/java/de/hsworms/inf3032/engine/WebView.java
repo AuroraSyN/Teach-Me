@@ -28,11 +28,11 @@ import de.hsworms.inf3032.listeners.WebListener;
 import de.hsworms.inf3032.utility.FilePickerUtilities;
 import de.hsworms.inf3032.utility.PermissionUtilities;
 
-public class WebEngine {
+public class WebView {
 
     public static final int KEY_FILE_PICKER = 554;
     private static final String GOOGLE_DOCS_VIEWER = "https://docs.google.com/viewerng/viewer?url=";
-    private WebView webView;
+    private android.webkit.WebView webView;
     private Activity mActivity;
     private Context mContext;
     private Fragment mFragment;
@@ -41,14 +41,14 @@ public class WebEngine {
 
     private WebListener mWebListener;
     private String mDownloadUrl;
-    private VideoViewEngine mVideoViewer;
+    private VideoView mVideoViewer;
     private WebChromeClient.CustomViewCallback mVideoViewCallback;
 
-    public WebEngine(WebView webView, Activity activity) {
+    public WebView(android.webkit.WebView webView, Activity activity) {
         this.webView = webView;
         this.mActivity = activity;
         this.mContext = mActivity.getApplicationContext();
-        mVideoViewer = VideoViewEngine.getInstance();
+        mVideoViewer = VideoView.getInstance();
     }
 
     public void initWebView() {
@@ -66,7 +66,6 @@ public class WebEngine {
         if (!isNetworkAvailable(mContext)) {
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
-
         if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))) {
             webView.getSettings().setTextSize(WebSettings.TextSize.SMALLER);
         } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))) {
@@ -82,13 +81,13 @@ public class WebEngine {
 
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
-            public void onProgressChanged(WebView view, int newProgress) {
+            public void onProgressChanged(android.webkit.WebView view, int newProgress) {
                 super.onProgressChanged(view, newProgress);
                 webListener.onProgress(newProgress);
             }
 
             @Override
-            public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> filePath, FileChooserParams fileChooserParams) {
+            public boolean onShowFileChooser(android.webkit.WebView view, ValueCallback<Uri[]> filePath, FileChooserParams fileChooserParams) {
 
                 if (mFilePathCallback != null) {
                     mFilePathCallback.onReceiveValue(null);
@@ -99,7 +98,7 @@ public class WebEngine {
             }
 
             @Override
-            public void onReceivedTitle(WebView view, String title) {
+            public void onReceivedTitle(android.webkit.WebView view, String title) {
                 super.onReceivedTitle(view, title);
                 webListener.onPageTitle(webView.getTitle());
             }
@@ -126,19 +125,19 @@ public class WebEngine {
         webView.setWebViewClient(new WebViewClient() {
 
             @Override
-            public boolean shouldOverrideUrlLoading(WebView webView, String webUrl) {
+            public boolean shouldOverrideUrlLoading(android.webkit.WebView webView, String webUrl) {
 
                 loadPage(webUrl);
                 return true;
             }
 
             @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            public void onPageStarted(android.webkit.WebView view, String url, Bitmap favicon) {
                 webListener.onStart();
             }
 
             @Override
-            public void onPageFinished(WebView view, String url) {
+            public void onPageFinished(android.webkit.WebView view, String url) {
                 webListener.onLoaded();
             }
 
@@ -193,11 +192,7 @@ public class WebEngine {
             webView.loadUrl(GOOGLE_DOCS_VIEWER + htmlString);
             webView.getSettings().setBuiltInZoomControls(true);
         } else {
-            // load data in LTR mode
             webView.loadDataWithBaseURL(null, htmlString, "text/html; charset=utf-8", "UTF-8", null);
-
-            // load data in RTL mode
-            // webView.loadDataWithBaseURL(null, "<html dir=\"rtl\" lang=\"\"><body>" + htmlString + "</body></html>", "text/html; charset=utf-8", "UTF-8", null);
         }
     }
 

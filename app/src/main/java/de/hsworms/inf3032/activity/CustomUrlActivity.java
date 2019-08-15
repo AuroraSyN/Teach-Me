@@ -5,11 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.webkit.WebView;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
-import de.hsworms.inf3032.engine.WebEngine;
+import de.hsworms.inf3032.engine.WebView;
 import de.hsworms.inf3032.listeners.WebListener;
 import de.hsworms.inf3032.utility.AppUtilities;
 import de.hsworms.inf3032.utility.FilePickerUtilities;
@@ -22,8 +21,8 @@ public class CustomUrlActivity extends BaseActivity {
     private Context mContext;
     private String mPageTitle, mPageUrl;
 
-    private WebView mWebView;
-    private WebEngine mWebEngine;
+    private android.webkit.WebView mWebView;
+    private WebView mWebEngine;
 
     private boolean mFromPush = false;
 
@@ -65,7 +64,7 @@ public class CustomUrlActivity extends BaseActivity {
 
         mWebView = findViewById(R.id.web_view);
 
-        mWebEngine = new WebEngine(mWebView, mActivity);
+        mWebEngine = new WebView(mWebView, mActivity);
         mWebEngine.initWebView();
 
 
@@ -125,7 +124,7 @@ public class CustomUrlActivity extends BaseActivity {
     protected void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (reqCode == WebEngine.KEY_FILE_PICKER) {
+            if (reqCode == WebView.KEY_FILE_PICKER) {
                 String picturePath = FilePickerUtilities.getPickedFilePath(this, data);
                 if (mWebEngine != null) {
                     mWebEngine.uploadFile(data, picturePath);

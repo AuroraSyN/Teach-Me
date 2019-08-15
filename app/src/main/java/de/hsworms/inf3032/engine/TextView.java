@@ -4,26 +4,26 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
-public class TextViewEngine extends androidx.appcompat.widget.AppCompatTextView {
+public class TextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private Context context;
     private AttributeSet attrs;
     private int defStyle;
 
-    public TextViewEngine(Context context) {
+    public TextView(Context context) {
         super(context);
         this.context = context;
         init();
     }
 
-    public TextViewEngine(Context context, AttributeSet attrs) {
+    public TextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         this.attrs = attrs;
         init();
     }
 
-    public TextViewEngine(Context context, AttributeSet attrs, int defStyle) {
+    public TextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.context = context;
         this.attrs = attrs;
@@ -41,7 +41,6 @@ public class TextViewEngine extends androidx.appcompat.widget.AppCompatTextView 
         } else {
             this.setTypeface(regularFont);
         }
-
     }
 
     private void init(int style) {

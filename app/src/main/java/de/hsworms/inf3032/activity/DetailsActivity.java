@@ -24,7 +24,7 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.DetailPagerAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.sqlite.FavoriteDbController;
-import de.hsworms.inf3032.engine.SpeechEngine;
+import de.hsworms.inf3032.engine.Speech;
 import de.hsworms.inf3032.models.favorite.FavoriteModel;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
@@ -45,7 +45,7 @@ public class DetailsActivity extends BaseActivity {
     private List<FavoriteModel> mFavoriteList;
     private FavoriteDbController mFavoriteDbController;
     private boolean mIsFavorite = false;
-    private SpeechEngine mSpeechEngine;
+    private Speech mSpeechEngine;
     private boolean mIsTtsPlaying = false;
     private String mTtsText;
     private MenuItem menuItemTTS;
@@ -105,7 +105,7 @@ public class DetailsActivity extends BaseActivity {
         mFavoriteList.addAll(mFavoriteDbController.getAllData());
         isFavorite();
 
-        mSpeechEngine = new SpeechEngine(mActivity);
+        mSpeechEngine = new Speech(mActivity);
 
         updateCounter();
 

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.LinearLayout;
 
 import androidx.viewpager.widget.PagerAdapter;
@@ -13,7 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import java.util.ArrayList;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.engine.WebEngine;
+import de.hsworms.inf3032.engine.WebView;
 
 public class DetailPagerAdapter extends PagerAdapter {
 
@@ -22,8 +21,8 @@ public class DetailPagerAdapter extends PagerAdapter {
     private ArrayList<String> mItemList;
     private LayoutInflater inflater;
     private LinearLayout mLoadingView, mNoDataView;
-    private WebView mWebView;
-    private WebEngine mWebEngine;
+    private android.webkit.WebView mWebView;
+    private WebView mWebEngine;
 
 
     public DetailPagerAdapter(Context mContext, ArrayList<String> mItemList) {
@@ -52,7 +51,7 @@ public class DetailPagerAdapter extends PagerAdapter {
         mNoDataView = rootView.findViewById(R.id.noDataView);
 
         mWebView = rootView.findViewById(R.id.web_view);
-        mWebEngine = new WebEngine(mWebView, (Activity) mContext);
+        mWebEngine = new WebView(mWebView, (Activity) mContext);
         mWebEngine.initWebView();
 
         showLoader();

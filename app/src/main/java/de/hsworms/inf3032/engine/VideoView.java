@@ -12,21 +12,19 @@ import android.widget.ProgressBar;
 
 import de.hsworms.inf3032.R;
 
-public class VideoViewEngine {
+public class VideoView {
 
-    private static VideoViewEngine videoViewer = null;
+    private static VideoView videoViewer = null;
     private AlertDialog dialog;
     private FrameLayout videoLayout;
     private ProgressBar progressBar;
 
-    public static VideoViewEngine getInstance() {
+    public static VideoView getInstance() {
         if (videoViewer == null) {
-            videoViewer = new VideoViewEngine();
+            videoViewer = new VideoView();
         }
         return videoViewer;
     }
-
-
     public void show(final Activity activity) {
         dismiss();
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, R.style.DialogTheme);
@@ -44,10 +42,7 @@ public class VideoViewEngine {
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         window.setAttributes(lp);
-
         dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
         View v = window.getDecorView();
         v.setBackgroundResource(android.R.color.black);
 
@@ -57,8 +52,10 @@ public class VideoViewEngine {
             int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
             v.setSystemUiVisibility(uiOptions);
         }
-
     }
+
+
+
 
     public void dismiss() {
         if (dialog != null && dialog.isShowing()) {
