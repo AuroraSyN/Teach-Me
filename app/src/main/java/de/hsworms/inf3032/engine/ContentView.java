@@ -28,7 +28,7 @@ import de.hsworms.inf3032.listeners.WebListener;
 import de.hsworms.inf3032.utility.FilePickerUtilities;
 import de.hsworms.inf3032.utility.PermissionUtilities;
 
-public class WebView {
+public class ContentView {
 
     public static final int KEY_FILE_PICKER = 554;
     private static final String GOOGLE_DOCS_VIEWER = "https://docs.google.com/viewerng/viewer?url=";
@@ -44,7 +44,7 @@ public class WebView {
     private VideoView mVideoViewer;
     private WebChromeClient.CustomViewCallback mVideoViewCallback;
 
-    public WebView(android.webkit.WebView webView, Activity activity) {
+    public ContentView(android.webkit.WebView webView, Activity activity) {
         this.webView = webView;
         this.mActivity = activity;
         this.mContext = mActivity.getApplicationContext();
