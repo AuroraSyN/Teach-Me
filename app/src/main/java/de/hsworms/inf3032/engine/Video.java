@@ -12,24 +12,34 @@ import android.widget.ProgressBar;
 
 import de.hsworms.inf3032.R;
 
-public class VideoView {
+public class Video {
 
-    private static VideoView videoViewer = null;
+    private static Video videoViewer = null;
     private AlertDialog dialog;
     private FrameLayout videoLayout;
     private ProgressBar progressBar;
 
-    public static VideoView getInstance() {
+    public static Video getInstance() {
+
         if (videoViewer == null) {
-            videoViewer = new VideoView();
+            videoViewer = new Video();
         }
         return videoViewer;
+
     }
-    public void show(final Activity activity) {
+
+    public void launch(final Activity activity) {
+
         dismiss();
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity, R.style.DialogTheme);
+
+        AlertDialog.Builder alertDialogBuilder =
+                    new AlertDialog.Builder(activity, R.style.DialogTheme);
+
         LayoutInflater layoutInflater = LayoutInflater.from(activity);
-        View promptsView = layoutInflater.inflate(R.layout.layout_video_view, null);
+
+        View promptsView = layoutInflater.inflate
+                    (R.layout.layout_video_view, null);
+
         alertDialogBuilder.setView(promptsView);
         alertDialogBuilder.setCancelable(true);
         videoLayout = promptsView.findViewById(R.id.videoView);
@@ -42,14 +52,20 @@ public class VideoView {
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         window.setAttributes(lp);
-        dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        dialog.getWindow().setFlags
+                (WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         View v = window.getDecorView();
         v.setBackgroundResource(android.R.color.black);
 
         if (Build.VERSION.SDK_INT < 19) {
             v.setSystemUiVisibility(View.GONE);
         } else if (Build.VERSION.SDK_INT >= 19) {
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            int uiOptions =
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                            View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
             v.setSystemUiVisibility(uiOptions);
         }
     }
@@ -68,5 +84,4 @@ public class VideoView {
             videoLayout.addView(view);
         }
     }
-
 }

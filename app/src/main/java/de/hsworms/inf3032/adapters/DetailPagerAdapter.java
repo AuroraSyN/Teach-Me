@@ -12,7 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import java.util.ArrayList;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.engine.ContentView;
+import de.hsworms.inf3032.engine.Content;
 
 public class DetailPagerAdapter extends PagerAdapter {
 
@@ -22,7 +22,7 @@ public class DetailPagerAdapter extends PagerAdapter {
     private LayoutInflater inflater;
     private LinearLayout mLoadingView, mNoDataView;
     private android.webkit.WebView mWebView;
-    private ContentView mWebEngine;
+    private Content mWebEngine;
 
 
     public DetailPagerAdapter(Context mContext, ArrayList<String> mItemList) {
@@ -51,7 +51,7 @@ public class DetailPagerAdapter extends PagerAdapter {
         mNoDataView = rootView.findViewById(R.id.noDataView);
 
         mWebView = rootView.findViewById(R.id.web_view);
-        mWebEngine = new ContentView(mWebView, (Activity) mContext);
+        mWebEngine = new Content(mWebView, (Activity) mContext);
         mWebEngine.initWebView();
 
         showLoader();

@@ -4,26 +4,26 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
-public class TextView extends androidx.appcompat.widget.AppCompatTextView {
+public class Text extends androidx.appcompat.widget.AppCompatTextView {
 
     private Context context;
     private AttributeSet attrs;
     private int defStyle;
 
-    public TextView(Context context) {
+    public Text(Context context) {
         super(context);
         this.context = context;
         init();
     }
 
-    public TextView(Context context, AttributeSet attrs) {
+    public Text(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         this.attrs = attrs;
         init();
     }
 
-    public TextView(Context context, AttributeSet attrs, int defStyle) {
+    public Text(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.context = context;
         this.attrs = attrs;
@@ -32,13 +32,20 @@ public class TextView extends androidx.appcompat.widget.AppCompatTextView {
     }
 
     private void init() {
-        Typeface regularFont = Typeface.createFromAsset(getContext().getAssets(), "fonts/times.ttf");
-        Typeface boldFont = Typeface.createFromAsset(getContext().getAssets(), "fonts/timesbd.ttf");
+
+        Typeface regularFont = Typeface.createFromAsset
+                (getContext().getAssets(), "fonts/times.ttf");
+        Typeface boldFont = Typeface.createFromAsset
+                (getContext().getAssets(), "fonts/timesbd.ttf");
 
         Typeface currentTypeFace = this.getTypeface();
-        if (currentTypeFace != null && currentTypeFace.getStyle() == Typeface.BOLD) {
+        if (currentTypeFace != null && currentTypeFace.getStyle()
+                == Typeface.BOLD)
+        {
             this.setTypeface(boldFont);
-        } else {
+        }
+        else
+        {
             this.setTypeface(regularFont);
         }
     }

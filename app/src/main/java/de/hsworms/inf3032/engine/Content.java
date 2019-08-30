@@ -14,7 +14,6 @@ import android.webkit.DownloadListener;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.fragment.app.Fragment;
@@ -28,7 +27,7 @@ import de.hsworms.inf3032.listeners.WebListener;
 import de.hsworms.inf3032.utility.FilePickerUtilities;
 import de.hsworms.inf3032.utility.PermissionUtilities;
 
-public class ContentView {
+public class Content {
 
     public static final int KEY_FILE_PICKER = 554;
     private static final String GOOGLE_DOCS_VIEWER = "https://docs.google.com/viewerng/viewer?url=";
@@ -41,17 +40,18 @@ public class ContentView {
 
     private WebListener mWebListener;
     private String mDownloadUrl;
-    private VideoView mVideoViewer;
+    private Video mVideoViewer;
     private WebChromeClient.CustomViewCallback mVideoViewCallback;
 
-    public ContentView(android.webkit.WebView webView, Activity activity) {
+    public Content(android.webkit.WebView webView, Activity activity) {
         this.webView = webView;
         this.mActivity = activity;
         this.mContext = mActivity.getApplicationContext();
-        mVideoViewer = VideoView.getInstance();
+        mVideoViewer = Video.getInstance();
     }
 
     public void initWebView() {
+
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setAppCacheMaxSize(AppConstant.SITE_CACHE_SIZE);
@@ -63,16 +63,33 @@ public class ContentView {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setDefaultTextEncodingName("utf-8");
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+
         if (!isNetworkAvailable(mContext)) {
-            webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+            webView.getSettings().setCacheMode
+                    (WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
-        if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.SMALLER);
-        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.NORMAL);
-        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.large_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.LARGER);
-        }
+
+        if (AppPreference.getInstance(mContext).
+                getTextSize().equals(mContext.getResources().getString(R.string.small_text)))
+            { webView.getSettings().
+                    setTextSize(WebSettings.TextSize.SMALLER);
+            }
+
+        else if (AppPreference.getInstance(mContext).
+                getTextSize().equals(mContext.getResources().
+                    getString(R.string.default_text)))
+            {
+                webView.getSettings().
+                    setTextSize(WebSettings.TextSize.NORMAL);
+            }
+
+        else if (AppPreference.getInstance(mContext).
+                getTextSize().equals(mContext.getResources().
+                    getString(R.string.large_text)))
+            {
+                webView.getSettings().
+                    setTextSize(WebSettings.TextSize.LARGER);
+            }
     }
 
     public void initListeners(final WebListener webListener) {
@@ -108,7 +125,7 @@ public class ContentView {
             public void onShowCustomView(View view, CustomViewCallback callback) {
                 super.onShowCustomView(view, callback);
                 mVideoViewCallback = callback;
-                mVideoViewer.show(mActivity);
+                mVideoViewer.launch(mActivity);
                 mVideoViewer.setVideoLayout(view);
             }
 

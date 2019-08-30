@@ -163,7 +163,7 @@
                 tools:text="@string/greeting_text1" />
 
 
-            <de.hsworms.inf3032.engine.TextView
+            <de.hsworms.inf3032.engine.Text
                 android:id="@+id/share_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
