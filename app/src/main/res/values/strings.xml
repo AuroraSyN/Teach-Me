@@ -128,7 +128,7 @@
     <string name="engineVersion">ENGINE: 1.4.13 </string>
     <string name="contentVersion">CONTENT: 0.7.7 </string>
     <string name="questionsVersion">QUEST: 0.5.1 </string>
-    <string name="study">Study:</string>
+    <string name="study"></string>
     <string name="btn_skipAllQuestions">Skip All</string>
     <string name="quest_selected">Please, select a questions file</string>
     <string name="quiz_button_yes">Start</string>

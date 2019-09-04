@@ -3,7 +3,7 @@ package de.hsworms.inf3032.data.constant;
 public class ContentConstant {
 
     // content file
-    public static final String COMPUTER_SCINCE_CONTENT_FILE_EN = "json/content/Computer science/CS_EnglishContentFile.json";
+    public static final String COMPUTER_SCINCE_CONTENT_FILE_EN = "json/content/Computer science/PROTOTYPE.json";
     public static final String COMPUTER_SCINCE_CONTENT_FILE_RU = "json/content/Computer science/CS_RussianContentFile.json";
     public static final String COMPUTER_SCINCE_CONTENT_FILE_DE = "json/content/Computer science/CS_GermanContentFile.json";
 
