@@ -1,4 +1,4 @@
-package de.hsworms.inf3032.activity;
+package de.hsworms.inf3032.engine;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,13 +17,20 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import de.hsworms.inf3032.R;
+import de.hsworms.inf3032.activity.AboutDevActivity;
+import de.hsworms.inf3032.activity.CustomUrlActivity;
+import de.hsworms.inf3032.activity.FavoriteActivity;
+import de.hsworms.inf3032.activity.NotificationListActivity;
+import de.hsworms.inf3032.activity.QuestionSelectActivity;
+import de.hsworms.inf3032.activity.QuestionsInterviewActivity;
+import de.hsworms.inf3032.activity.SettingsActivity;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 import de.hsworms.inf3032.utility.AppUtilities;
 import de.hsworms.inf3032.utility.DialogUtilities;
 
 
-public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
+public class Provider extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
 
     private static LinearLayout mLoadingView, mNoDataView;
     private Activity mActivity;
@@ -45,7 +52,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mActivity = BaseActivity.this;
+        mActivity = Provider.this;
         mContext = mActivity.getApplicationContext();
 
     }
@@ -159,7 +166,6 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         return true;
 
     }
-
 
     @Override
     public void onBackPressed() {

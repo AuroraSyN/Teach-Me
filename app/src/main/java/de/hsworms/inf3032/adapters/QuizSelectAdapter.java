@@ -6,7 +6,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import de.hsworms.inf3032.activity.BaseActivity;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.activity.DetailsActivity;
 import de.hsworms.inf3032.activity.QuestionSelectActivity;
 import de.hsworms.inf3032.data.constant.EnglishConstant;
@@ -14,7 +14,7 @@ import de.hsworms.inf3032.data.constant.GermanConstant;
 import de.hsworms.inf3032.data.constant.RussianConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
-public class QuizSelectAdapter extends BaseActivity {
+public class QuizSelectAdapter extends Provider {
 
     public StringBuffer sb;
 

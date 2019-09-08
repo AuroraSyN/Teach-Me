@@ -11,9 +11,10 @@ import android.widget.TextView;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
-public class NotificationDetailsActivity extends BaseActivity {
+public class NotificationDetailsActivity extends Provider {
 
     private Context mContext;
     private Activity mActivity;

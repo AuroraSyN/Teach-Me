@@ -20,9 +20,10 @@ import de.hsworms.inf3032.data.preference.AppPreference;
 import de.hsworms.inf3032.data.trees.EnglishTree;
 import de.hsworms.inf3032.data.trees.GermanTree;
 import de.hsworms.inf3032.data.trees.RussianTree;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
-public class QuestionSelectActivity extends BaseActivity {
+public class QuestionSelectActivity extends Provider {
 
     public static String selectedItem;
     private Activity mActivity;

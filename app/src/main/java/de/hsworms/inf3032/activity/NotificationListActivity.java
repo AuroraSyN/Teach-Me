@@ -19,11 +19,12 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.NotificationAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.sqlite.NotificationDbController;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.models.notification.NotificationModel;
 import de.hsworms.inf3032.utility.DialogUtilities;
 
-public class NotificationListActivity extends BaseActivity {
+public class NotificationListActivity extends Provider {
 
     private Context mContext;
     private Activity mActivity;

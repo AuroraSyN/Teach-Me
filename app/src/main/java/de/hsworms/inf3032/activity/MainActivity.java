@@ -38,6 +38,7 @@ import de.hsworms.inf3032.adapters.ContentLoaderAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.sqlite.NotificationDbController;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.listeners.MainActivityContentSelectorListner;
 import de.hsworms.inf3032.listeners.MainActivityLanguageSelectorListner;
@@ -48,7 +49,7 @@ import de.hsworms.inf3032.utility.ActivityUtilities;
 import de.hsworms.inf3032.utility.AppUtilities;
 import de.hsworms.inf3032.utility.RateItDialogFragment;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends Provider {
 
 
     public static Context mContext;

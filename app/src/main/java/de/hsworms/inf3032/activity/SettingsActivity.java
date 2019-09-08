@@ -8,10 +8,11 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import de.hsworms.inf3032.R;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
-public class SettingsActivity extends BaseActivity {
+public class SettingsActivity extends Provider {
 
     private Button settingsApplyButton;
 

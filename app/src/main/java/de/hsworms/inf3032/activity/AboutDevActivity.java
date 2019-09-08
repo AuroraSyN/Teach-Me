@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import de.hsworms.inf3032.R;
+import de.hsworms.inf3032.engine.Provider;
 
-public class AboutDevActivity extends BaseActivity {
+public class AboutDevActivity extends Provider {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

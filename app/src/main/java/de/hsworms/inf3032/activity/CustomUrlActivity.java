@@ -9,13 +9,14 @@ import android.view.MenuItem;
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.engine.Content;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.WebListener;
 import de.hsworms.inf3032.utility.AppUtilities;
 import de.hsworms.inf3032.utility.FilePickerUtilities;
 import de.hsworms.inf3032.utility.PermissionUtilities;
 
 
-public class CustomUrlActivity extends BaseActivity {
+public class CustomUrlActivity extends Provider {
 
     private Activity mActivity;
     private Context mContext;

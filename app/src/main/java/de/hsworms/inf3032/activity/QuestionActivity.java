@@ -30,6 +30,7 @@ import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 import de.hsworms.inf3032.data.preference.PrefKey;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.models.quiz.QuizModel;
 import de.hsworms.inf3032.models.quiz.ResultModel;
@@ -38,7 +39,7 @@ import de.hsworms.inf3032.utility.BeatBox;
 import de.hsworms.inf3032.utility.DialogUtilities;
 import de.hsworms.inf3032.utility.SoundUtilities;
 
-public class QuestionActivity extends BaseActivity implements DialogUtilities.OnCompleteListener {
+public class QuestionActivity extends Provider implements DialogUtilities.OnCompleteListener {
 
     ArrayList<String> mOptionList;
     ArrayList<String> mBackgroundColorList;

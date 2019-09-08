@@ -18,13 +18,14 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.FavoriteAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.sqlite.FavoriteDbController;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.models.favorite.FavoriteModel;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 import de.hsworms.inf3032.utility.DialogUtilities;
 
 
-public class FavoriteActivity extends BaseActivity {
+public class FavoriteActivity extends Provider {
 
     private Activity mActivity;
     private Context mContext;

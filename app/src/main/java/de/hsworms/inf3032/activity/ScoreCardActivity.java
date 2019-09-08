@@ -27,10 +27,11 @@ import java.util.ArrayList;
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ResultAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.models.quiz.ResultModel;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
-public class ScoreCardActivity extends BaseActivity implements OnChartValueSelectedListener {
+public class ScoreCardActivity extends Provider implements OnChartValueSelectedListener {
 
     private Activity mActivity;
     private Context mContext;

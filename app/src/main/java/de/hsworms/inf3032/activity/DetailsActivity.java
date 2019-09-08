@@ -24,11 +24,12 @@ import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.DetailPagerAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.sqlite.FavoriteDbController;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.engine.Speech;
 import de.hsworms.inf3032.models.favorite.FavoriteModel;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
-public class DetailsActivity extends BaseActivity {
+public class DetailsActivity extends Provider {
     public static String currentItem;
     public static MenuItem startTest;
     private Activity mActivity;

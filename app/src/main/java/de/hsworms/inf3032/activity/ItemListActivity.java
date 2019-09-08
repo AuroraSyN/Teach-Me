@@ -15,12 +15,13 @@ import java.util.ArrayList;
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ItemAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.ListItemClickListener;
 import de.hsworms.inf3032.models.content.Contents;
 import de.hsworms.inf3032.models.content.Item;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
-public class ItemListActivity extends BaseActivity {
+public class ItemListActivity extends Provider {
 
     private Activity mActivity;
     private Context mContext;

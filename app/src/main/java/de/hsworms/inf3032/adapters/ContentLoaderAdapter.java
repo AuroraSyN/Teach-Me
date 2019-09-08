@@ -6,13 +6,13 @@ import java.io.InputStreamReader;
 import java.util.Locale;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.activity.BaseActivity;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.activity.MainActivity;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
-public class ContentLoaderAdapter extends BaseActivity {
+public class ContentLoaderAdapter extends Provider {
 
     StringBuffer stringBuffer;
 

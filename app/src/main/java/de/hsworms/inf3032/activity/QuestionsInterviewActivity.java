@@ -26,11 +26,12 @@ import de.hsworms.inf3032.data.preference.AppPreference;
 import de.hsworms.inf3032.data.trees.EnglishTree;
 import de.hsworms.inf3032.data.trees.GermanTree;
 import de.hsworms.inf3032.data.trees.RussianTree;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.listeners.InterviewQuestionsListner;
 import de.hsworms.inf3032.utility.ActivityUtilities;
 
 
-public class QuestionsInterviewActivity extends BaseActivity {
+public class QuestionsInterviewActivity extends Provider {
 
     public PopupWindow listView;
     public Button selectButton;

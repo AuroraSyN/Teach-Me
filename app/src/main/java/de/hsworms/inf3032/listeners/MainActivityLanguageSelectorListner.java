@@ -12,11 +12,11 @@ import android.widget.TextView;
 import java.util.Locale;
 
 import de.hsworms.inf3032.R;
-import de.hsworms.inf3032.activity.BaseActivity;
+import de.hsworms.inf3032.engine.Provider;
 import de.hsworms.inf3032.activity.MainActivity;
 import de.hsworms.inf3032.data.preference.AppPreference;
 
-public class MainActivityLanguageSelectorListner extends BaseActivity implements OnItemClickListener {
+public class MainActivityLanguageSelectorListner extends Provider implements OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View v, int arg2, long arg3) {
