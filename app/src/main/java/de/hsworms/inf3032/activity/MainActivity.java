@@ -86,17 +86,30 @@ public class MainActivity extends BaseActivity {
     public static void parseJson(String jsonData) {
         try {
             JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_ITEMS);
+            JSONArray jsonArray1 = jsonObjMain.
+                    getJSONArray(ContentConstant.JSON_KEY_ITEMS);
+
             for (int i = 0; i < jsonArray1.length(); i++) {
                 JSONObject jsonObj = jsonArray1.getJSONObject(i);
-                String title = jsonObj.getString(ContentConstant.JSON_KEY_TITLE);
+
+                String title = jsonObj.getString
+                        (ContentConstant.JSON_KEY_TITLE);
+
                 ArrayList<Item> items = new ArrayList<>();
-                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_CONTENT);
+
+                JSONArray jsonArray2 = jsonObj.
+                        getJSONArray(ContentConstant.JSON_KEY_CONTENT);
+
                 for (int j = 0; j < jsonArray2.length(); j++) {
                     JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
-                    String tag_line = jsonObj2.getString(ContentConstant.JSON_KEY_TAG_LINE);
+                    String tag_line = jsonObj2.
+                            getString(ContentConstant.JSON_KEY_TAG_LINE);
+
                     ArrayList<String> detailList = new ArrayList<>();
-                    JSONArray jsonArray3 = jsonObj2.getJSONArray(ContentConstant.JSON_KEY_DETAILS);
+
+                    JSONArray jsonArray3 = jsonObj2.
+                            getJSONArray(ContentConstant.JSON_KEY_DETAILS);
+
                     for (int k = 0; k < jsonArray3.length(); k++) {
                         String details = jsonArray3.get(k).toString();
                         detailList.add(details);

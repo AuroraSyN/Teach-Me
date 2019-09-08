@@ -3,8 +3,8 @@ package de.hsworms.inf3032.data.constant;
 public class GermanConstant {
 
     // BIG question file de
-    public static final String JAVA_PROG = "json/questions/Computer science/BigQuestions/German/Java.json";
-    public static final String C_PROG = "json/questions/Computer science/BigQuestions/German/C++.json";
+    public static final String JAVA_PROG = "json/questions/Computer science/BigQuestions/German/QA_GERMAN_JAVA.json";
+    public static final String C_PROG = "json/questions/Computer science/BigQuestions/German/QA_GERMAN_C++.json";
 
 
     // SMALL question file de
