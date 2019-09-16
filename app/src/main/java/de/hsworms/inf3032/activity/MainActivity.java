@@ -35,6 +35,7 @@ import java.util.List;
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.ContentAdapter;
 import de.hsworms.inf3032.adapters.ContentLoaderAdapter;
+import de.hsworms.inf3032.adapters.ContentParserAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.constant.ContentConstant;
 import de.hsworms.inf3032.data.sqlite.NotificationDbController;
@@ -51,14 +52,6 @@ import de.hsworms.inf3032.utility.RateItDialogFragment;
 
 public class MainActivity extends Provider {
 
-
-    public static Context mContext;
-    public static Activity mActivity;
-    public static Button mContentSelectorButton, mLanguageSelectorButton;
-    public static PopupWindow content_listWindow;
-    public static PopupWindow language_listWindow;
-    private static ArrayList<Contents> mContentList;
-    private static ContentAdapter mAdapter = null;
     private RelativeLayout mNotificationView;
     private ImageButton mImgBtnSearch, mQuizButton, mInterviewButton;
     private RecyclerView mRecycler;
@@ -75,55 +68,27 @@ public class MainActivity extends Provider {
         }
     };
 
+    public static Context mContext;
+    public static Activity mActivity;
+    public static Button mContentSelectorButton, mLanguageSelectorButton;
+    public static PopupWindow content_listWindow;
+    public static PopupWindow language_listWindow;
+    public static ArrayList<Contents> mContentList;
+    public static ContentAdapter mAdapter = null;
+
     public static void loadJson() {
         if (mContentList != null) {
             mContentList.clear();
         }
         ContentLoaderAdapter contentLoaderAdapter = new ContentLoaderAdapter();
+
         contentLoaderAdapter.loadData();
         parseJson(contentLoaderAdapter.getStringBuffer().toString());
     }
 
     public static void parseJson(String jsonData) {
-        try {
-            JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray1 = jsonObjMain.
-                    getJSONArray(ContentConstant.JSON_KEY_ITEMS);
-
-            for (int i = 0; i < jsonArray1.length(); i++) {
-                JSONObject jsonObj = jsonArray1.getJSONObject(i);
-
-                String title = jsonObj.getString
-                        (ContentConstant.JSON_KEY_TITLE);
-
-                ArrayList<Item> items = new ArrayList<>();
-
-                JSONArray jsonArray2 = jsonObj.
-                        getJSONArray(ContentConstant.JSON_KEY_CONTENT);
-
-                for (int j = 0; j < jsonArray2.length(); j++) {
-                    JSONObject jsonObj2 = jsonArray2.getJSONObject(j);
-                    String tag_line = jsonObj2.
-                            getString(ContentConstant.JSON_KEY_TAG_LINE);
-
-                    ArrayList<String> detailList = new ArrayList<>();
-
-                    JSONArray jsonArray3 = jsonObj2.
-                            getJSONArray(ContentConstant.JSON_KEY_DETAILS);
-
-                    for (int k = 0; k < jsonArray3.length(); k++) {
-                        String details = jsonArray3.get(k).toString();
-                        detailList.add(details);
-                    }
-                    items.add(new Item(tag_line, detailList));
-                }
-                mContentList.add(new Contents(title, items));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        hideLoader();
-        mAdapter.notifyDataSetChanged();
+        ContentParserAdapter contentParserAdapter = new ContentParserAdapter(jsonData);
+        contentParserAdapter.parseJson();
     }
 
     @Override

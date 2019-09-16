@@ -81,6 +81,7 @@
     <string name="share_prompt">Share your score with friends!</string>
     <string name="share_now">Share Now</string>
     <string name="sharing_text" formatted="false">My Score is %d. Find Yours- </string>
+    <string name="sharing_text_core" formatted="false"></string>
     <string name="play_again">Play Again</string>
     <string name="your_ans">Your Ans:</string>
     <string name="correct_ans">Correct Ans:</string>

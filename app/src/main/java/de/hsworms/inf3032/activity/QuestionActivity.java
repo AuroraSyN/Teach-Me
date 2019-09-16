@@ -25,6 +25,7 @@ import java.util.List;
 
 import de.hsworms.inf3032.R;
 import de.hsworms.inf3032.adapters.QuizAdapter;
+import de.hsworms.inf3032.adapters.QuizParserAdapter;
 import de.hsworms.inf3032.adapters.QuizSelectAdapter;
 import de.hsworms.inf3032.data.constant.AppConstant;
 import de.hsworms.inf3032.data.constant.ContentConstant;
@@ -41,25 +42,25 @@ import de.hsworms.inf3032.utility.SoundUtilities;
 
 public class QuestionActivity extends Provider implements DialogUtilities.OnCompleteListener {
 
-    ArrayList<String> mOptionList;
-    ArrayList<String> mBackgroundColorList;
+    public static ArrayList<String> mOptionList;
+    public static ArrayList<String> mBackgroundColorList;
     private Activity mActivity;
     private Context mContext;
     private ImageButton mBtnSpeaker;
     private ImageButton mSkipAllQuestions;
     private Button mBtnNext;
     private ImageView mImgFirstLife, mImgSecondLife, mImgThirdLife, mImgFourthLife, mImgFifthLife;
-    private List<QuizModel> mItemList;
-    private RecyclerView mRecyclerQuiz;
-    private QuizAdapter mAdapter = null;
-    private TextView mQuestionTextView;
+    public static List<QuizModel> mItemList;
+    public static RecyclerView mRecyclerQuiz;
+    public static QuizAdapter mAdapter = null;
+    public static TextView mQuestionTextView;
 
-    private int mQuestionPosition = 0;
+    public static int mQuestionPosition = 0;
     private int mScore = 0, mWrongAns = 0, mSkip = 0;
     private int mLifeCounter = 5;
     private boolean mUserHasPressed = false;
     private boolean mIsSkipped = false, mIsCorrect = false;
-    private String mQuestionText, mGivenAnsText, mCorrectAnsText;
+    public static String mQuestionText, mGivenAnsText, mCorrectAnsText;
     private ArrayList<ResultModel> mResultList;
 
     private BeatBox mBeatBox;
@@ -303,7 +304,7 @@ public class QuestionActivity extends Provider implements DialogUtilities.OnComp
         }
     }
 
-    public void updateQuestionsAndAnswers() {
+    public static void updateQuestionsAndAnswers() {
         mOptionList.clear();
         mBackgroundColorList.clear();
         (mRecyclerQuiz.getLayoutManager()).scrollToPosition(AppConstant.BUNDLE_KEY_ZERO_INDEX);
@@ -329,36 +330,8 @@ public class QuestionActivity extends Provider implements DialogUtilities.OnComp
     }
 
     public void parseJson(String jsonData) {
-        try {
-
-            JSONObject jsonObjMain = new JSONObject(jsonData);
-            JSONArray jsonArray = jsonObjMain.getJSONArray(ContentConstant.JSON_KEY_QUESTIONNAIRY);
-
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObj = jsonArray.getJSONObject(i);
-
-                String question = jsonObj.getString(ContentConstant.JSON_KEY_QUESTION);
-                int correctAnswer = Integer.parseInt(jsonObj.getString(ContentConstant.JSON_KEY_CORRECT_ANS));
-
-                JSONArray jsonArray2 = jsonObj.getJSONArray(ContentConstant.JSON_KEY_ANSWERS);
-                ArrayList<String> contents = new ArrayList<>();
-                ArrayList<String> backgroundColors = new ArrayList<>();
-                for (int j = 0; j < jsonArray2.length(); j++) {
-                    String item_title = jsonArray2.get(j).toString();
-                    contents.add(item_title);
-                    backgroundColors.add(AppConstant.COLOR_WHITE);
-                }
-                mItemList.add(new QuizModel(question, contents, correctAnswer, backgroundColors));
-                Collections.shuffle(mItemList);
-            }
-
-            hideLoader();
-            updateQuestionsAndAnswers();
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-            showEmptyView();
-        }
+        QuizParserAdapter quizParserAdapter = new QuizParserAdapter(jsonData);
+        quizParserAdapter.parseJson();
     }
 
     @Override

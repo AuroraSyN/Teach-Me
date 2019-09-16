@@ -129,12 +129,25 @@ public class ScoreCardActivity extends Provider implements OnChartValueSelectedL
     }
 
     public void initListener() {
+
+        String mResultBuffer = "";
+
+
+
         mBtnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String mResultSwapper = null;
+                String mResultSwapperTwo = null;
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.sharing_text, mScore) + " https://play.google.com/store/apps/details?id=" + mActivity.getPackageName());
+                for (int i = 0; i <= mResultList.size() -1; i++) {
+                mResultSwapper = mResultSwapper + "Q: "+ mResultList.get(i).getQuestion() + "\n" +"CA: " + mResultList.get(i).getCorrectAns() + "\n" +
+                            "U: "+ mResultList.get(i).getGivenAns() + "\n";
+                }
+                final String mResultBuffer = mResultSwapper;
+                sendIntent.putExtra(Intent.EXTRA_TEXT, mResultBuffer+
+                        getString(R.string.sharing_text, mScore) + "\n" + "\n" + " https://play.google.com/store/apps/details?id=" + mActivity.getPackageName());
                 sendIntent.setType("text/plain");
                 startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
             }
