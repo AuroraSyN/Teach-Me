@@ -3,7 +3,7 @@ package de.hsworms.inf3032.data.constant;
 public class RussianConstant {
 
     // BIG question file ru
-    public static final String BIG_1 = "json/questions/Computer science/BigQuestions/Russian/C++.json";
+    public static final String BIG_1 = "json/questions/Computer science/BigQuestions/Russian/QA_RUSSIAN_C++.json";
     public static final String BIG_2 = "json/questions/Computer science/BigQuestions/Russian/ru_2.json";
     public static final String BIG_3 = "json/questions/Computer science/BigQuestions/Russian/ru_2.json";
 

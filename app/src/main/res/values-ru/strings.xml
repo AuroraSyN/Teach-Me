@@ -9,9 +9,8 @@
     <string name="alternate_dev_page"></string>
     <string name="developer_name">Soloninov Aleksandr</string>
     <string name="developer_detail">Worms, Deutschland</string>
-    <string name="developer_message">This App is are Thesis App for Mobile Computing at Hochschule Worms.
-        This App is are Thesis App for Mobile Computing at Hochschule Worms.
-        This App is are Thesis App for Mobile Computing at Hochschule Worms.</string>
+    <string name="developer_message">Teach Me - is an Android app built as part of a master thesis for students at many universities. The app should serve as a tutor, or rather replace a tutor. With the help of this app, students should improve their knowledge.
+    </string>
     <string name="site_menu_fav">Favorites</string>
     <string name="site_menu_copy">Copy</string>
     <string name="site_menu_share">Share</string>
@@ -81,6 +80,7 @@
     <string name="share_prompt">Share your score with friends!</string>
     <string name="share_now">Share Now</string>
     <string name="sharing_text" formatted="false">My Score is %d. Find Yours- </string>
+    <string name="sharing_text_core" formatted="false"></string>
     <string name="play_again">Play Again</string>
     <string name="your_ans">Your Ans:</string>
     <string name="correct_ans">Correct Ans:</string>
@@ -125,9 +125,9 @@
     <string name="russian">Russian</string>
     <string name="german">German</string>
     <string name="mSpeakButtonText">TODO</string>
-    <string name="engineVersion">ENGINE: 1.4.13 </string>
-    <string name="contentVersion">CONTENT: 0.7.7 </string>
-    <string name="questionsVersion">QUEST: 0.5.1 </string>
+    <string name="engineVersion">ENGINE: 1.97.42 (96043)</string>
+    <string name="contentVersion">CONTENT: 1.3.411 (11053) </string>
+    <string name="questionsVersion">QUEST: 1.5.1 (46220) </string>
     <string name="study">Study:</string>
     <string name="btn_skipAllQuestions">Skip All</string>
     <string name="quest_selected">Please, select a questions file</string>
@@ -146,5 +146,4 @@
     <string name="ru">RU</string>
     <string name="assist_title">Assistant</string>
     <string name="settings_title">Settings</string>
-    <string name="sharing_text_core" formatted="false"></string>
 </resources>

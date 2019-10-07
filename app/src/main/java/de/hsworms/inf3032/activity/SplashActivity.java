@@ -53,9 +53,7 @@ public class SplashActivity extends AppCompatActivity {
         versionView = findViewById(R.id.versionView);
 
         versionView.setText(
-                getString(R.string.engineVersion) +
-                        getString(R.string.contentVersion) +
-                        getString(R.string.questionsVersion));
+                getString(R.string.engineVersion));
         mImageView = findViewById(R.id.splashIcon);
         mAnimation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
 

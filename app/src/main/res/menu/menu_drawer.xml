@@ -18,15 +18,6 @@
             android:title="@string/site_menu_fav" />
     </group>
 
-    <item android:title="@string/settings_title">
-        <menu>
-            <item
-                android:id="@+id/action_settings"
-                android:icon="@drawable/ic_settings_black_48dp"
-                android:title="@string/settings" />
-        </menu>
-    </item>
-
     <item android:title="@string/others">
         <menu>
             <item
@@ -40,15 +31,24 @@
             <item
                 android:id="@+id/action_share"
                 android:icon="@drawable/ic_share_variant_black_48dp"
-                android:title="@string/share" />
+                android:title="@string/share"
+                android:visible="false"/>
             <item
                 android:id="@+id/action_rate_app"
                 android:icon="@drawable/ic_star_circle_outline_black_48dp"
-                android:title="@string/rate" />
+                android:title="@string/rate"
+                android:visible="false"/>
+
             <item
                 android:id="@+id/action_about_dev"
                 android:icon="@drawable/ic_developer_board_black_48dp"
                 android:title="@string/about_dev" />
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings_black_48dp"
+                android:title="@string/settings" />
+
             <item
                 android:id="@+id/action_exit"
                 android:icon="@drawable/ic_exit_to_app_black_48dp"

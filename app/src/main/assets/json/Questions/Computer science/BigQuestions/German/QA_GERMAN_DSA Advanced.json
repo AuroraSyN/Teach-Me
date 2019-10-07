@@ -1,0 +1,176 @@
+{
+  "questionnaires": [
+    {
+      "question": "Was ist der Standardwert von double variable?",
+      "answers": [
+        "0.0 d",
+        "0.0 f",
+        "0",
+        "nicht definiert"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "kann Konstruktor vererbt werden?",
+      "answers": [
+        "Wahr.",
+        "Falsch"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Was ist Klassenvariable?",
+      "answers": [
+        "Klassenvariablen sind statische Variablen innerhalb einer Klasse, aber außerhalb jeder Methode.",
+        "Klassenvariablen sind Variablen, die innerhalb von Methoden, Konstruktoren oder Blöcken definiert sind.",
+        "Klassenvariablen sind Variablen innerhalb einer Klasse, aber außerhalb jeder Methode.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Was ist Funktion?",
+      "answers": [
+        "Wenn eine Unterklasse eine Methode verwendet, die bereits von Ihrer übergeordneten Klasse bereitgestellt wird, wird Sie als Method Overriding bezeichnet.",
+        "Wenn eine Unterklasse eine spezifische Implementierung einer Methode bereitstellt, die bereits von Ihrer übergeordneten Klasse bereitgestellt wird, wird Sie als Method Overriding bezeichnet.",
+        "Beides oben.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Wenn statische Bindung Auftritt?",
+      "answers": [
+        "Statische Bindung tritt während der Kompilierzeit auf.",
+        "Statische Bindung tritt während der Ladezeit auf.",
+        "Statische Bindung tritt während der Laufzeit auf.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Zusammensetzung stellt",
+      "answers": [
+        "HAT-eine Beziehung.",
+        "IST-eine Beziehung."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Unter welchen Bedingungen wird die finalize () - Methode eines Objekts vom garbage collector aufgerufen?",
+      "answers": [
+        "Wenn es erkennt, dass das Objekt unerreichbar geworden ist.",
+        "Sobald Objekt als null gesetzt ist.",
+        "Im festen intervalm überprüft es auf Nullwert.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Was ist die korrekte syntax für die Hauptmethode einer java-Klasse?",
+      "answers": [
+        "public static int main(String[] args)",
+        "public int main(String[] args)",
+        "public static void main(String[] args)",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Was ist eine transiente variable?",
+      "answers": [
+        "Eine transiente variable ist eine variable, die während der Serialisierung serialisiert wird.",
+        "Eine transiente variable ist eine variable, die während der Serialisierung nicht serialisiert werden kann.",
+        "Eine transiente variable ist eine variable, die als serialisierbar markiert werden.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Was ist der Standardwert der booleschen Variablen?",
+      "answers": [
+        "wahr",
+        "falsch",
+        "null",
+        "nicht definiert"
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Was ist der Standardwert der byte-variable?",
+      "answers": [
+        "0",
+        "0.0",
+        "null",
+        "nicht definiert"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "ist eine leere .java-Datei eine gültige Quelldatei?",
+      "answers": [
+        "Wahr",
+        "Falsch"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Was ist Vererbung?",
+      "answers": [
+        "Es ist der Prozess, in dem ein Objekt die Eigenschaften eines anderen erwirbt.",
+        "Vererbung ist die Fähigkeit eines Objekts, viele Formen anzunehmen.",
+        "Vererbung ist eine Technik, um verschiedene Methoden des gleichen Typs zu definieren.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Welche der folgenden ist wahr über public access modifier?",
+      "answers": [
+        "Variablen, Methoden und Konstruktoren, die öffentlich deklariert werden, können von jeder Klasse aufgerufen werden.",
+        "Variablen, Methoden und Konstruktoren, die als öffentlich deklariert werden, können von jeder Klasse aus demselben Paket aufgerufen werden.",
+        "Variablen, Methoden und Konstruktoren, die in der Superklasse öffentlich deklariert sind, können nur von Ihrer untergeordneten Klasse aufgerufen werden.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Kann Konstruktor privat gemacht werden?",
+      "answers": [
+        "Wahr",
+        "Falsch"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Was ist NullPointerException?",
+      "answers": [
+        "NullPointerException wird ausgelöst, wenn die Instanzmethode eines null-Objekts aufgerufen oder das Feld eines null-Objekts geändert/aufgerufen wird.",
+        "Eine NullPointerException wird ausgelöst, wenn das Objekt als null gesetzt ist.",
+        "Eine NullPointerException wird ausgelöst, wenn die object-Eigenschaft als null gesetzt ist.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Welches der folgenden ist falsch an String?",
+      "answers": [
+        "String unveränderlich ist.",
+        "String kann mit neuem operator erstellt werden.",
+        "String ist ein primärer Datentyp.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Dies ist das Elternteil der Fehler-und Ausnahmeklassen.",
+      "answers": [
+        "Throwable",
+        "Abfangbar",
+        "MainError",
+        "MainException"
+      ],
+      "correct_answer": 0
+    }
+  ]
+}

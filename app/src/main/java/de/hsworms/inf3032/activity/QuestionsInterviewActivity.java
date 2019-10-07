@@ -159,7 +159,52 @@ public class QuestionsInterviewActivity extends Provider {
                     contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
+            } else if (selectedItem.equals("Android")) {
+                while (counter <= EnglishTree.ANDROID_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.ANDROID_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.ANDROID_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("jQuery")) {
+                while (counter <= EnglishTree.JQUERY_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.JQUERY_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.JQUERY_QUESTIONS_A[counter]);
+                    counter++;
+                }
             }
+
+            // GERMAN
+            if (selectedItem.equals("Java Interviewfragen")) {
+                while (counter <= GermanTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(GermanTree.JAVA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("C++ Interviewfragen")) {
+                while (counter <= GermanTree.C_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.C_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("Operating System Interviewfragen")) {
+                while (counter <= GermanTree.OS_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(GermanTree.OS_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.OS_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("DSA Interviewfragen")) {
+                while (counter <= GermanTree.DSA_INERVIEW_QUESTIONS.length - 1) {
+                    contentList.add(GermanTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.DSA_INERVIEW_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("Android ")) {
+                while (counter <= EnglishTree.ANDROID_QUESTIONS.length - 1) {
+                    contentList.add(GermanTree.ANDROID_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.ANDROID_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            } else if (selectedItem.equals("jQuery ")) {
+                while (counter <= GermanTree.JQUERY_QUESTIONS.length - 1) {
+                    contentList.add(GermanTree.JQUERY_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.JQUERY_QUESTIONS_A[counter]);
+                    counter++;
+                }
+            }
+
+
             popUpContents = new String[contentList.size()];
             contentList.toArray(popUpContents);
             listView = popupWindow();

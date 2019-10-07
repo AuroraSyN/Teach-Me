@@ -115,32 +115,42 @@ public class QuizSelectAdapter extends Provider {
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.JAVA_ADVANCED)));
                         break;
                     case "DSA Basics":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.DSA_ADVANCED)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.DSA_BASICS)));
                         break;
                     case "DSA Advanced":
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(EnglishConstant.DSA_ADVANCED)));
                         break;
 
                     //German
-                    case "Objektorientiertes Programmieren in Java":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.JAVA_PROG)));
+                    case "C ++ Grundlagen":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.C_BASICS)));
                         break;
-                    case "Objektorientiertes Programmieren mit C++":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.C_PROG)));
+                    case "C ++ Objektorientiert":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.C_OBJECT_ORIENTED)));
+                        break;
+                    case "Betriebssystem":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.OPERATING_SYSTEM)));
+                        break;
+                    case "Java 9 ":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.JAVA_9)));
+                        break;
+                    case "Java-Grundlagen":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.JAVA_BASICS)));
+                        break;
+                    case "Java Advanced ":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.JAVA_ADVANCED)));
+                        break;
+                    case "DSA-Grundlagen":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.DSA_BASICS)));
+                        break;
+                    case "DSA Advanced ":
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(GermanConstant.DSA_ADVANCED)));
                         break;
 
                     //Russian
-                    case "  ":
+                    case "С++ Введение":
                         br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_1)));
                         break;
-                    case "   ":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_2)));
-                        break;
-                    case "    ":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_3)));
-                        break;
-
-
                     default:
                         br = new BufferedReader(new InputStreamReader(getAssets().open(EnglishConstant.C_BASICS)));
                         Toast toast = Toast.makeText(getApplicationContext(),

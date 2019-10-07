@@ -6,16 +6,14 @@ import java.util.List;
 public class RussianTree {
 
     public static final List<String> RUSSIAN_TREE = Arrays.asList(
-            "Russian 1",
-            "Russian 2",
-            "Russian 3"
+            "С++ Введение"
     );
 
     public static final List<String> CS_RUSSIAN_INTERVIEW_TREE = Arrays.asList(
-            "CS_RU_INT_TREE"
+            "Простите, данных еще нет, но они скоро будут."
     );
 
     public static final List<String> MC_RUSSIAN_INTERVIEW_TREE = Arrays.asList(
-            "MC_RU_INT_TREE"
+            "Простите, данных еще нет, но они скоро будут."
     );
 }

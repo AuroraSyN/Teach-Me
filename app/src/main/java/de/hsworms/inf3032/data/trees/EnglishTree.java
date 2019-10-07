@@ -27,8 +27,225 @@ public class EnglishTree {
     );
 
     public static final List<String> MC_ENGLISH_INTERVIEW_TREE = Arrays.asList(
-            "MC Interview questions"
+            "Android",
+            "jQuery"
     );
+
+    public static final String[] JQUERY_QUESTIONS = new String[]{
+            "What is jQuery?",
+            "What are the core features of jQuery?",
+            "How will you make sure that DOM is ready using jQuery?",
+            "How can you create an Object in JavaScript?",
+            "How can you read properties of an Object in JavaScript?",
+            "How can you create an Array in JavaScript?",
+            "How to read elements of an array in JavaScript?",
+            "What is a named function in JavaScript? How to define a named function?",
+            "How many types of functions JavaScript supports?",
+            "How can you get the type of arguments passed to a function?",
+            "How can you get the total number of arguments passed to a function?",
+            "How can you get the reference of a caller function inside a function?",
+            "What are the valid scopes of a variable in JavaScript?",
+            "Give an example of closure?",
+    };
+
+    public static final String[] JQUERY_QUESTIONS_A = new String[]{
+            "jQuery is a fast and concise JavaScript Library created by John Resig in 2006 with a nice motto - Write less, do more. jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is a JavaScript toolkit designed to simplify various tasks by writing less code.",
+            "\n" +
+                    "\n" +
+                    "Following is the list of important core features supported by jQuery −\n" +
+                    "\n" +
+                    "    DOM manipulation − The jQuery made it easy to select DOM elements, traverse them and modifying their content by using cross-browser open source selector engine called Sizzle.\n" +
+                    "\n" +
+                    "    Event handling − The jQuery offers an elegant way to capture a wide variety of events, such as a user clicking on a link, without the need to clutter the HTML code itself with event handlers.\n" +
+                    "\n" +
+                    "    AJAX Support − The jQuery helps you a lot to develop a responsive and feature-rich site using AJAX technology.\n" +
+                    "\n" +
+                    "    Animations − The jQuery comes with plenty of built-in animation effects which you can use in your websites.\n" +
+                    "\n" +
+                    "    Lightweight − The jQuery is very lightweight library - about 19KB in size ( Minified and gzipped ).\n" +
+                    "\n" +
+                    "    Cross Browser Support − The jQuery has cross-browser support, and works well in IE 6.0+, FF 2.0+, Safari 3.0+, Chrome and Opera 9.0+.\n" +
+                    "\n" +
+                    "    Latest Technology − The jQuery supports CSS3 selectors and basic XPath syntax.\n" +
+                    "\n",
+            "Use $(document).ready() function. Everything inside it will load as soon as the DOM is loaded and before the page contents are loaded.",
+            "\n" +
+                    "\n" +
+                    "JavaScript supports Object concept very well. You can create an object using the object literal as follows −\n" +
+                    "\n" +
+                    "var emp = {\n" +
+                    "   name: \"Zara\",\n" +
+                    "   age: 10\n" +
+                    "};\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "JavaScript supports Object concept very well. You can create an object using the object literal as follows −\n" +
+                    "\n" +
+                    "var emp = {\n" +
+                    "   name: \"Zara\",\n" +
+                    "   age: 10\n" +
+                    "};\n" +
+                    "\n" +
+                    "You can write and read properties of an object using the dot notation as follows −\n" +
+                    "\n" +
+                    "// Getting object properties\n" +
+                    "emp.name  // ==> Zara\n" +
+                    "emp.age   // ==> 10\n" +
+                    "\n" +
+                    "// Setting object properties\n" +
+                    "emp.name = \"Daisy\"  // <== Daisy\n" +
+                    "emp.age  =  20      // <== 20\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "You can define arrays using the array literal as follows −\n" +
+                    "\n" +
+                    "var x = [];\n" +
+                    "var y = [1, 2, 3, 4, 5];\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "An array has a length property that is useful for iteration. We can read elements of an array as follows −\n" +
+                    "\n" +
+                    "var x = [1, 2, 3, 4, 5];\n" +
+                    "\n" +
+                    "for (var i = 0; i < x.length; i++) {\n" +
+                    "   // Do something with x[i]\n" +
+                    "}\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "A named function has a name when it is defined. A named function can be defined using function keyword as follows −\n" +
+                    "\n" +
+                    "function named(){\n" +
+                    "   // do some stuff here\n" +
+                    "}\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "Using typeof operator, we can get the type of arguments passed to a function. For example −\n" +
+                    "\n" +
+                    "function func(x){\n" +
+                    "   console.log(typeof x, arguments.length);\n" +
+                    "}\n" +
+                    "\n" +
+                    "func();                //==> \"undefined\", 0\n" +
+                    "func(1);               //==> \"number\", 1\n" +
+                    "func(\"1\", \"2\", \"3\");   //==> \"string\", 3\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "Using typeof operator, we can get the type of arguments passed to a function. For example −\n" +
+                    "\n" +
+                    "function func(x){\n" +
+                    "   console.log(typeof x, arguments.length);\n" +
+                    "}\n" +
+                    "\n" +
+                    "func();                //==> \"undefined\", 0\n" +
+                    "func(1);               //==> \"number\", 1\n" +
+                    "func(\"1\", \"2\", \"3\");   //==> \"string\", 3\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "Using arguments.length property, we can get the total number of arguments passed to a function. For example −\n" +
+                    "\n" +
+                    "function func(x){\n" +
+                    "   console.log(typeof x, arguments.length);\n" +
+                    "}\n" +
+                    "\n" +
+                    "func();                //==> \"undefined\", 0\n" +
+                    "func(1);               //==> \"number\", 1\n" +
+                    "func(\"1\", \"2\", \"3\");   //==> \"string\", 3\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "The arguments object has a callee property, which refers to the function you're inside of. For example −\n" +
+                    "\n" +
+                    "function func() {\n" +
+                    "   return arguments.callee; \n" +
+                    "}\n" +
+                    "\n" +
+                    "func();                // ==> func\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "The scope of a variable is the region of your program in which it is defined. JavaScript variable will have only two scopes.\n" +
+                    "\n" +
+                    "    Global Variables − A global variable has global scope which means it is visible everywhere in your JavaScript code.\n" +
+                    "\n" +
+                    "    Local Variables − A local variable will be visible only within a function where it is defined. Function parameters are always local to that function.\n" +
+                    "\n",
+            "\n" +
+                    "\n" +
+                    "Following example shows how the variable counter is visible within the create, increment, and print functions, but not outside of them −\n" +
+                    "\n" +
+                    "function create() {\n" +
+                    "   var counter = 0;\n" +
+                    "\t\n" +
+                    "   return {\n" +
+                    "      increment: function() {\n" +
+                    "         counter++;\n" +
+                    "      },\n" +
+                    "  \n" +
+                    "      print: function() {\n" +
+                    "         console.log(counter);\n" +
+                    "      }\n" +
+                    "   }\n" +
+                    "}\n" +
+                    "\n" +
+                    "var c = create();\n" +
+                    "c.increment();\n" +
+                    "c.print();     // ==> 1\n" +
+                    "\n",
+    };
+
+
+    public static final String[] ANDROID_QUESTIONS = new String[] {
+            "What is Android?",
+            "Describe Android application Architecture?",
+            "What is An Activity?",
+            "What is the APK format?",
+            "What is An Intent?",
+            "What is an explicit Intent?",
+            "What is an implicit Intent?",
+            "What is ADB in android?",
+            "Define the application resource file in android?",
+            "How to launch an activity in android?",
+            "What is fragment in android?",
+            "What folders are impotent in android project?",
+            "What is drawable folder in android?",
+    };
+
+    public static final String[] ANDROID_QUESTIONS_A = new String[] {
+            "Android is a stack of software for mobile devices which includes an Operating System, \n" +
+                    "middleware and some key applications. The application executes within its own process and its own instance of Dalvik Virtual Machine.",
+            "<p>Android application architecture has the following components.They are as follows −</p>\n" +
+                    "<p>Services − It will perform background functionalities</p>\n" +
+                    "<p>Intent − It will perform the inter connection between activities and the data passing mechanism</p>\n" +
+                    "<p>Resource Externalization − strings and graphics</p>\n" +
+                    "<p>Notification − light,sound,icon,notification,dialog box,and toast</p>\n" +
+                    "<p>Content Providers − It will share the data between applications</p>",
+            "Activity performs actions on the screen.If you want to do any operations, we can do with activity",
+            "The Android packaging key is compressed with classes,UI's, supportive assets and manifest.All files are compressed to a single file is called APK.",
+            "It is connected to either the external world of application or internal world of application ,Such as, opening a pdf is an intent and connect to the web browser.etc.",
+            "Android Explicit intent specifies the component to be invoked from activity. In other words, we can call another activity in android by explicit intent.",
+            "Implicit Intent doesn't specifiy the component. In such case, intent provides information of available components provided by the system that is to be invoked.",
+            "It is acts as bridge between emulator and IDE, it executes remote shell commands to run applications on an emulator",
+            "JSON,XML bitmap.etc are application resources.You can injected these files to build process and can load them from the code.",
+            "<p>Using with intent, we can launch an activity.</p>\n" +
+                    "<pre class=\"prettyprint notranslate prettyprinted\" style=\"\"><span class=\"typ\">Intent</span><span class=\"pln\"> intent </span><span class=\"pun\">=</span><span class=\"pln\"> </span><span class=\"kwd\">new</span><span class=\"pln\"> </span><span class=\"typ\">Intent</span><span class=\"pun\">(</span><span class=\"kwd\">this</span><span class=\"pun\">,</span><span class=\"pln\"> </span><span class=\"typ\">MyTestActivity</span><span class=\"pun\">.</span><span class=\"kwd\">class</span><span class=\"pun\">);</span><span class=\"pln\">\n" +
+                    "\n" +
+                    "        startActivity</span><span class=\"pun\">(</span><span class=\"pln\">intent</span><span class=\"pun\">);</span></pre>",
+            "Fragment is a piece of activity, if you want to do turn your application 360 degrees, you can do this by fragment.",
+            "<p>AndroidManifest.xml</p>\n" +
+                    "<p>build.xml</p>\n" +
+                    "<p>bin/</p>\n" +
+                    "<p>src/</p>\n" +
+                    "<p>res/</p>\n" +
+                    "<p>assets/</p>",
+            "A compiled visual resource that can  used as a backgrounds,banners, icons,splash screen etc.",
+    };
 
     public static final String[] JAVA_INERVIEW_QUESTIONS = new String[]{
             "What do you know about Java?",
@@ -98,44 +315,26 @@ public class EnglishTree {
             "Use StringBuilder whenever possible because it is faster than StringBuffer. But, if thread safety is necessary then use StringBuffer objects.",
     };
 
+
+
     public static final String[] C_INERVIEW_QUESTIONS = new String[]{
-            "dksjg",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "What is a pointer on pointer?",
+            "What is NULL pointer?",
+            "What is dandling pointer?",
+            "What is a token?",
+            "What are bit fields?",
+            "Is FILE a built-in data type?",
+            "What is a static function?",
     };
 
     public static final String[] C_INERVIEW_QUESTIONS_A = new String[]{
-            "dfgsjlk",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "It’s a pointer variable which can hold the address of another pointer variable. It de-refers twice to point to the data held by the designated pointer variable.",
+            "A pointer pointing to nothing is called so. Eg: char *p=NULL;",
+            "A pointer initially holding valid address, but later the held address is released or freed. Then such a pointer is called as dangling pointer.",
+            "A C program consists of various tokens and a token is either a keyword, an identifier, a constant, a string literal, or a symbol.",
+            "We can create integer structure members of differing size apart from non-standard size using bit fields. Such structure size is automatically adjusted with the multiple of integer size of the machine.",
+            "No, it is a structure defined in stdio.h.",
+            "A function’s definition prefixed with static keyword is called as a static function. You would make a function static if it should be called only within the same source code.",
     };
 
     public static final String[] OS_INERVIEW_QUESTIONS = new String[]{
