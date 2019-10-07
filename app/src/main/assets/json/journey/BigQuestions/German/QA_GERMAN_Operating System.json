@@ -1,0 +1,103 @@
+{
+  "questionnaires": [
+    {
+      "question": "Was ist die Beziehung zwischen Betriebssystemen und Computerhardware?",
+      "answers": [
+        "Betriebssystem hilft, Computerhardware für die Anwendungsprogramme verfügbar zu machen. Ohne Betriebssystem können wir nicht auf Computerhardware zugreifen.",
+        "Betriebssystem hilft nicht, Computerhardware für die Anwendungsprogramme verfügbar zu machen. Ohne Betriebssystem können wir nicht auf Computerhardware zugreifen.",
+        "Ohne ein Betriebssystem ist Computerhardware nur eine inaktive elektronische Maschine, die für den Benutzer zur Ausführung von Programmen unbequem ist.",
+        "So ohne Betriebssystem Ausführung von Benutzerprogramm oder Benutzerprobleme zu lösen ist extrem schwierig."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Wie kann Pufferung die Leistung eines Computersystems verbessern?",
+      "answers": [
+        "Betriebssystem hilft, Computerhardware für die Anwendungsprogramme verfügbar zu machen. Ohne Betriebssystem können wir nicht auf Computerhardware zugreifen.",
+        "Ein Prozess bezieht sich auf ein Programm unter Ausführung. Dieses Programm kann eine Anwendung oder ein Systemprogramm sein.",
+        "Wenn C. P. U-und I/O-Geräte fast gleich schnell sind, hilft die Pufferung, die C. P. U und die I/O-Geräte mit voller Geschwindigkeit arbeiten zu lassen, so dass C. P. U und die I/O-Geräte niemals im Leerlauf sitzen."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Was sind die Hauptunterschiede zwischen Netzwerkbetriebssystem und Verteiltem Betriebssystem?",
+      "answers": [
+        "So erweist sich das Puffern als nützlich für jene jobs, die ein Gleichgewicht zwischen rechnerischer Arbeit und I/O-Operationen haben. In anderen Fällen kann Pufferung Schema nicht gut funktionieren.",
+        "Netzwerk-und Verteilte Betriebssysteme haben eine gemeinsame hardware-Basis, aber der Unterschied liegt in software."
+      ],
+      "correct_answer": 1
+    },
+    {
+      "question": "Erklären Sie die folgenden allokationsalgorithmen: First Fit",
+      "answers": [
+        "In der ersten fit-Ansatz ist es, die erste freie partition oder Loch groß genug, die den Prozess aufnehmen kann zuweisen. Es endet nach dem finden der ersten geeigneten freien partition.",
+        "Der erste fit beschäftigt sich mit der Zuordnung der kleinste freie partition, die erfüllt die Anforderung des anfordernden Prozesses. Dieser Algorithmus sucht zuerst die gesamte Liste der freien Partitionen und betrachtet das kleinste Loch, das angemessen ist. Es versucht dann, ein Loch zu finden, das nahe an der tatsächlichen prozessgröße benötigt wird.",
+        "Es beginnt als erste fit eine freie partition zu finden. Wenn es das nächste mal aufgerufen wird, beginnt es von dort aus zu suchen, nicht von Anfang an."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Erklären Sie die folgenden allokationsalgorithmen: Buddy' s system",
+      "answers": [
+        "Im Systemansatz des Kumpels ist es, die erste freie partition oder Loch groß genug, die den Prozess aufnehmen kann zuzuweisen. Es endet nach dem finden der ersten geeigneten freien partition.",
+        "Im Systemansatz von Buddy ist es, den größten verfügbaren freien Teil zu finden, so dass der Verbleibende Teil groß genug ist, um nützlich zu sein. Es ist die Rückseite der besten Passform.",
+        "Die best-fit-befasst sich mit der Zuordnung der kleinste freie partition, die erfüllt die Anforderung des anfordernden Prozesses.",
+        "Im buddy-system sind Größen von freien Blöcken in Form von integraler Kraft von 2. Z. B. 2, 4, 8, 16 usw. Bis zur Größe des Speichers."
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Erklären Sie die folgenden allokationsalgorithmen: Best fit",
+      "answers": [
+        "In der besten Passform Ansatz ist es, die erste freie partition oder Loch groß genug, die den Prozess aufnehmen kann zuweisen. Es endet nach dem finden der ersten geeigneten freien partition.",
+        "In best-fit-Ansatz ist es, größte verfügbare freie portion zu finden, so dass der Verbleibende Teil groß genug ist, um nützlich zu sein. Es ist die Rückseite der besten Passform.",
+        "Die best-fit-befasst sich mit der Zuordnung der kleinste freie partition, die erfüllt die Anforderung des anfordernden Prozesses. "
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Job und Prozess?",
+      "answers": [
+        "Ein Prozess bezieht sich auf ein Programm unter Ausführung. Dieses Programm kann eine Anwendung oder ein Systemprogramm sein.\n \ nJob bedeutet ein Anwendungsprogramm und es ist kein Systemprogramm.",
+        "Ein Prozess bezieht sich auf ein Programm unter Ausführung. Dieses Programm kann eine Anwendung oder ein Systemprogramm sein.\n \ nJob bedeutet ein Systemprogramm und es ist kein Anwendungsprogramm.",
+        "Ein job bezieht sich auf ein Programm unter Ausführung. Dieses Programm kann eine Anwendung oder ein Systemprogramm sein.\n \ nJob bedeutet ein Anwendungsprogramm und es ist kein Systemprogramm."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Erhöhte CPU Auslastung ist:",
+      "answers": [
+        "Multiprogramming verbessert die CPU-Auslastung, da es eine Reihe von jobs organisiert, bei denen CPU immer einen ausführen muss.",
+        "Turnaround-Zeit für kurze jobs ist stark verbessert im multiprogramming.",
+        "In multiprogramming befindet sich mehr als ein Programm im Hauptspeicher. So wird der Speicher optimal genutzt."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Was sind nicht die Vorteile der multiprogrammierung?",
+      "answers": [
+        "Erhöhte CPU-Auslastung",
+        "Erhöhter Durchsatz",
+        "Kürzere Umdrehungszeit",
+        "Erhöhter Durchsatz",
+        "Verbesserte Speicherauslastung",
+        "Erhöhte Ressourcenauslastung",
+        "Erhöhte Ressourcenauslastung"
+      ],
+      "correct_answer": 6
+    },
+    {
+      "question": "Was ist kein Höchstes Response Ratio Next (HRN) Scheduling?",
+      "answers": [
+        "HRN ist ein nicht-präemptiver planungsalgorithmus.",
+        "In Kürzesten Job Erste Planung, Priorität wird kürzeste job gegeben, die manchmal unbestimmte Sperrung von längeren job.t",
+        "HRN, ist preemptive scheduling-Algorithmus.",
+        "Für die Bestimmung der Priorität wird nicht nur die Dienstzeit des Jobs, sondern auch die Wartezeit berücksichtigt.",
+        "In diesem Algorithmus werden dynamische Prioritäten anstelle fester Prioritäten verwendet.",
+        "So erhalten kürzere jobs Präferenz über längere Prozesse, weil service-Zeit im Nenner erscheint.",
+        "Längere Wartezeiten sind auch deshalb günstig, weil Wartezeiten in der Warteschleife berücksichtigt werden."
+      ],
+      "correct_answer": 2
+    }
+  ]
+}

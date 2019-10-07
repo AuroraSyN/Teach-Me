@@ -149,7 +149,7 @@ public class QuizSelectAdapter extends Provider {
 
                     //Russian
                     case "С++ Введение":
-                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.BIG_1)));
+                        br = new BufferedReader(new InputStreamReader(AppPreference.mContext.getAssets().open(RussianConstant.C_BASICS)));
                         break;
                     default:
                         br = new BufferedReader(new InputStreamReader(getAssets().open(EnglishConstant.C_BASICS)));

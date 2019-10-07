@@ -141,69 +141,68 @@ public class QuestionsInterviewActivity extends Provider {
             short counter = 0;
             if (selectedItem.equals("Java Interview questions")) {
                 while (counter <= EnglishTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.JAVA_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("C++ Interview questions")) {
                 while (counter <= EnglishTree.C_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.C_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("Operating System questions")) {
                 while (counter <= EnglishTree.OS_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.OS_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.OS_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("DSA Interview questions")) {
                 while (counter <= EnglishTree.DSA_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.DSA_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.DSA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("Android")) {
                 while (counter <= EnglishTree.ANDROID_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.ANDROID_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.ANDROID_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.ANDROID_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.ANDROID_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("jQuery")) {
                 while (counter <= EnglishTree.JQUERY_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.JQUERY_QUESTIONS[counter] + EnglishConstant._KEY_ + EnglishTree.JQUERY_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.JQUERY_QUESTIONS[counter] + AppConstant._KEY_ + EnglishTree.JQUERY_QUESTIONS_A[counter]);
                     counter++;
                 }
             }
 
             // GERMAN
-            if (selectedItem.equals("Java Interviewfragen")) {
+            else if (selectedItem.equals("Java Interviewfragen")) {
                 while (counter <= GermanTree.JAVA_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(GermanTree.JAVA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(GermanTree.JAVA_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.JAVA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("C++ Interviewfragen")) {
                 while (counter <= GermanTree.C_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.C_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(EnglishTree.C_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.C_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("Operating System Interviewfragen")) {
                 while (counter <= GermanTree.OS_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(GermanTree.OS_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.OS_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(GermanTree.OS_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.OS_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("DSA Interviewfragen")) {
                 while (counter <= GermanTree.DSA_INERVIEW_QUESTIONS.length - 1) {
-                    contentList.add(GermanTree.DSA_INERVIEW_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.DSA_INERVIEW_QUESTIONS_A[counter]);
+                    contentList.add(GermanTree.DSA_INERVIEW_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.DSA_INERVIEW_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("Android ")) {
                 while (counter <= EnglishTree.ANDROID_QUESTIONS.length - 1) {
-                    contentList.add(GermanTree.ANDROID_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.ANDROID_QUESTIONS_A[counter]);
+                    contentList.add(GermanTree.ANDROID_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.ANDROID_QUESTIONS_A[counter]);
                     counter++;
                 }
             } else if (selectedItem.equals("jQuery ")) {
                 while (counter <= GermanTree.JQUERY_QUESTIONS.length - 1) {
-                    contentList.add(GermanTree.JQUERY_QUESTIONS[counter] + EnglishConstant._KEY_ + GermanTree.JQUERY_QUESTIONS_A[counter]);
+                    contentList.add(GermanTree.JQUERY_QUESTIONS[counter] + AppConstant._KEY_ + GermanTree.JQUERY_QUESTIONS_A[counter]);
                     counter++;
                 }
             }
-
 
             popUpContents = new String[contentList.size()];
             contentList.toArray(popUpContents);

@@ -59,9 +59,9 @@
     <string name="close_prompt">App verlassen?</string>
     <string name="yes">Ja</string>
     <string name="no">Abbrechen</string>
-    <string name = "failed">Fehler </string>
+    <string name = "failed">Ok</string>
     <string name = "failed_dialog_title">Leider bist du durchgefallen </string>
-    <string name = "failed_dialog_text"> Versuch ein nächstes mal </string>
+    <string name = "failed_dialog_text"> Versuch ein nächstes mal</string>
     <string name = "skipAll_dialog_title">Alle Fragen überspringen? </string>
     <string name = "skipAll_dialog_text">Möchten Sie alle Fragen überspringen? </string>
     <string name = "skip_prompt">Möchten Sie diese Frage überspringen? </string>
@@ -123,9 +123,9 @@
     <string name="russian">Russian</string>
     <string name="german">German</string>
     <string name="mSpeakButtonText">TODO</string>
-    <string name="engineVersion">ENGINE: 1.97.42 (96043)</string>
-    <string name="contentVersion">INHALT: 1.3.411 (11053) </string>
-    <string name="questionsVersion">FRAGEN: 1.5.1 (46220) </string>
+    <string name="engineVersion">ENGINE: 1.98.42 (96043)</string>
+    <string name="contentVersion">CONTENT: 1.3.411 (11053) </string>
+    <string name="questionsVersion">QUEST: 1.5.1 (46220) </string>
     <string name="study">Fach:</string>
     <string name = "btn_skipAllQuestions">Alle überspringen</string>
     <string name = "quest_selected">Bitte wählen Sie eine Fragendatei aus.</string>
