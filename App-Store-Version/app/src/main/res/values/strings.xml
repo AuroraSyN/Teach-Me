@@ -2,7 +2,7 @@
 
     <!-- app name -->
     <string name="app_name">Teach Me</string>
-    <string name="tagline">Learn with Fun!</string>
+    <string name="tagline">Learn - Fun - Tutorial</string>
 
     <!-- app ad section -->
     <string name="app_ad_id">ca-app-pub-3685192802289955~4763865611</string>
@@ -22,7 +22,7 @@
     <string name="developer_detail">Germany, Lampertheim-Hofheim</string>
 
     <string name="developer_message">
-                                     Engine: 2.5.1(25119)
+                                     Engine: 2.6.0
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1

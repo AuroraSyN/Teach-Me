@@ -20,25 +20,23 @@ import com.teachme.utility.ActivityUtilities;
 public class SplashActivity extends AppCompatActivity {
 
     // Constants
-    private static final int SPLASH_DURATION = 1750;
+    private static final int SPLASH_DURATION = 1650;
     private Context mContext;
     private Activity mActivity;
     private ImageView mImageView;
-    private Animation mAnimation_1;
+   private Animation mAnimation_1;
     private ProgressBar mProgressBar;
-    private RelativeLayout mRootLayout;
+        private RelativeLayout mRootLayout;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            initVar();
+            initView();
+        }
 
-        initVar();
-        initView();
-
-    }
-
-    private void initVar() {
+        private void initVar() {
         mContext = getApplicationContext();
         mActivity = SplashActivity.this;
     }
@@ -49,6 +47,7 @@ public class SplashActivity extends AppCompatActivity {
         mRootLayout = findViewById(R.id.splashBody);
         mImageView = findViewById(R.id.splashIcon);
         mAnimation_1 = AnimationUtils.loadAnimation(getBaseContext(), R.anim.rotate);
+        mImageView.setVisibility(View.GONE);
     }
 
     private void initFunctionality() {

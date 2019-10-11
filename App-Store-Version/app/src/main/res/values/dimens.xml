@@ -14,7 +14,9 @@
     <dimen name="margin_55dp">55dp</dimen>
     <dimen name="margin_64dp">64dp</dimen>
     <dimen name="margin_100dp">100dp</dimen>
+    <dimen name="margin_150dp">150dp</dimen>
     <dimen name="margin_180dp">180dp</dimen>
+    <dimen name="margin_240dp">240dp</dimen>
     <dimen name="margin_300dp">300dp</dimen>
 
 </resources>
