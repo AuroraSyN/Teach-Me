@@ -163,7 +163,7 @@
                 tools:text="@string/greeting_text1" />
 
 
-            <com.teachme.PhenomenaTextView
+            <org.teachme.PhenomenaTextView
                 android:id="@+id/share_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

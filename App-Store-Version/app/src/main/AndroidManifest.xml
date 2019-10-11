@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.teachme">
+    package="org.teachme">
 
     <!-- network permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.teachme.App"
+        android:name="org.teachme.App"
         android:allowBackup="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +19,7 @@
             android:value="@string/app_ad_id" />
 
         <activity
-            android:name="com.teachme.ui.SplashActivity"
+            android:name="org.teachme.ui.SplashActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
@@ -34,74 +34,74 @@
 
 
         <activity
-            android:name="com.teachme.ui.MainActivity"
+            android:name="org.teachme.ui.MainActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
 
         <activity
-            android:name="com.teachme.ui.SettingsActivity"
+            android:name="org.teachme.ui.SettingsActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
 
         <activity
-            android:name="com.teachme.ui.CustomUrlActivity"
+            android:name="org.teachme.ui.CustomUrlActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.NotificationListActivity"
+            android:name="org.teachme.ui.NotificationListActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.NotificationDetailsActivity"
+            android:name="org.teachme.ui.NotificationDetailsActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.ItemListActivity"
+            android:name="org.teachme.ui.ItemListActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.DetailsListActivity"
+            android:name="org.teachme.ui.DetailsListActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.DetailsActivity"
+            android:name="org.teachme.ui.DetailsActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.QuizPromptActivity"
+            android:name="org.teachme.ui.QuizPromptActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.QuizActivity"
+            android:name="org.teachme.ui.QuizActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.ScoreCardActivity"
+            android:name="org.teachme.ui.ScoreCardActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.AboutDevActivity"
+            android:name="org.teachme.ui.AboutDevActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.FavoriteListActivity"
+            android:name="org.teachme.ui.FavoriteListActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.teachme.ui.SearchActivity"
+            android:name="org.teachme.ui.SearchActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme">
             <meta-data
@@ -110,7 +110,7 @@
         </activity>
 
 
-        <service android:name="com.teachme.FirebaseMessagingService">
+        <service android:name="org.teachme.FirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

@@ -5,15 +5,14 @@
     <string name="tagline">Learn - Fun - Tutorial</string>
 
     <!-- app ad section -->
-    <string name="app_ad_id">ca-app-pub-3685192802289955~4763865611</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3685192802289955/4380722236</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-3685192802289955/6811783762</string>
-    <string name="rewarded_ad_unit_id">ca-app-pub-3685192802289955/2768257660</string>
+    <string name="app_ad_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="rewarded_ad_unit_id">ca-app-pub-3940256099942544/5224354917</string>
     <!-- end of the ad section -->
 
 
     <string name="privacy_url"></string>
-
     <string name="developer_page"></string>
     <string name="alternate_dev_page"></string>
 
@@ -22,7 +21,7 @@
     <string name="developer_detail">Germany, Lampertheim-Hofheim</string>
 
     <string name="developer_message">
-                                     Engine: 2.6.0
+                                     Engine: 2.6.1
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
@@ -120,8 +119,6 @@
     <string name="default_text">Normal</string>
     <string name="large_text">Large</string>
 
-
-
     <string name="quest_selector_1">quest_selector_1</string>
     <string name="quest_selector_2">quest_selector_2</string>
     <string name="quest_selector_3">quest_selector_3</string>
@@ -134,9 +131,11 @@
     <string name="site_menu_tutorial">Tutorial</string>
     <string name="site_menu_video">Video</string>
 
-
     <string name="app_mode_1">Tutorial</string>
     <string name="app_mode_2">Interview</string>
     <string name="app_mode_3">Video</string>
+
+    <string name="first_time">First time: default value</string>
+
 
 </resources>
