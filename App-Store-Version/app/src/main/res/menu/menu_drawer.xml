@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/modules">
+        <menu>
+            <item
+                android:id="@+id/action_tutorial"
+                android:icon="@drawable/ic_error"
+                android:title="@string/site_menu_tutorial" />
+
+            <item
+                android:id="@+id/action_interview"
+                android:icon="@drawable/ic_error"
+                android:title="@string/site_menu_interview" />
+
+            <item
+                android:id="@+id/action_video"
+                android:icon="@drawable/ic_error"
+                android:title="@string/site_menu_video" />
+
+            <item
+                android:id="@+id/action_quiz"
+                android:icon="@drawable/ic_bulb"
+                android:title="@string/site_menu_quiz" />
+        </menu>
+    </item>
+
+    <item android:title="@string/miscellaneous">
+        <menu>
+            <item
+                android:id="@+id/action_fav"
+                android:icon="@drawable/ic_fav_gray"
+                android:title="@string/site_menu_fav" />
+
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/ic_settings"
+                android:title="@string/settings" />
+        </menu>
+    </item>
+
+
+    <item android:title="@string/others">
+        <menu>
+            <item
+                android:id="@+id/privacy_policy"
+                android:icon="@drawable/ic_privacy_policy"
+                android:title="@string/privacy" />
+
+            <item
+                android:id="@+id/action_share"
+                android:icon="@drawable/ic_share"
+                android:title="@string/share" />
+
+            <item
+                android:id="@+id/action_rate_app"
+                android:icon="@drawable/ic_rating"
+                android:title="@string/rate" />
+
+            <item
+                android:id="@+id/action_about_dev"
+                android:icon="@drawable/ic_developer"
+                android:title="@string/about_dev" />
+
+            <item
+                android:id="@+id/action_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="@string/exit" />
+        </menu>
+    </item>
+
+</menu>
