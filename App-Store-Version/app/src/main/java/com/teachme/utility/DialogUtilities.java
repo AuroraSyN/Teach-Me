@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
 
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 
 public class DialogUtilities extends DialogFragment {
     private Activity mActivity;

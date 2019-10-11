@@ -3,7 +3,7 @@ package com.teachme.utility;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 import com.teachme.models.content.Contents;
 import com.teachme.models.content.Item;
 import com.teachme.models.quiz.ResultModel;

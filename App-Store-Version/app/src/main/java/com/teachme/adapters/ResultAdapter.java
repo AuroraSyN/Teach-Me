@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 import com.teachme.listeners.ListItemClickListener;
 import com.teachme.models.quiz.ResultModel;
 

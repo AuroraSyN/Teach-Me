@@ -33,7 +33,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_quiz_bulb" />
 
-            <com.teachme.view.PhenomenaTextView
+            <com.teachme.PhenomenaTextView
                 android:id="@+id/first_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
                 >
             </ListView>
 
-            <com.teachme.view.PhenomenaTextView
+            <com.teachme.PhenomenaTextView
                 android:id="@+id/third_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

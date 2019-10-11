@@ -1,7 +1,7 @@
 package com.teachme.loader;
 
-import com.teachme.activity.MainActivity;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
+import com.teachme.ui.MainActivity;
 
 import java.io.BufferedReader;
 import java.io.IOException;

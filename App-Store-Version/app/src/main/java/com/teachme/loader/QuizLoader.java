@@ -3,7 +3,7 @@ package com.teachme.loader;
 import android.content.Context;
 
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,12 +22,23 @@ public class QuizLoader {
         this.stringBuffer = new StringBuffer();
         BufferedReader br = null;
         try {
-            if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_1))) {
-                br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION1)));
-            } else if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_2))) {
-                br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION2)));
-            } else if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_3))) {
-                br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION3)));
+            switch (AppConstant.SELECTED_CONTENT) {
+                case 1:
+                    if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_1))) {
+                        br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION1)));
+                    } else if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_2))) {
+                        br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION2)));
+                    } else if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_3))) {
+                        br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION3)));
+                    }
+                    break;
+                case 2:
+                    if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_1))) {
+                        br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION1)));
+                    } else if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_2))) {
+                        br = new BufferedReader(new InputStreamReader(mContext.getAssets().open(AppConstant.QUESTION2)));
+                    }
+                    break;
             }
 
             String temp;

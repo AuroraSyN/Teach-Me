@@ -1,6 +1,6 @@
 package com.teachme.parser;
 
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 import com.teachme.loader.QuizLoader;
 
 import org.json.JSONArray;

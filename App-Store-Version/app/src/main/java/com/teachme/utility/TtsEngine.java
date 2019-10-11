@@ -7,7 +7,7 @@ import android.speech.tts.TextToSpeech;
 import android.widget.Toast;
 
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 
 import java.util.ArrayList;
 import java.util.Locale;

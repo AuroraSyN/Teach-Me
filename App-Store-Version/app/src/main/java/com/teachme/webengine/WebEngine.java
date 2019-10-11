@@ -20,8 +20,8 @@ import android.webkit.WebViewClient;
 import androidx.fragment.app.Fragment;
 
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
-import com.teachme.data.preference.AppPreference;
+import com.teachme.database.constant.AppConstant;
+import com.teachme.database.preference.AppPreference;
 import com.teachme.listeners.WebListener;
 import com.teachme.utility.FilePickerUtilities;
 import com.teachme.utility.PermissionUtilities;

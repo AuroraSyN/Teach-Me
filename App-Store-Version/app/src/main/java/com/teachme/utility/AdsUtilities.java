@@ -10,7 +10,7 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.teachme.R;
-import com.teachme.data.constant.AppConstant;
+import com.teachme.database.constant.AppConstant;
 
 public class AdsUtilities {
 
