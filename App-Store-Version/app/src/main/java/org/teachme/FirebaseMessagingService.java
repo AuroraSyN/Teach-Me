@@ -38,7 +38,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             Map<String, String> params = remoteMessage.getData();
 
             if (AppPreference.getInstance(FirebaseMessagingService.this).isNotificationOn()) {
-
                 sendNotification(params.get("title"), params.get("message"), params.get("url"));
                 broadcastNewNotification();
             }

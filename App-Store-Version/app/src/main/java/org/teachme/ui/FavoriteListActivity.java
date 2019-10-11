@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdView;
 import org.teachme.R;
 import org.teachme.adapters.FavoriteAdapter;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.database.preference.AppPreference;
 import org.teachme.database.sqlite.FavoriteDbController;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.favorite.FavoriteModel;
@@ -63,7 +64,11 @@ public class FavoriteListActivity extends BaseActivity {
         setContentView(R.layout.activity_favorite_list);
 
         mRecycler = findViewById(R.id.rvFavorite);
-        mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        if (AppPreference.getInstance(mContext).isWidescreenOn()) {
+            mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        } else{
+            mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        }
         mFavoriteAdapter = new FavoriteAdapter(mContext, mActivity, mDetailsList);
         mRecycler.setAdapter(mFavoriteAdapter);
 

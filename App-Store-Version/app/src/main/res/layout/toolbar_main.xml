@@ -44,39 +44,52 @@
 
                 <ImageButton
                     android:id="@+id/imgBtnTutorial"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="250dp"
+                    android:layout_marginEnd="@dimen/margin_230dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/ic_dev"
+                    android:background="@drawable/ic_tutorial_white"
                     android:clickable="true"
                     android:contentDescription="@string/app_name"
                     android:focusable="true" />
 
                 <ImageButton
                     android:id="@+id/imgBtnInterview"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="180dp"
+                    android:layout_marginEnd="@dimen/margin_180dp"
                     android:layout_marginStart="10dp"
-                    android:background="@drawable/ic_dev"
+                    android:background="@drawable/ic_interview_white"
                     android:clickable="true"
                     android:contentDescription="@string/app_name"
                     android:focusable="true" />
 
                 <ImageButton
                     android:id="@+id/imgBtnVideo"
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="110dp"
-                    android:background="@drawable/ic_dev"
+                    android:layout_marginEnd="@dimen/margin_130dp"
+                    android:background="@drawable/ic_video_white"
+                    android:clickable="true"
+                    android:contentDescription="@string/app_name"
+                    android:focusable="true" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnQuiz"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_80dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/ic_quiz_white"
                     android:clickable="true"
                     android:contentDescription="@string/app_name"
                     android:focusable="true" />

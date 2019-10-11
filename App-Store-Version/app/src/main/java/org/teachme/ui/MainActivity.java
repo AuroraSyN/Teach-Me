@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
     public Button mContentSelectorButton;
     private Activity mActivity;
     private RelativeLayout mNotificationView;
-    private ImageButton mImgBtnSearch, mImgBtnInterview, mImgBtnVideo, mImgBtnTutorial;
+    private ImageButton mImgBtnSearch, mImgBtnInterview, mImgBtnVideo, mImgBtnTutorial, mImgBtnQuiz;
     private RecyclerView mRecycler;
     private String[] popUpContents;
     private AppPreference appPreference;
@@ -151,6 +151,7 @@ public class MainActivity extends BaseActivity {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(newNotificationReceiver);
         AppPreference.mEditor.putString("content_selector", mContentSelectorButton.getText().toString());
         AppPreference.mEditor.putInt("selected_content", AppConstant.SELECTED_CONTENT);
+        AppPreference.mEditor.putBoolean(AppConstant.PREF_WIDESCREEN, AppConstant.WIDESCREEN_MODE);
         AppPreference.mEditor.commit();
         AppPreference.mEditor.apply();
     }
@@ -182,10 +183,17 @@ public class MainActivity extends BaseActivity {
         mImgBtnInterview = findViewById(R.id.imgBtnInterview);
         mImgBtnVideo = findViewById(R.id.imgBtnVideo);
         mImgBtnTutorial = findViewById(R.id.imgBtnTutorial);
+        mImgBtnQuiz = findViewById(R.id.imgBtnQuiz);
         mRecycler = findViewById(R.id.rvContent);
         mContentSelectorButton = findViewById(R.id.content_selector);
         mAppMode = findViewById(R.id.toolbarTitle);
-        mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
+
+        if (AppConstant.WIDESCREEN_MODE == true) {
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.HORIZONTAL, false));
+        } else{
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
+        }
+
         mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
         mRecycler.setAdapter(mAdapter);
 
@@ -234,6 +242,13 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        mImgBtnQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+            }
+        });
+
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
@@ -242,6 +257,7 @@ public class MainActivity extends BaseActivity {
             }
 
         });
+
 
         View.OnClickListener handler = new View.OnClickListener() {
             public void onClick(View v) {

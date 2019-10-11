@@ -21,7 +21,7 @@
     <string name="developer_detail">Germany, Lampertheim-Hofheim</string>
 
     <string name="developer_message">
-                                     Engine: 2.6.1
+                                     Engine: 2.6.3
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
@@ -114,6 +114,8 @@
     <string name="pref_notification_summ">Turn on/off notification</string>
     <string name="pref_text_title">Text size</string>
     <string name="select_size">Select text size</string>
+    <string name="pref_widescreen_title">Widescreen</string>
+    <string name="pref_widescreen_summ">Turn on/off widescreen</string>
 
     <string name="small_text">Small</string>
     <string name="default_text">Normal</string>
@@ -134,6 +136,9 @@
     <string name="app_mode_1">Tutorial</string>
     <string name="app_mode_2">Interview</string>
     <string name="app_mode_3">Video</string>
+
+    <string name="set_true">True</string>
+    <string name="set_false">False</string>
 
     <string name="first_time">First time: default value</string>
 

@@ -5,17 +5,17 @@
         <menu>
             <item
                 android:id="@+id/action_tutorial"
-                android:icon="@drawable/ic_error"
+                android:icon="@drawable/ic_tutorial"
                 android:title="@string/site_menu_tutorial" />
 
             <item
                 android:id="@+id/action_interview"
-                android:icon="@drawable/ic_error"
+                android:icon="@drawable/ic_interview"
                 android:title="@string/site_menu_interview" />
 
             <item
                 android:id="@+id/action_video"
-                android:icon="@drawable/ic_error"
+                android:icon="@drawable/ic_video"
                 android:title="@string/site_menu_video" />
 
             <item

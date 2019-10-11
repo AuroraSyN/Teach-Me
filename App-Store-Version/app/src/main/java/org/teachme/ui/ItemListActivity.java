@@ -16,6 +16,7 @@ import org.teachme.R;
 import org.teachme.adapters.ItemAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.constant.EnglishVideoURL;
+import org.teachme.database.preference.AppPreference;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.content.Contents;
 import org.teachme.models.content.Item;
@@ -60,8 +61,11 @@ public class ItemListActivity extends BaseActivity {
         setContentView(R.layout.activity_item_list);
 
         mRecycler = findViewById(R.id.rvContent);
-        mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.VERTICAL, false));
-
+        if (AppPreference.getInstance(mContext).isWidescreenOn()) {
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.HORIZONTAL, false));
+        } else{
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.VERTICAL, false));
+        }
         initLoader();
         initToolbar(true);
         setToolbarTitle(mContent.getTitle());

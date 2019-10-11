@@ -73,6 +73,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         setContentView(R.layout.activity_score_card);
 
         mRecyclerResult = findViewById(R.id.rvContent);
+
         mRecyclerResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
 

@@ -67,10 +67,10 @@ public class AppConstant {
     public static final float TRANSPARENT_CIRCLE_RADIUS = 65f;
     public static final int ANIMATION_VALUE = 1400;
 
-    // notification constants
+    // settings constants
     public static final String PREF_NOTIFICATION = "perf_notification";
     public static final String PREF_FONT_SIZE = "pref_font_size";
-
+    public static final String PREF_WIDESCREEN = "perf_widescreen";
 
     // Tutorial files
     public static final String COMPUTER_SCIENCE_TUTORIAL = "json/Tutorial/English/Computer Science.json";
@@ -93,6 +93,7 @@ public class AppConstant {
     public static String SELECTED_QUEST = "";
     public static int SELECTED_CONTENT = 1;
     public static int APP_MODE = 0;
+    public static boolean WIDESCREEN_MODE = false;
     public static String APP_MODE_0 = null;
     public static String APP_MODE_1 = null;
     public static String APP_MODE_2 = null;

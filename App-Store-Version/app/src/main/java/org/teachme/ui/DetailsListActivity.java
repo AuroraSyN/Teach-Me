@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdView;
 import org.teachme.R;
 import org.teachme.adapters.DetailsAdapter;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.database.preference.AppPreference;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.content.Item;
 import org.teachme.utility.ActivityUtilities;
@@ -59,8 +60,11 @@ public class DetailsListActivity extends BaseActivity {
         setContentView(R.layout.activity_details_list);
 
         mRecycler = findViewById(R.id.rvContent);
-        mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
-
+        if (AppPreference.getInstance(mContext).isWidescreenOn()) {
+            mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
+        } else{
+            mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
+        }
         initLoader();
         initToolbar(true);
         setToolbarTitle(mItem.getTagLine());
