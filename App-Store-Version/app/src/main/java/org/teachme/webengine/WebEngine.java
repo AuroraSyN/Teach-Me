@@ -63,16 +63,29 @@ public class WebEngine {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setDefaultTextEncodingName("utf-8");
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+
+        webView.getSettings().setSupportZoom(true);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setDisplayZoomControls(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setUseWideViewPort(true);
+
+        webView.setScrollBarStyle(WebView.SCROLLBARS_INSIDE_OVERLAY);
+        webView.setScrollbarFadingEnabled(true);
+        webView.setHorizontalScrollBarEnabled(true);
+
         if (!isNetworkAvailable(mContext)) {
             webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         }
 
         if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.SMALLER);
-        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))) {
             webView.getSettings().setTextSize(WebSettings.TextSize.NORMAL);
-        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.large_text))) {
+        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))) {
             webView.getSettings().setTextSize(WebSettings.TextSize.LARGER);
+        } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.large_text))) {
+            webView.getSettings().setTextSize(WebSettings.TextSize.LARGEST);
         }
     }
 
@@ -119,7 +132,6 @@ public class WebEngine {
                 mVideoViewer.dismiss();
                 mVideoViewCallback.onCustomViewHidden();
             }
-
 
         });
 

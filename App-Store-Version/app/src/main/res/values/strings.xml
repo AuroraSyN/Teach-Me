@@ -25,7 +25,7 @@
         for students at many universities. The app should serve as a tutor, or rather replace
         a tutor. With the help of this app, students should improve their knowledge.
 
-                                     Engine: 2.8.0
+                                     Engine: 2.8.3
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
@@ -135,12 +135,12 @@
     <string name="content_selector_2">Scripts::2</string>
 
     <string name="site_menu_interview">Interview</string>
-    <string name="site_menu_tutorial">Tutorial</string>
-    <string name="site_menu_video">Video</string>
+    <string name="site_menu_tutorial">Lectures</string>
+    <string name="site_menu_video">Video Tutorial</string>
 
-    <string name="app_mode_1">Tutorial</string>
-    <string name="app_mode_2">Interview</string>
-    <string name="app_mode_3">Video</string>
+    <string name="app_mode_1">Lectures</string>
+    <string name="app_mode_2">Question and Answer</string>
+    <string name="app_mode_3">Video Tutorial</string>
 
     <string name="textsize_small">Text size is small</string>
     <string name="textsize_normal">Text size is normal</string>
