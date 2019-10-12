@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.ui.MainActivity;
 
 public class AppPreference {
 
@@ -22,25 +23,49 @@ public class AppPreference {
         mSettingsPreferences = PreferenceManager.getDefaultSharedPreferences(mContext);
         mEditor = mSharedPreferences.edit();
 
+        initListener();
+    }
+
+    private void initListener(){
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-                if (key.equals(AppConstant.PREF_NOTIFICATION)){
-                    if (AppPreference.getInstance(mContext).isNotificationOn() == true){
-                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.set_true),
+
+                if (key.equals(AppConstant.PREF_FONT_SIZE)){
+                    if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))){
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.textsize_small),
                                 Toast.LENGTH_SHORT).show();
-                    } else{
-                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.set_false),
+                    }
+                    if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))){
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.textsize_normal),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.large_text))){
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.textsize_large),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
+
+                if (key.equals(AppConstant.PREF_NOTIFICATION)){
+                    if (AppPreference.getInstance(mContext).isNotificationOn() == true){
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.notification_true),
+                                Toast.LENGTH_SHORT).show();
+                    } else{
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.notification_false),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 if (key.equals(AppConstant.PREF_WIDESCREEN)) {
                     if (AppPreference.getInstance(mContext).isWidescreenOn() == true){
                         AppConstant.WIDESCREEN_MODE = true;
-                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.set_true) + "",
+                        MainActivity.updateLayout();
+                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.widescreen_true),
                                 Toast.LENGTH_SHORT).show();
+
                     } else {
                         AppConstant.WIDESCREEN_MODE = false;
-                        Toast.makeText(mContext.getApplicationContext(),  mContext.getString(R.string.set_false),
+                        MainActivity.updateLayout();
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.widescreen_false),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }

@@ -49,16 +49,12 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-    public static Context mContext;
     private static TextView mAppMode;
     private static ArrayList<Contents> mContentList;
     private static ContentAdapter mAdapter = null;
-    public PopupWindow popupWindow;
-    public Button mContentSelectorButton;
-    private Activity mActivity;
+
     private RelativeLayout mNotificationView;
     private ImageButton mImgBtnSearch, mImgBtnInterview, mImgBtnVideo, mImgBtnTutorial, mImgBtnQuiz;
-    private RecyclerView mRecycler;
     private String[] popUpContents;
     private AppPreference appPreference;
     private BroadcastReceiver newNotificationReceiver = new BroadcastReceiver() {
@@ -68,6 +64,13 @@ public class MainActivity extends BaseActivity {
             initNotification();
         }
     };
+
+    public PopupWindow popupWindow;
+    public Button mContentSelectorButton;
+
+    public static RecyclerView mRecycler;
+    public static Context mContext;
+    public static Activity mActivity;
 
     public static void loadJson() {
         TutorialLoader tutorialLoader = new TutorialLoader();
@@ -113,8 +116,10 @@ public class MainActivity extends BaseActivity {
         appPreference = AppPreference.getInstance(mContext);
 
         if (AppPreference.mSharedPreferences != null) {
-            mContentSelectorButton.setText(AppPreference.mSharedPreferences.getString("content_selector", "Touch Me for change"));
-            AppConstant.SELECTED_CONTENT = AppPreference.mSharedPreferences.getInt("selected_content", 1);
+            mContentSelectorButton.setText(AppPreference.mSharedPreferences.
+                    getString("content_selector", "Touch Me for change"));
+            AppConstant.SELECTED_CONTENT = AppPreference.mSharedPreferences.
+                    getInt("selected_content", 1);
         } else {
             Toast toast = Toast.makeText(mContext, getString(R.string.first_time), Toast.LENGTH_SHORT);
             toast.show();
@@ -126,7 +131,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private ArrayAdapter<String> contentAdapter(String[] array) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, array) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 String item = getItem(position);
@@ -149,7 +155,8 @@ public class MainActivity extends BaseActivity {
     protected void onPause() {
         super.onPause();
         LocalBroadcastManager.getInstance(this).unregisterReceiver(newNotificationReceiver);
-        AppPreference.mEditor.putString("content_selector", mContentSelectorButton.getText().toString());
+        AppPreference.mEditor.putString("content_selector",
+                mContentSelectorButton.getText().toString());
         AppPreference.mEditor.putInt("selected_content", AppConstant.SELECTED_CONTENT);
         AppPreference.mEditor.putBoolean(AppConstant.PREF_WIDESCREEN, AppConstant.WIDESCREEN_MODE);
         AppPreference.mEditor.commit();
@@ -160,7 +167,8 @@ public class MainActivity extends BaseActivity {
     protected void onResume() {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter(AppConstant.NEW_NOTI);
-        LocalBroadcastManager.getInstance(this).registerReceiver(newNotificationReceiver, intentFilter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(newNotificationReceiver,
+                intentFilter);
         initNotification();
         AdsUtilities.getInstance(mContext).loadFullScreenAd(mActivity);
     }
@@ -188,18 +196,26 @@ public class MainActivity extends BaseActivity {
         mContentSelectorButton = findViewById(R.id.content_selector);
         mAppMode = findViewById(R.id.toolbarTitle);
 
-        if (AppConstant.WIDESCREEN_MODE == true) {
-            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.HORIZONTAL, false));
-        } else{
-            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 2, GridLayoutManager.VERTICAL, false));
-        }
+        updateLayout();
 
-        mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
         mRecycler.setAdapter(mAdapter);
-
         initToolbar(false);
         initDrawer();
         initLoader();
+
+    }
+
+    public static void updateLayout(){
+        if (!AppConstant.WIDESCREEN_MODE) {
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity,
+                    2, GridLayoutManager.VERTICAL, false));
+
+            mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
+
+        } else{
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity,
+                    2, GridLayoutManager.HORIZONTAL, false));
+        }
     }
 
     private void initListener() {
@@ -207,14 +223,16 @@ public class MainActivity extends BaseActivity {
         mNotificationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationListActivity.class, false);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity,
+                        NotificationListActivity.class, false);
             }
         });
 
         mImgBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, SearchActivity.class, false);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity,
+                        SearchActivity.class, false);
             }
         });
 
@@ -245,7 +263,8 @@ public class MainActivity extends BaseActivity {
         mImgBtnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity,
+                        QuizPromptActivity.class, true);
             }
         });
 
@@ -253,7 +272,8 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onItemClick(int position, View view) {
                 Contents model = mContentList.get(position);
-                ActivityUtilities.getInstance().invokeItemListActiviy(mActivity, ItemListActivity.class, model, false);
+                ActivityUtilities.getInstance().invokeItemListActiviy(mActivity,
+                        ItemListActivity.class, model, false);
             }
 
         });

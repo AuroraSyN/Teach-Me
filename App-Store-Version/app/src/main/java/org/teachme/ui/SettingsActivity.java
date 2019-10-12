@@ -18,10 +18,7 @@ public class SettingsActivity extends BaseActivity {
 
     private void initView() {
         setContentView(R.layout.activity_settings);
-
-        // replace linear layout by preference screen
         getFragmentManager().beginTransaction().replace(R.id.content, new MyPreferenceFragment()).commit();
-
         initToolbar(true);
         setToolbarTitle(getString(R.string.settings));
         enableUpButton();
