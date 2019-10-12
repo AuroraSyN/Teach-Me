@@ -12,7 +12,8 @@
     <!-- end of the ad section -->
 
 
-    <string name="privacy_url"></string>
+    <string name="privacy_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
+    <string name="faq_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
     <string name="developer_page"></string>
     <string name="alternate_dev_page"></string>
 
@@ -20,13 +21,17 @@
     <string name="developer_name">Aleksandr Soloninov</string>
     <string name="developer_detail">Germany, Lampertheim-Hofheim</string>
 
-    <string name="developer_message">
-                                     Engine: 2.6.4
+    <string name="developer_message">Teach Me - is an Android app built as part of a master thesis
+        for students at many universities. The app should serve as a tutor, or rather replace
+        a tutor. With the help of this app, students should improve their knowledge.
+
+                                     Engine: 2.7.0
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
                                      Video 0.0.1
-                                                    </string>
+    </string>
+
 
     <string name="site_menu_fav">Favorites</string>
     <string name="site_menu_delete_all">Delete All</string>

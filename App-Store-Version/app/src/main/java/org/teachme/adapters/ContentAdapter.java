@@ -57,10 +57,11 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
         // setting data over views
         String title = model.getTitle();
         mainHolder.tvTitleText.setText(Html.fromHtml(title));
+        mainHolder.tvTitleText.setTextSize(20);
 
 
         Random rand = new Random();
-        int i = rand.nextInt(6) + 1;
+        int i = rand.nextInt(7) + 1;
 
 
         switch (i) {
@@ -81,6 +82,9 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
                 break;
             case 6:
                 mainHolder.lytContainer.setBackground(ContextCompat.getDrawable(mContext, R.drawable.rectangle_deep_blue));
+                break;
+            case 7:
+                mainHolder.lytContainer.setBackground(ContextCompat.getDrawable(mContext, R.drawable.rectangle_black));
                 break;
             default:
                 break;
