@@ -20,7 +20,7 @@
 
             <item
                 android:id="@+id/action_quiz"
-                android:icon="@drawable/ic_bulb"
+                android:icon="@drawable/ic_quiz"
                 android:title="@string/site_menu_quiz" />
         </menu>
     </item>
@@ -31,6 +31,11 @@
                 android:id="@+id/action_fav"
                 android:icon="@drawable/ic_fav_gray"
                 android:title="@string/site_menu_fav" />
+
+            <item
+                android:id="@+id/action_notifications"
+                android:icon="@drawable/ic_noti_gray"
+                android:title="@string/notifications" />
 
             <item
                 android:id="@+id/action_settings"

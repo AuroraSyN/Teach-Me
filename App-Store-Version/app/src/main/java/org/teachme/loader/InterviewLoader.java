@@ -7,11 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class InterViewLoader {
+public class InterviewLoader {
 
     private StringBuffer stringBuffer = null;
 
-    public void load() {
+    public void work() {
         this.stringBuffer = new StringBuffer();
         BufferedReader br = null;
         try {

@@ -5,6 +5,7 @@ import android.preference.PreferenceFragment;
 import android.view.MenuItem;
 
 import org.teachme.R;
+import org.teachme.utility.ActivityUtilities;
 
 
 public class SettingsActivity extends BaseActivity {
@@ -28,7 +29,7 @@ public class SettingsActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
                 return true;
 
             default:

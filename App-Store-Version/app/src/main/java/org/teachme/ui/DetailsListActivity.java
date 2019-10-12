@@ -62,7 +62,7 @@ public class DetailsListActivity extends BaseActivity {
         mRecycler = findViewById(R.id.rvContent);
         if (AppPreference.getInstance(mContext).isWidescreenOn()) {
             mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.HORIZONTAL, false));
-        } else{
+        } else {
             mRecycler.setLayoutManager(new LinearLayoutManager(mActivity, LinearLayoutManager.VERTICAL, false));
         }
         initLoader();

@@ -149,6 +149,8 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             MainActivity.loadJson();
         } else if (id == R.id.action_fav) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteListActivity.class, false);
+        } else if (id == R.id.action_notifications) {
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationListActivity.class, false);
         } else if (id == R.id.action_settings) {
             ActivityUtilities.getInstance().invokeNewActivity(mActivity, SettingsActivity.class, false);
         } else if (id == R.id.action_about_dev) {
@@ -171,11 +173,9 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         if (mDrawerLayout != null && mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         }
-
         return true;
 
     }
-
 
     @Override
     public void onBackPressed() {

@@ -33,7 +33,7 @@ import org.teachme.database.preference.AppPreference;
 import org.teachme.database.sqlite.NotificationDbController;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.listeners.MainActivityListner;
-import org.teachme.loader.InterViewLoader;
+import org.teachme.loader.InterviewLoader;
 import org.teachme.loader.TutorialLoader;
 import org.teachme.loader.VideoLoader;
 import org.teachme.models.content.Contents;
@@ -49,14 +49,17 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
+    public static ArrayList<Contents> mContentList;
+    public static ContentAdapter mAdapter = null;
+    public static Context mContext;
+    public static Activity mActivity;
     private static TextView mAppMode;
-    private static ArrayList<Contents> mContentList;
-    private static ContentAdapter mAdapter = null;
-
+    public PopupWindow popupWindow;
+    public Button mContentSelectorButton;
     private RelativeLayout mNotificationView;
     private ImageButton mImgBtnSearch, mImgBtnInterview, mImgBtnVideo, mImgBtnTutorial, mImgBtnQuiz;
     private String[] popUpContents;
-    private AppPreference appPreference;
+    private RecyclerView mRecycler;
     private BroadcastReceiver newNotificationReceiver = new BroadcastReceiver() {
 
         @Override
@@ -65,30 +68,26 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-    public PopupWindow popupWindow;
-    public Button mContentSelectorButton;
-
-    public static RecyclerView mRecycler;
-    public static Context mContext;
-    public static Activity mActivity;
-
     public static void loadJson() {
+        if (mContentList != null) {
+            mContentList.clear();
+        }
         TutorialLoader tutorialLoader = new TutorialLoader();
-        InterViewLoader interViewLoader = new InterViewLoader();
+        InterviewLoader interviewLoader = new InterviewLoader();
         VideoLoader videoLoader = new VideoLoader();
         switch (AppConstant.APP_MODE) {
             case 0:
-                tutorialLoader.load();
+                tutorialLoader.work();
                 mAppMode.setText(AppConstant.APP_MODE_0);
                 parseJson(tutorialLoader.getStringBuffer());
                 break;
             case 1:
-                interViewLoader.load();
+                interviewLoader.work();
                 mAppMode.setText(AppConstant.APP_MODE_1);
-                parseJson(interViewLoader.getStringBuffer());
+                parseJson(interviewLoader.getStringBuffer());
                 break;
             case 2:
-                videoLoader.load();
+                videoLoader.work();
                 mAppMode.setText(AppConstant.APP_MODE_2);
                 parseJson(videoLoader.getStringBuffer());
                 break;
@@ -97,13 +96,7 @@ public class MainActivity extends BaseActivity {
 
     private static void parseJson(StringBuffer buffer) {
         Parser parser = new Parser(buffer.toString());
-        parser.parse();
-        if (mContentList != null) {
-            mContentList.clear();
-        }
-        mContentList.add(new Contents(parser.getTitle(), parser.getItems()));
-        hideLoader();
-        mAdapter.notifyDataSetChanged();
+        Parser.work();
     }
 
     @Override
@@ -113,42 +106,21 @@ public class MainActivity extends BaseActivity {
         initVar();
         initView();
 
-        appPreference = AppPreference.getInstance(mContext);
-
-        if (AppPreference.mSharedPreferences != null) {
+        if (AppPreference.getInstance(mContext).mSharedPreferences != null) {
             mContentSelectorButton.setText(AppPreference.mSharedPreferences.
-                    getString("content_selector", "Touch Me for change"));
+                    getString("content_selector", getString(R.string.content_selector_button_title)));
             AppConstant.SELECTED_CONTENT = AppPreference.mSharedPreferences.
                     getInt("selected_content", 1);
+            AppConstant.WIDESCREEN_MODE = AppPreference.mSharedPreferences.getBoolean("widescreen_mode", false);
         } else {
             Toast toast = Toast.makeText(mContext, getString(R.string.first_time), Toast.LENGTH_SHORT);
             toast.show();
             mContentSelectorButton.setText(getString(R.string.content_selector_button_title));
             AppConstant.SELECTED_CONTENT = 1;
+            AppConstant.WIDESCREEN_MODE = false;
         }
         loadData();
         initListener();
-    }
-
-    private ArrayAdapter<String> contentAdapter(String[] array) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, array) {
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                String item = getItem(position);
-                String[] itemArr = item.split("::");
-                String text = itemArr[0];
-                String id = itemArr[1];
-                TextView listItem = new TextView(MainActivity.this);
-                listItem.setText(text);
-                listItem.setTag(id);
-                listItem.setTextSize(22);
-                listItem.setPadding(10, 10, 10, 10);
-                listItem.setTextColor(Color.WHITE);
-                return listItem;
-            }
-        };
-        return adapter;
     }
 
     @Override
@@ -178,6 +150,27 @@ public class MainActivity extends BaseActivity {
         AppUtilities.tapPromptToExit(mActivity);
     }
 
+    private ArrayAdapter<String> contentAdapter(String[] array) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, array) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                String item = getItem(position);
+                String[] itemArr = item.split("::");
+                String text = itemArr[0];
+                String id = itemArr[1];
+                TextView listItem = new TextView(MainActivity.this);
+                listItem.setText(text);
+                listItem.setTag(id);
+                listItem.setTextSize(22);
+                listItem.setPadding(10, 10, 10, 10);
+                listItem.setTextColor(Color.WHITE);
+                return listItem;
+            }
+        };
+        return adapter;
+    }
+
     private void initVar() {
         mActivity = MainActivity.this;
         mContext = getApplicationContext();
@@ -195,9 +188,7 @@ public class MainActivity extends BaseActivity {
         mRecycler = findViewById(R.id.rvContent);
         mContentSelectorButton = findViewById(R.id.content_selector);
         mAppMode = findViewById(R.id.toolbarTitle);
-
         updateLayout();
-
         mRecycler.setAdapter(mAdapter);
         initToolbar(false);
         initDrawer();
@@ -205,17 +196,44 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public static void updateLayout(){
+    public void updateLayout() {
         if (!AppConstant.WIDESCREEN_MODE) {
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity,
-                    2, GridLayoutManager.VERTICAL, false));
-
-            mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
-
-        } else{
+                    3, GridLayoutManager.VERTICAL, false));
+        } else {
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity,
-                    2, GridLayoutManager.HORIZONTAL, false));
+                    8, GridLayoutManager.HORIZONTAL, false));
         }
+        mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
+    }
+
+    public void initNotification() {
+        NotificationDbController notificationDbController = new NotificationDbController(mContext);
+        TextView notificationCount = findViewById(R.id.notificationCount);
+        notificationCount.setVisibility(View.INVISIBLE);
+        ArrayList<NotificationModel> notiArrayList = notificationDbController.getUnreadData();
+        if (notiArrayList != null && !notiArrayList.isEmpty()) {
+            int totalUnread = notiArrayList.size();
+            if (totalUnread > 0) {
+                notificationCount.setVisibility(View.VISIBLE);
+                notificationCount.setText(String.valueOf(totalUnread));
+            } else {
+                notificationCount.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    public PopupWindow popupWindow() {
+        PopupWindow popupWindow = new PopupWindow(this);
+        ListView listViewContent = new ListView(this);
+        listViewContent.setAdapter(contentAdapter(popUpContents));
+        listViewContent.setOnItemClickListener(new MainActivityListner());
+        popupWindow.setFocusable(true);
+        Display mDisplay = getWindowManager().getDefaultDisplay();
+        popupWindow.setWidth(mDisplay.getWidth());
+        popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
+        popupWindow.setContentView(listViewContent);
+        return popupWindow;
     }
 
     private void initListener() {
@@ -306,33 +324,5 @@ public class MainActivity extends BaseActivity {
         AdsUtilities.getInstance(mContext).showBannerAd((AdView) findViewById(R.id.adsView));
     }
 
-    public void initNotification() {
-        NotificationDbController notificationDbController = new NotificationDbController(mContext);
-        TextView notificationCount = findViewById(R.id.notificationCount);
-        notificationCount.setVisibility(View.INVISIBLE);
-        ArrayList<NotificationModel> notiArrayList = notificationDbController.getUnreadData();
-        if (notiArrayList != null && !notiArrayList.isEmpty()) {
-            int totalUnread = notiArrayList.size();
-            if (totalUnread > 0) {
-                notificationCount.setVisibility(View.VISIBLE);
-                notificationCount.setText(String.valueOf(totalUnread));
-            } else {
-                notificationCount.setVisibility(View.INVISIBLE);
-            }
-        }
-    }
-
-    public PopupWindow popupWindow() {
-        PopupWindow popupWindow = new PopupWindow(this);
-        ListView listViewContent = new ListView(this);
-        listViewContent.setAdapter(contentAdapter(popUpContents));
-        listViewContent.setOnItemClickListener(new MainActivityListner());
-        popupWindow.setFocusable(true);
-        Display mDisplay = getWindowManager().getDefaultDisplay();
-        popupWindow.setWidth(mDisplay.getWidth());
-        popupWindow.setHeight(WindowManager.LayoutParams.WRAP_CONTENT);
-        popupWindow.setContentView(listViewContent);
-        return popupWindow;
-    }
 
 }

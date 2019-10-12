@@ -17,21 +17,21 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="@dimen/margin_15dp">
 
             <ImageView
                 android:id="@+id/quiz_light"
-                android:layout_width="@dimen/margin_100dp"
-                android:layout_height="@dimen/margin_100dp"
+                android:layout_width="355dp"
+                android:layout_height="112dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="@dimen/margin_30dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/margin_10dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_quiz_bulb" />
+                android:src="@drawable/ic_quiz" />
 
             <org.teachme.PhenomenaTextView
                 android:id="@+id/first_text"

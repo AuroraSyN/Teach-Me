@@ -11,7 +11,7 @@ public class VideoLoader {
 
     private StringBuffer stringBuffer = null;
 
-    public void load() {
+    public void work() {
         this.stringBuffer = new StringBuffer();
         BufferedReader br = null;
         try {

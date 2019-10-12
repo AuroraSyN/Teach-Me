@@ -54,11 +54,8 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
     public void onBindViewHolder(ContentAdapter.ViewHolder mainHolder, int position) {
         final Contents model = mContentList.get(position);
 
-        // setting data over views
         String title = model.getTitle();
         mainHolder.tvTitleText.setText(Html.fromHtml(title));
-        mainHolder.tvTitleText.setTextSize(20);
-
 
         Random rand = new Random();
         int i = rand.nextInt(7) + 1;
@@ -103,12 +100,9 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
             super(itemView);
 
             this.itemClickListener = itemClickListener;
-            // Find all views ids
             lytContainer = itemView.findViewById(R.id.lyt_container);
             tvTitleText = itemView.findViewById(R.id.title_text);
-
             lytContainer.setOnClickListener(this);
-
         }
 
         @Override

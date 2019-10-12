@@ -62,8 +62,8 @@ public class ItemListActivity extends BaseActivity {
 
         mRecycler = findViewById(R.id.rvContent);
         if (AppPreference.getInstance(mContext).isWidescreenOn()) {
-            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.HORIZONTAL, false));
-        } else{
+            mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 8, GridLayoutManager.HORIZONTAL, false));
+        } else {
             mRecycler.setLayoutManager(new GridLayoutManager(mActivity, 3, GridLayoutManager.VERTICAL, false));
         }
         initLoader();

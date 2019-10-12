@@ -1,10 +1,106 @@
 {
   "items": [
     {
-      "title": "Computer Science | Tutorial",
+      "title": "Adaptive Software Development",
+      "content": [
+        {
+          "tag_line": "Template 1 ",
+          "details": [
+            ""
+          ]
+        },
+        {
+          "tag_line": "Template 2 ",
+          "details": [
+            ""
+          ]
+        },
+        {
+          "tag_line": "Template 3 ",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Agile Methodology",
+      "content": [
+        {
+          "tag_line": "Template 111 ",
+          "details": [
+            ""
+          ]
+        },
+        {
+          "tag_line": "Template 222 ",
+          "details": [
+            ""
+          ]
+        },
+        {
+          "tag_line": "Template 333 ",
+          "details": [
+            ""
+          ]
+        },
+        {
+          "tag_line": "Template 444 ",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Agile Data Science",
       "content": [
         {
           "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Computer Programming",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Inter Process Communication",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Basics of Computers",
+      "content": [
+        {
+          "tag_line": "Template",
+          "details": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Basics of Computer Science",
+      "content": [
+        {
+          "tag_line": "Template lo",
           "details": [
             ""
           ]

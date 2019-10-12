@@ -24,19 +24,19 @@ public class SplashActivity extends AppCompatActivity {
     private Context mContext;
     private Activity mActivity;
     private ImageView mImageView;
-   private Animation mAnimation_1;
+    private Animation mAnimation_1;
     private ProgressBar mProgressBar;
-        private RelativeLayout mRootLayout;
+    private RelativeLayout mRootLayout;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            initVar();
-            initView();
-        }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        initVar();
+        initView();
+    }
 
-        private void initVar() {
+    private void initVar() {
         mContext = getApplicationContext();
         mActivity = SplashActivity.this;
     }

@@ -66,7 +66,7 @@ public class FavoriteListActivity extends BaseActivity {
         mRecycler = findViewById(R.id.rvFavorite);
         if (AppPreference.getInstance(mContext).isWidescreenOn()) {
             mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        } else{
+        } else {
             mRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         }
         mFavoriteAdapter = new FavoriteAdapter(mContext, mActivity, mDetailsList);
