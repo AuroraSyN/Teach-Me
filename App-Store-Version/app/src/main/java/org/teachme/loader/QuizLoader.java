@@ -22,6 +22,36 @@ public class QuizLoader {
         this.stringBuffer = new StringBuffer();
         BufferedReader br = null;
         try {
+
+                        /*
+            if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
+                    MainActivity.mContext.getString(R.string.language_english)
+            )) {
+                switch (AppConstant.SELECTED_CONTENT) {
+                    case 1: {
+                        br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.COMPUTER_SCIENCE_INTERVIEW)));
+                        break;
+                    }
+                    case 2: {
+                        br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.SCRIPTS_JOURNEY_INTERVIEW)));
+                        break;
+                    }
+                }
+            } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
+                    MainActivity.mContext.getString(R.string.language_german)
+            )) {
+
+                // German
+
+            } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
+                    MainActivity.mContext.getString(R.string.language_russian)
+            )) {
+
+                // Russian
+
+            }
+            */
+
             switch (AppConstant.SELECTED_CONTENT) {
                 case 1:
                     if (AppConstant.SELECTED_QUEST.equals(mContext.getString(R.string.quest_selector_1))) {

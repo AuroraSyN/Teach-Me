@@ -13,7 +13,6 @@ public class SettingsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initView();
     }
 
@@ -30,6 +29,7 @@ public class SettingsActivity extends BaseActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
+                finish();
                 return true;
 
             default:

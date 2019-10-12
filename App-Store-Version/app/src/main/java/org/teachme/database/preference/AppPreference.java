@@ -41,6 +41,29 @@ public class AppPreference {
         preferenceChangeListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
 
+                if (key.equals(AppConstant.PREF_NOTIFICATION)) {
+                    if (AppPreference.getInstance(mContext).isNotificationOn()) {
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.notification_true),
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.notification_false),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                if (key.equals(AppConstant.PREF_WIDESCREEN)) {
+                    if (AppPreference.getInstance(mContext).isWidescreenOn()) {
+                        AppConstant.WIDESCREEN_MODE = true;
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.widescreen_true),
+                                Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        AppConstant.WIDESCREEN_MODE = false;
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.widescreen_false),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 if (key.equals(AppConstant.PREF_FONT_SIZE)) {
                     if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))) {
                         Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.textsize_small),
@@ -56,28 +79,24 @@ public class AppPreference {
                     }
                 }
 
-                if (key.equals(AppConstant.PREF_NOTIFICATION)) {
-                    if (AppPreference.getInstance(mContext).isNotificationOn() == true) {
-                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.notification_true),
+                if (key.equals(AppConstant.PREF_LANGUAGE)) {
+                    if (AppPreference.getInstance(mContext).getLanguage().equals(mContext.getResources().getString(R.string.language_english))) {
+                        AppConstant.LANGUAGE = mContext.getString(R.string.language_english);
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.language_english),
                                 Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.notification_false),
+                    }
+                    if (AppPreference.getInstance(mContext).getLanguage().equals(mContext.getResources().getString(R.string.language_german))) {
+                        AppConstant.LANGUAGE = mContext.getString(R.string.language_german);
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.language_german),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    if (AppPreference.getInstance(mContext).getLanguage().equals(mContext.getResources().getString(R.string.language_russian))) {
+                        AppConstant.LANGUAGE = mContext.getString(R.string.language_russian);
+                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.language_russian),
                                 Toast.LENGTH_SHORT).show();
                     }
                 }
 
-                if (key.equals(AppConstant.PREF_WIDESCREEN)) {
-                    if (AppPreference.getInstance(mContext).isWidescreenOn() == true) {
-                        AppConstant.WIDESCREEN_MODE = true;
-                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.widescreen_true),
-                                Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        AppConstant.WIDESCREEN_MODE = false;
-                        Toast.makeText(mContext.getApplicationContext(), mContext.getString(R.string.widescreen_false),
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
             }
         };
         mSettingsPreferences.registerOnSharedPreferenceChangeListener(preferenceChangeListener);
@@ -106,6 +125,10 @@ public class AppPreference {
 
     public boolean isWidescreenOn() {
         return mSettingsPreferences.getBoolean(AppConstant.PREF_WIDESCREEN, false);
+    }
+
+    public String getLanguage() {
+        return mSettingsPreferences.getString(AppConstant.PREF_LANGUAGE, mContext.getResources().getString(R.string.default_language));
     }
 
 }

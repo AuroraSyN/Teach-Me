@@ -7,4 +7,10 @@
         <item>@string/large_text</item>
     </string-array>
 
+    <string-array name="languages_entries">
+        <item>@string/language_english</item>
+        <item>@string/language_german</item>
+        <item>@string/language_russian</item>
+    </string-array>
+
 </resources>

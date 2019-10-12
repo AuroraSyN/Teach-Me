@@ -25,7 +25,7 @@
         for students at many universities. The app should serve as a tutor, or rather replace
         a tutor. With the help of this app, students should improve their knowledge.
 
-                                     Engine: 2.7.7
+                                     Engine: 2.8.0
                                      Content 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
@@ -149,6 +149,13 @@
     <string name="notification_false">Notification turn off</string>
     <string name="widescreen_true">Widescreen turn on</string>
     <string name="widescreen_false">Widescreen turn off</string>
+
+    <string name="default_language">English</string>
+    <string name="language_english">English</string>
+    <string name="language_german">German</string>
+    <string name="language_russian">Russian</string>
+    <string name="select_language">Select language</string>
+    <string name="pref_language_title">Content language</string>
 
     <string name="first_time">First time: default value</string>
 

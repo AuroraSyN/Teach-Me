@@ -18,7 +18,6 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -100,42 +99,6 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        RateItDialogFragment.show(this, getSupportFragmentManager());
-        initVar();
-        initView();
-
-        if (AppPreference.getInstance(mContext).mSharedPreferences != null) {
-            mContentSelectorButton.setText(AppPreference.mSharedPreferences.
-                    getString("content_selector", getString(R.string.content_selector_button_title)));
-            AppConstant.SELECTED_CONTENT = AppPreference.mSharedPreferences.
-                    getInt("selected_content", 1);
-            AppConstant.WIDESCREEN_MODE = AppPreference.mSharedPreferences.getBoolean("widescreen_mode", false);
-        } else {
-            Toast toast = Toast.makeText(mContext, getString(R.string.first_time), Toast.LENGTH_SHORT);
-            toast.show();
-            mContentSelectorButton.setText(getString(R.string.content_selector_button_title));
-            AppConstant.SELECTED_CONTENT = 1;
-            AppConstant.WIDESCREEN_MODE = false;
-        }
-        loadData();
-        initListener();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(newNotificationReceiver);
-        AppPreference.mEditor.putString("content_selector",
-                mContentSelectorButton.getText().toString());
-        AppPreference.mEditor.putInt("selected_content", AppConstant.SELECTED_CONTENT);
-        AppPreference.mEditor.putBoolean(AppConstant.PREF_WIDESCREEN, AppConstant.WIDESCREEN_MODE);
-        AppPreference.mEditor.commit();
-        AppPreference.mEditor.apply();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter(AppConstant.NEW_NOTI);
@@ -205,6 +168,42 @@ public class MainActivity extends BaseActivity {
                     8, GridLayoutManager.HORIZONTAL, false));
         }
         mAdapter = new ContentAdapter(mContext, mActivity, mContentList);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        RateItDialogFragment.show(this, getSupportFragmentManager());
+        initVar();
+        initView();
+
+        if (AppPreference.getInstance(mContext).mSharedPreferences != null) {
+
+            mContentSelectorButton.setText(AppPreference.mSharedPreferences.
+                    getString("content_selector", getString(R.string.content_selector_button_title)));
+
+            AppConstant.SELECTED_CONTENT = AppPreference.mSharedPreferences.
+                    getInt("selected_content", 1);
+
+            AppConstant.WIDESCREEN_MODE = AppPreference.mSharedPreferences.
+                    getBoolean("widescreen_mode", false);
+        }
+
+        loadData();
+        initListener();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(newNotificationReceiver);
+        AppPreference.mEditor.putString("content_selector",
+                mContentSelectorButton.getText().toString());
+        AppPreference.mEditor.putInt("selected_content", AppConstant.SELECTED_CONTENT);
+        AppPreference.mEditor.putString("language", AppConstant.LANGUAGE);
+        AppPreference.mEditor.putBoolean(AppConstant.PREF_WIDESCREEN, AppConstant.WIDESCREEN_MODE);
+        AppPreference.mEditor.commit();
+        AppPreference.mEditor.apply();
     }
 
     public void initNotification() {

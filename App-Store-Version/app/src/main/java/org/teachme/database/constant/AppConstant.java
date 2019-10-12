@@ -71,6 +71,7 @@ public class AppConstant {
     public static final String PREF_NOTIFICATION = "perf_notification";
     public static final String PREF_FONT_SIZE = "pref_font_size";
     public static final String PREF_WIDESCREEN = "perf_widescreen";
+    public static final String PREF_LANGUAGE = "pref_language";
 
     // Tutorial files
     public static final String COMPUTER_SCIENCE_TUTORIAL = "json/Tutorial/English/Computer Science.json";
@@ -92,10 +93,16 @@ public class AppConstant {
 
     public static String SELECTED_QUEST = "";
     public static int SELECTED_CONTENT = 1;
-    public static int APP_MODE = 0;
+
     public static boolean WIDESCREEN_MODE = false;
+
+    public static int APP_MODE = 0;
     public static String APP_MODE_0 = null;
     public static String APP_MODE_1 = null;
     public static String APP_MODE_2 = null;
+
+    public static String LANGUAGE = "";
+
+
 
 }
