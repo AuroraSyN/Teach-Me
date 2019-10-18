@@ -20,7 +20,7 @@ import org.teachme.utility.ActivityUtilities;
 public class SplashActivity extends AppCompatActivity {
 
     // Constants
-    private static final int SPLASH_DURATION = 1650;
+    private static final int SPLASH_DURATION = 750;
     private Context mContext;
     private Activity mActivity;
     private ImageView mImageView;

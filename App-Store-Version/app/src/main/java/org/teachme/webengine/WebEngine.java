@@ -65,7 +65,6 @@ public class WebEngine {
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
-
         webView.getSettings().setSupportZoom(true);
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(true);
@@ -81,11 +80,11 @@ public class WebEngine {
         }
 
         if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.small_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.NORMAL);
+            webView.getSettings().setTextZoom(250);
         } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.default_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.LARGER);
+            webView.getSettings().setTextZoom(300);
         } else if (AppPreference.getInstance(mContext).getTextSize().equals(mContext.getResources().getString(R.string.large_text))) {
-            webView.getSettings().setTextSize(WebSettings.TextSize.LARGEST);
+            webView.getSettings().setTextZoom(350);
         }
     }
 
@@ -184,6 +183,7 @@ public class WebEngine {
                 webView.loadUrl(GOOGLE_DOCS_VIEWER + webUrl);
                 webView.getSettings().setBuiltInZoomControls(true);
             } else {
+                webView.getSettings().setTextZoom(100);
                 webView.loadUrl(webUrl);
             }
 
