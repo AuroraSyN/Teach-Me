@@ -19,6 +19,7 @@ import org.teachme.adapters.FavoriteAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.preference.AppPreference;
 import org.teachme.database.sqlite.FavoriteDbController;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.favorite.FavoriteModel;
 import org.teachme.utility.ActivityUtilities;
@@ -28,7 +29,7 @@ import org.teachme.utility.DialogUtilities;
 import java.util.ArrayList;
 
 
-public class FavoriteListActivity extends BaseActivity {
+public class FavoriteList extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -53,7 +54,7 @@ public class FavoriteListActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = FavoriteListActivity.this;
+        mActivity = FavoriteList.this;
         mContext = mActivity.getApplicationContext();
 
         mFavouriteList = new ArrayList<>();
@@ -123,7 +124,7 @@ public class FavoriteListActivity extends BaseActivity {
                 final FavoriteModel model = mFavouriteList.get(position);
                 switch (view.getId()) {
                     case R.id.lyt_container:
-                        ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, DetailsActivity.class, position, mDetailsList, false);
+                        ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, Details.class, position, mDetailsList, false);
                         break;
                     case R.id.btn_delete:
                         FragmentManager manager = getSupportFragmentManager();

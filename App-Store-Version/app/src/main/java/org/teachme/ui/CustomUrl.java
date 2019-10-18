@@ -9,15 +9,16 @@ import android.webkit.WebView;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.engine.Base;
+import org.teachme.engine.WebEngine;
 import org.teachme.listeners.WebListener;
 import org.teachme.utility.AdsUtilities;
 import org.teachme.utility.AppUtilities;
 import org.teachme.utility.FilePickerUtilities;
 import org.teachme.utility.PermissionUtilities;
-import org.teachme.webengine.WebEngine;
 
 
-public class CustomUrlActivity extends BaseActivity {
+public class CustomUrl extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -39,7 +40,7 @@ public class CustomUrlActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = CustomUrlActivity.this;
+        mActivity = CustomUrl.this;
         mContext = mActivity.getApplicationContext();
 
         Intent intent = getIntent();
@@ -165,7 +166,7 @@ public class CustomUrlActivity extends BaseActivity {
 
     private void goToHome() {
         if (mFromPush) {
-            Intent intent = new Intent(CustomUrlActivity.this, MainActivity.class);
+            Intent intent = new Intent(CustomUrl.this, Main.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

@@ -27,6 +27,7 @@ import org.teachme.adapters.QuizAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.preference.AppPreference;
 import org.teachme.database.preference.PrefKey;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.loader.QuizLoader;
 import org.teachme.models.quiz.QuizModel;
@@ -43,7 +44,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class QuizActivity extends BaseActivity implements RewardedVideoAdListener, DialogUtilities.OnCompleteListener {
+public class Quiz extends Base implements RewardedVideoAdListener, DialogUtilities.OnCompleteListener {
 
     ArrayList<String> mOptionList;
     ArrayList<String> mBackgroundColorList;
@@ -86,7 +87,7 @@ public class QuizActivity extends BaseActivity implements RewardedVideoAdListene
     }
 
     private void initVar() {
-        mActivity = QuizActivity.this;
+        mActivity = Quiz.this;
         mContext = mActivity.getApplicationContext();
 
         mItemList = new ArrayList<>();
@@ -376,7 +377,7 @@ public class QuizActivity extends BaseActivity implements RewardedVideoAdListene
             DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.reward_dialog_title), getString(R.string.reward_dialog_message), getString(R.string.yes), getString(R.string.no), AppConstant.BUNDLE_KEY_REWARD_OPTION);
             dialog.show(manager, AppConstant.BUNDLE_KEY_DIALOG_FRAGMENT);
         } else {
-            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCardActivity.class, mScore, mWrongAns, mSkip, mResultList, true);
+            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCard.class, mScore, mWrongAns, mSkip, mResultList, true);
         }
     }
 
@@ -418,7 +419,7 @@ public class QuizActivity extends BaseActivity implements RewardedVideoAdListene
     public void onComplete(Boolean isOkPressed, String viewIdText) {
         if (isOkPressed) {
             if (viewIdText.equals(AppConstant.BUNDLE_KEY_CLOSE_OPTION)) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
             } else if (viewIdText.equals(AppConstant.BUNDLE_KEY_SKIP_OPTION)) {
                 mSkip++;
                 mIsSkipped = true;
@@ -430,7 +431,7 @@ public class QuizActivity extends BaseActivity implements RewardedVideoAdListene
                 mRewardedVideoAd.show();
             }
         } else if (!isOkPressed && viewIdText.equals(AppConstant.BUNDLE_KEY_REWARD_OPTION)) {
-            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCardActivity.class, mScore, mWrongAns, mSkip, mResultList, true);
+            ActivityUtilities.getInstance().invokeScoreCardActivity(mActivity, ScoreCard.class, mScore, mWrongAns, mSkip, mResultList, true);
         }
     }
 }

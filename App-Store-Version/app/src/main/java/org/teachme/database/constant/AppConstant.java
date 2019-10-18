@@ -43,10 +43,7 @@ public class AppConstant {
     public static final String DIRECTORY = "drawable/" + "result_";
 
     // GLOBAL
-    public static final String GLOBAL = "json/Tutorial/Global.json";
-    public static final String JOURNEY = "json/Interview/Global.json";
-    public static final String VIDEO = "json/Video/Global.json";
-
+    public static final String GLOBAL = "json/Global.json";
 
     // Parser
     public static final String JSON_KEY_ITEMS = "items";
@@ -74,8 +71,8 @@ public class AppConstant {
     public static final String PREF_LANGUAGE = "pref_language";
 
     // Tutorial files
-    public static final String COMPUTER_SCIENCE_TUTORIAL = "json/Tutorial/English/Computer Science.json";
-    public static final String SCRIPTS_TUTORIAL = "json/Tutorial/English/Scripts.json";
+    public static final String COMPUTER_SCIENCE_TUTORIAL = "json/Lectures/English/Computer Science.json";
+    public static final String SCRIPTS_TUTORIAL = "json/Lectures/English/Scripts.json";
 
     // Interview files
     public static final String COMPUTER_SCIENCE_INTERVIEW = "json/Interview/English/Computer Science.json";

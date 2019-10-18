@@ -26,13 +26,14 @@ import com.google.android.gms.ads.AdView;
 import org.teachme.R;
 import org.teachme.adapters.ResultAdapter;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.engine.Base;
 import org.teachme.models.quiz.ResultModel;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
 
 import java.util.ArrayList;
 
-public class ScoreCardActivity extends BaseActivity implements OnChartValueSelectedListener {
+public class ScoreCard extends Base implements OnChartValueSelectedListener {
 
     private Activity mActivity;
     private Context mContext;
@@ -57,7 +58,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
     }
 
     private void initVar() {
-        mActivity = ScoreCardActivity.this;
+        mActivity = ScoreCard.this;
         mContext = mActivity.getApplicationContext();
 
         Intent intent = getIntent();
@@ -140,7 +141,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
         mBtnPlayAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPrompt.class, true);
             }
         });
     }
@@ -188,7 +189,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
                 return true;
 
         }
@@ -197,7 +198,7 @@ public class ScoreCardActivity extends BaseActivity implements OnChartValueSelec
 
     @Override
     public void onBackPressed() {
-        ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+        ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
     }
 
 }

@@ -16,6 +16,7 @@ import org.teachme.R;
 import org.teachme.adapters.DetailsAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.preference.AppPreference;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.content.Item;
 import org.teachme.utility.ActivityUtilities;
@@ -24,7 +25,7 @@ import org.teachme.utility.AdsUtilities;
 import java.util.ArrayList;
 
 
-public class DetailsListActivity extends BaseActivity {
+public class DetailsList extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -46,7 +47,7 @@ public class DetailsListActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = DetailsListActivity.this;
+        mActivity = DetailsList.this;
         mContext = mActivity.getApplicationContext();
 
         Intent intent = getIntent();
@@ -89,7 +90,7 @@ public class DetailsListActivity extends BaseActivity {
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-                ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, DetailsActivity.class, position, mItemList, false);
+                ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, Details.class, position, mItemList, false);
             }
 
         });

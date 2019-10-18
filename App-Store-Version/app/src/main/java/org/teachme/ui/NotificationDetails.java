@@ -13,10 +13,11 @@ import com.google.android.gms.ads.AdView;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.engine.Base;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
 
-public class NotificationDetailsActivity extends BaseActivity {
+public class NotificationDetails extends Base {
 
     private Context mContext;
     private Activity mActivity;
@@ -29,7 +30,7 @@ public class NotificationDetailsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mActivity = NotificationDetailsActivity.this;
+        mActivity = NotificationDetails.this;
         mContext = mActivity.getApplicationContext();
 
         initVar();
@@ -78,7 +79,7 @@ public class NotificationDetailsActivity extends BaseActivity {
         mLinkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class, mTitle, mUrl, false);
+                ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrl.class, mTitle, mUrl, false);
             }
         });
     }
@@ -103,7 +104,7 @@ public class NotificationDetailsActivity extends BaseActivity {
 
     private void goToHome() {
         if (mFromPush) {
-            Intent intent = new Intent(NotificationDetailsActivity.this, MainActivity.class);
+            Intent intent = new Intent(NotificationDetails.this, Main.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

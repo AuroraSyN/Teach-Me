@@ -10,18 +10,18 @@ import android.widget.TextView;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
-import org.teachme.ui.MainActivity;
+import org.teachme.ui.Main;
 
 public class MainActivityListner implements OnItemClickListener {
 
-    private MainActivity mainActivity = null;
+    private Main mainActivity = null;
     private String selectedItemText = null;
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View v, int arg2, long arg3) {
 
         Context mContext = v.getContext();
-        this.mainActivity = ((MainActivity) mContext);
+        this.mainActivity = ((Main) mContext);
 
         Animation fadeInAnimation = AnimationUtils.loadAnimation(v.getContext(), android.R.anim.fade_in);
         fadeInAnimation.setDuration(10);
@@ -35,17 +35,17 @@ public class MainActivityListner implements OnItemClickListener {
 
         if (selectedItemText.equals(mContext.getString(R.string.content_selector_1).substring(0, mContext.getString(R.string.content_selector_1).length() - 3))) {
             AppConstant.SELECTED_CONTENT = Integer.parseInt(selectedItemTag);
-            MainActivity.loadJson();
+            Main.loadJson();
             mainActivity.mContentSelectorButton.setText(selectedItemText);
         } else if (selectedItemText.equals(mContext.getString(R.string.content_selector_2).substring(0, mContext.getString(R.string.content_selector_2).length() - 3))) {
             AppConstant.SELECTED_CONTENT = Integer.parseInt(selectedItemTag);
-            MainActivity.loadJson();
+            Main.loadJson();
             mainActivity.mContentSelectorButton.setText(selectedItemText);
         }
     }
 
     private void doIt() {
-        MainActivity.loadJson();
+        Main.loadJson();
         mainActivity.mContentSelectorButton.setText(selectedItemText);
     }
 

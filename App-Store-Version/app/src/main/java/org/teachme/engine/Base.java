@@ -1,4 +1,4 @@
-package org.teachme.ui;
+package org.teachme.engine;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,13 +18,20 @@ import com.google.android.material.navigation.NavigationView;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.ui.AboutDev;
+import org.teachme.ui.CustomUrl;
+import org.teachme.ui.FavoriteList;
+import org.teachme.ui.Main;
+import org.teachme.ui.NotificationList;
+import org.teachme.ui.QuizPrompt;
+import org.teachme.ui.Settings;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
 import org.teachme.utility.AppUtilities;
 import org.teachme.utility.DialogUtilities;
 
 
-public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
+public class Base extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, DialogUtilities.OnCompleteListener {
 
     private static LinearLayout mLoadingView, mNoDataView;
     private Context mContext;
@@ -46,7 +53,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mActivity = BaseActivity.this;
+        mActivity = Base.this;
         mContext = mActivity.getApplicationContext();
 
         // uncomment this line to disable ads from entire application
@@ -137,24 +144,24 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         // main items
         if (id == R.id.action_quiz) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPromptActivity.class, true);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizPrompt.class, true);
         } else if (id == R.id.action_tutorial) {
             AppConstant.APP_MODE = 0;
-            MainActivity.loadJson();
+            Main.loadJson();
         } else if (id == R.id.action_interview) {
             AppConstant.APP_MODE = 1;
-            MainActivity.loadJson();
+            Main.loadJson();
         } else if (id == R.id.action_video) {
             AppConstant.APP_MODE = 2;
-            MainActivity.loadJson();
+            Main.loadJson();
         } else if (id == R.id.action_fav) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteListActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, FavoriteList.class, false);
         } else if (id == R.id.action_notifications) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationListActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, NotificationList.class, false);
         } else if (id == R.id.action_settings) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, SettingsActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, Settings.class, false);
         } else if (id == R.id.action_about_dev) {
-            ActivityUtilities.getInstance().invokeNewActivity(mActivity, AboutDevActivity.class, false);
+            ActivityUtilities.getInstance().invokeNewActivity(mActivity, AboutDev.class, false);
         }
 
         // others
@@ -163,7 +170,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.action_rate_app) {
             AppUtilities.rateThisApp(mActivity);
         } else if (id == R.id.privacy_policy) {
-            ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class, getResources().getString(R.string.privacy), getResources().getString(R.string.privacy_url), false);
+            ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrl.class, getResources().getString(R.string.privacy), getResources().getString(R.string.privacy_url), false);
         } else if (id == R.id.action_exit) {
             FragmentManager manager = getSupportFragmentManager();
             DialogUtilities dialog = DialogUtilities.newInstance(getString(R.string.exit), getString(R.string.close_prompt), getString(R.string.yes), getString(R.string.no), AppConstant.BUNDLE_KEY_EXIT_OPTION);

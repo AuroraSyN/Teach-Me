@@ -5,10 +5,11 @@ import android.preference.PreferenceFragment;
 import android.view.MenuItem;
 
 import org.teachme.R;
+import org.teachme.engine.Base;
 import org.teachme.utility.ActivityUtilities;
 
 
-public class SettingsActivity extends BaseActivity {
+public class Settings extends Base {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class SettingsActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                ActivityUtilities.getInstance().invokeNewActivity(MainActivity.mActivity, MainActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(Main.mActivity, Main.class, true);
                 finish();
                 return true;
 

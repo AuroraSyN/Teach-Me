@@ -6,12 +6,12 @@
             <item
                 android:id="@+id/action_tutorial"
                 android:icon="@drawable/ic_tutorial"
-                android:title="@string/site_menu_tutorial" />
+                android:title="@string/site_menu_lectures" />
 
             <item
                 android:id="@+id/action_interview"
                 android:icon="@drawable/ic_interview"
-                android:title="@string/site_menu_interview" />
+                android:title="@string/site_menu_Q_A" />
 
             <item
                 android:id="@+id/action_video"

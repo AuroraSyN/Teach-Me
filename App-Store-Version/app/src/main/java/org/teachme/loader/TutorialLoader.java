@@ -1,7 +1,7 @@
 package org.teachme.loader;
 
 import org.teachme.database.constant.AppConstant;
-import org.teachme.ui.MainActivity;
+import org.teachme.ui.Main;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,27 +17,27 @@ public class TutorialLoader {
         try {
 
                         /*
-            if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
-                    MainActivity.mContext.getString(R.string.language_english)
+            if (AppPreference.getInstance(Main.mContext).getLanguage().equals(
+                    Main.mContext.getString(R.string.language_english)
             )) {
                 switch (AppConstant.SELECTED_CONTENT) {
                     case 1: {
-                        br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.COMPUTER_SCIENCE_INTERVIEW)));
+                        br = new BufferedReader(new InputStreamReader(Main.mContext.getAssets().open(AppConstant.COMPUTER_SCIENCE_INTERVIEW)));
                         break;
                     }
                     case 2: {
-                        br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.SCRIPTS_JOURNEY_INTERVIEW)));
+                        br = new BufferedReader(new InputStreamReader(Main.mContext.getAssets().open(AppConstant.SCRIPTS_JOURNEY_INTERVIEW)));
                         break;
                     }
                 }
-            } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
-                    MainActivity.mContext.getString(R.string.language_german)
+            } else if (AppPreference.getInstance(Main.mContext).getLanguage().equals(
+                    Main.mContext.getString(R.string.language_german)
             )) {
 
                 // German
 
-            } else if (AppPreference.getInstance(MainActivity.mContext).getLanguage().equals(
-                    MainActivity.mContext.getString(R.string.language_russian)
+            } else if (AppPreference.getInstance(Main.mContext).getLanguage().equals(
+                    Main.mContext.getString(R.string.language_russian)
             )) {
 
                 // Russian
@@ -47,10 +47,10 @@ public class TutorialLoader {
 
             switch (AppConstant.SELECTED_CONTENT) {
                 case 1:
-                    br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.COMPUTER_SCIENCE_TUTORIAL)));
+                    br = new BufferedReader(new InputStreamReader(Main.mContext.getAssets().open(AppConstant.COMPUTER_SCIENCE_TUTORIAL)));
                     break;
                 case 2:
-                    br = new BufferedReader(new InputStreamReader(MainActivity.mContext.getAssets().open(AppConstant.SCRIPTS_TUTORIAL)));
+                    br = new BufferedReader(new InputStreamReader(Main.mContext.getAssets().open(AppConstant.SCRIPTS_TUTORIAL)));
                     break;
             }
             String temp;

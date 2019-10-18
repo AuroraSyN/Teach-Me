@@ -1,4 +1,4 @@
-package org.teachme.utility;
+package org.teachme.engine;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -12,7 +12,7 @@ import org.teachme.database.constant.AppConstant;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class TtsEngine {
+public class Tts {
 
     private TextToSpeech mTextToSpeech;
     private Locale mLocale;
@@ -21,7 +21,7 @@ public class TtsEngine {
 
     private PlayStatusListener playStatusListener;
 
-    public TtsEngine(Activity activity) {
+    public Tts(Activity activity) {
         mActivity = activity;
         mLocale = new Locale(AppConstant.TTS_LOCALE);
     }

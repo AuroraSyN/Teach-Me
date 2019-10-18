@@ -15,17 +15,17 @@ import com.google.android.gms.ads.AdView;
 import org.teachme.R;
 import org.teachme.adapters.ItemAdapter;
 import org.teachme.database.constant.AppConstant;
-import org.teachme.database.constant.EnglishVideoURL;
 import org.teachme.database.preference.AppPreference;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.content.Contents;
 import org.teachme.models.content.Item;
-import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
+import org.teachme.utility.ItemSelector;
 
 import java.util.ArrayList;
 
-public class ItemListActivity extends BaseActivity {
+public class ItemList extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -47,7 +47,7 @@ public class ItemListActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = ItemListActivity.this;
+        mActivity = ItemList.this;
         mContext = mActivity.getApplicationContext();
 
         Intent intent = getIntent();
@@ -93,37 +93,11 @@ public class ItemListActivity extends BaseActivity {
             @Override
             public void onItemClick(int position, View view) {
                 Item model = mItemList.get(position);
-                if (model.getDetails().size() > 1) {
-                    ActivityUtilities.getInstance().invokeDetailsListActiviy(mActivity, DetailsListActivity.class, model, false);
-                } else {
-                    switch (mItemList.get(position).getTagLine()) {
-                        case "Connecting to SQL Server using SSMS - Part 1":
-                            ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class,
-                                    mItemList.get(position).getDetails().toString().substring(1, mItemList.get(position).getDetails().toString().length() - 1),
-                                    EnglishVideoURL.DATABASE_URL_1, false);
-                            break;
-                        case "Creating altering and dropping a database - Part 2":
-
-                            ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class,
-                                    mItemList.get(position).getDetails().toString().substring(1, mItemList.get(position).getDetails().toString().length() - 1),
-                                    EnglishVideoURL.DATABASE_URL_2, false);
-                            break;
-
-                        case "Creating and working with tables - Part 3":
-                            ActivityUtilities.getInstance().invokeCustomUrlActivity(mActivity, CustomUrlActivity.class,
-                                    mItemList.get(position).getDetails().toString().substring(1, mItemList.get(position).getDetails().toString().length() - 1),
-                                    EnglishVideoURL.DATABASE_URL_3, false);
-                            break;
-                        default:
-                            ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, DetailsActivity.class, position, model.getDetails(), false);
-                            break;
-                    }
-                }
+                ItemSelector itemSelector = new ItemSelector(mActivity, mItemList, model, position);
+                itemSelector.work();
             }
-
         });
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

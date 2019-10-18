@@ -4,8 +4,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import org.teachme.R;
+import org.teachme.engine.Base;
 
-public class AboutDevActivity extends BaseActivity {
+public class AboutDev extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import org.teachme.R;
 import org.teachme.adapters.DetailsAdapter;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
@@ -27,7 +28,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class SearchActivity extends BaseActivity {
+public class Search extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -47,7 +48,7 @@ public class SearchActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = SearchActivity.this;
+        mActivity = Search.this;
         mContext = mActivity.getApplicationContext();
 
         mItemList = new ArrayList<>();
@@ -81,7 +82,8 @@ public class SearchActivity extends BaseActivity {
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-                ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, DetailsActivity.class, position, mSearchList, false);
+                //TODO mSearchList
+                ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, Details.class, position, mSearchList, false);
             }
 
         });
@@ -159,17 +161,7 @@ public class SearchActivity extends BaseActivity {
         StringBuffer sb = new StringBuffer();
         BufferedReader br = null;
         try {
-            switch (AppConstant.APP_MODE) {
-                case 0:
-                    br = new BufferedReader(new InputStreamReader(getAssets().open(AppConstant.GLOBAL)));
-                    break;
-                case 1:
-                    br = new BufferedReader(new InputStreamReader(getAssets().open(AppConstant.JOURNEY)));
-                    break;
-                case 2:
-                    br = new BufferedReader(new InputStreamReader(getAssets().open(AppConstant.VIDEO)));
-                    break;
-            }
+            br = new BufferedReader(new InputStreamReader(getAssets().open(AppConstant.GLOBAL)));
             String temp;
             while ((temp = br.readLine()) != null)
                 sb.append(temp);

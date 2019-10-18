@@ -25,8 +25,8 @@
         for students at many universities. The app should serve as a tutor, or rather replace
         a tutor. With the help of this app, students should improve their knowledge.
 
-                                     Engine: 2.8.6
-                                     Content 0.0.1
+                                     Engine: 2.9.0
+                                     Lectures 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
                                      Video 0.0.1
@@ -133,8 +133,8 @@
     <string name="content_selector_1">Computer Science::1</string>
     <string name="content_selector_2">Scripts::2</string>
 
-    <string name="site_menu_interview">Interview</string>
-    <string name="site_menu_tutorial">Lectures</string>
+    <string name="site_menu_Q_A">Question and Answer</string>
+    <string name="site_menu_lectures">Lectures</string>
     <string name="site_menu_video">Video Tutorial</string>
 
     <string name="app_mode_1">Lectures</string>

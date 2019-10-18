@@ -19,8 +19,8 @@ import com.google.firebase.messaging.RemoteMessage;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.preference.AppPreference;
 import org.teachme.database.sqlite.NotificationDbController;
-import org.teachme.ui.CustomUrlActivity;
-import org.teachme.ui.NotificationDetailsActivity;
+import org.teachme.ui.CustomUrl;
+import org.teachme.ui.NotificationDetails;
 
 import java.util.Map;
 
@@ -53,12 +53,12 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
         Intent intent;
         if (url != null || url.trim().length() != 0) {
-            intent = new Intent(this, CustomUrlActivity.class);
+            intent = new Intent(this, CustomUrl.class);
             intent.putExtra(AppConstant.BUNDLE_KEY_TITLE, title);
             intent.putExtra(AppConstant.BUNDLE_KEY_URL, url);
             intent.putExtra(AppConstant.BUNDLE_FROM_PUSH, true);
         } else {
-            intent = new Intent(this, NotificationDetailsActivity.class);
+            intent = new Intent(this, NotificationDetails.class);
             intent.putExtra(AppConstant.BUNDLE_KEY_TITLE, title);
             intent.putExtra(AppConstant.BUNDLE_KEY_MESSAGE, messageBody);
             intent.putExtra(AppConstant.BUNDLE_KEY_URL, url);

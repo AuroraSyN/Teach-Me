@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdView;
 
 import org.teachme.R;
 import org.teachme.database.constant.AppConstant;
+import org.teachme.engine.Base;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
 
@@ -22,7 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class QuizPromptActivity extends BaseActivity {
+public class QuizPrompt extends Base {
 
     private Activity mActivity;
     private Context mContext;
@@ -42,7 +43,7 @@ public class QuizPromptActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = QuizPromptActivity.this;
+        mActivity = QuizPrompt.this;
         mContext = mActivity.getApplicationContext();
     }
 
@@ -65,13 +66,13 @@ public class QuizPromptActivity extends BaseActivity {
         mBtnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, QuizActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, Quiz.class, true);
             }
         });
         mBtnNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
             }
         });
 
@@ -115,7 +116,7 @@ public class QuizPromptActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+                ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -123,7 +124,7 @@ public class QuizPromptActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+        ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
     }
 
 }

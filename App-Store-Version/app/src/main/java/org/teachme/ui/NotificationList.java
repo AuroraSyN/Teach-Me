@@ -19,6 +19,7 @@ import org.teachme.R;
 import org.teachme.adapters.NotificationAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.sqlite.NotificationDbController;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.notification.NotificationModel;
 import org.teachme.utility.AdsUtilities;
@@ -26,7 +27,7 @@ import org.teachme.utility.DialogUtilities;
 
 import java.util.ArrayList;
 
-public class NotificationListActivity extends BaseActivity {
+public class NotificationList extends Base {
 
     private Context mContext;
     private Activity mActivity;
@@ -41,7 +42,7 @@ public class NotificationListActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mActivity = NotificationListActivity.this;
+        mActivity = NotificationList.this;
         mContext = mActivity.getApplicationContext();
 
         initVar();
@@ -105,7 +106,7 @@ public class NotificationListActivity extends BaseActivity {
             public void onItemClick(int position, View view) {
                 mNotificationDbController.updateStatus(mNotificationList.get(position).getId(), true);
 
-                Intent intent = new Intent(mContext, NotificationDetailsActivity.class);
+                Intent intent = new Intent(mContext, NotificationDetails.class);
                 intent.putExtra(AppConstant.BUNDLE_KEY_TITLE, mNotificationList.get(position).getTitle());
                 intent.putExtra(AppConstant.BUNDLE_KEY_MESSAGE, mNotificationList.get(position).getMessage());
                 intent.putExtra(AppConstant.BUNDLE_KEY_URL, mNotificationList.get(position).getUrl());

@@ -17,10 +17,10 @@ import org.teachme.R;
 import org.teachme.utility.ActivityUtilities;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     // Constants
-    private static final int SPLASH_DURATION = 750;
+    private static final int SPLASH_DURATION = 450;
     private Context mContext;
     private Activity mActivity;
     private ImageView mImageView;
@@ -38,7 +38,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void initVar() {
         mContext = getApplicationContext();
-        mActivity = SplashActivity.this;
+        mActivity = Splash.this;
     }
 
     private void initView() {
@@ -64,7 +64,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        ActivityUtilities.getInstance().invokeNewActivity(mActivity, MainActivity.class, true);
+                        ActivityUtilities.getInstance().invokeNewActivity(mActivity, Main.class, true);
                     }
 
                     @Override

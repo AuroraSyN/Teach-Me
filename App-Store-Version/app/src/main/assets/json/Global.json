@@ -22,6 +22,32 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Database | Video",
+      "content": [
+        {
+          "tag_line": "Connecting to SQL Server using SSMS - Part 1",
+          "url": 1,
+          "details": [
+            "Connecting to SQL Server using SSMS - Part 1"
+          ]
+        },
+        {
+          "tag_line": "Creating altering and dropping a database - Part 2",
+          "url": 2,
+          "details": [
+            "Creating altering and dropping a database - Part 2"
+          ]
+        },
+        {
+          "tag_line": "Creating and working with tables - Part 3",
+          "url": 3,
+          "details": [
+            "Creating and working with tables - Part 3"
+          ]
+        }
+      ]
     }
   ]
 }

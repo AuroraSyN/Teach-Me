@@ -6,11 +6,11 @@ import org.json.JSONObject;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.models.content.Contents;
 import org.teachme.models.content.Item;
-import org.teachme.ui.MainActivity;
+import org.teachme.ui.Main;
 
 import java.util.ArrayList;
 
-import static org.teachme.ui.BaseActivity.hideLoader;
+import static org.teachme.engine.Base.hideLoader;
 
 public class Parser {
 
@@ -45,12 +45,12 @@ public class Parser {
                     }
                     items.add(new Item(tag_line, detailList));
                 }
-                MainActivity.mContentList.add(new Contents(title, items));
+                Main.mContentList.add(new Contents(title, items));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         hideLoader();
-        MainActivity.mAdapter.notifyDataSetChanged();
+        Main.mAdapter.notifyDataSetChanged();
     }
 }

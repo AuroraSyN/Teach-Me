@@ -30,6 +30,7 @@ import org.teachme.adapters.ContentAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.preference.AppPreference;
 import org.teachme.database.sqlite.NotificationDbController;
+import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
 import org.teachme.listeners.MainActivityListner;
 import org.teachme.loader.InterviewLoader;
@@ -46,7 +47,7 @@ import org.teachme.utility.RateItDialogFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class Main extends Base {
 
     public static ArrayList<Contents> mContentList;
     public static ContentAdapter mAdapter = null;
@@ -122,7 +123,7 @@ public class MainActivity extends BaseActivity {
                 String[] itemArr = item.split("::");
                 String text = itemArr[0];
                 String id = itemArr[1];
-                TextView listItem = new TextView(MainActivity.this);
+                TextView listItem = new TextView(Main.this);
                 listItem.setText(text);
                 listItem.setTag(id);
                 listItem.setTextSize(22);
@@ -135,7 +136,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = MainActivity.this;
+        mActivity = Main.this;
         mContext = getApplicationContext();
         mContentList = new ArrayList<>();
     }
@@ -241,7 +242,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity,
-                        NotificationListActivity.class, false);
+                        NotificationList.class, false);
             }
         });
 
@@ -249,7 +250,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity,
-                        SearchActivity.class, false);
+                        Search.class, false);
             }
         });
 
@@ -281,7 +282,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 ActivityUtilities.getInstance().invokeNewActivity(mActivity,
-                        QuizPromptActivity.class, true);
+                        QuizPrompt.class, true);
             }
         });
 
@@ -290,7 +291,7 @@ public class MainActivity extends BaseActivity {
             public void onItemClick(int position, View view) {
                 Contents model = mContentList.get(position);
                 ActivityUtilities.getInstance().invokeItemListActiviy(mActivity,
-                        ItemListActivity.class, model, false);
+                        ItemList.class, model, false);
             }
 
         });

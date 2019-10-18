@@ -23,14 +23,15 @@ import org.teachme.R;
 import org.teachme.adapters.DetailPagerAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.database.sqlite.FavoriteDbController;
+import org.teachme.engine.Base;
+import org.teachme.engine.Tts;
 import org.teachme.models.favorite.FavoriteModel;
 import org.teachme.utility.AdsUtilities;
-import org.teachme.utility.TtsEngine;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetailsActivity extends BaseActivity {
+public class Details extends Base {
     private Activity mActivity;
     private Context mContext;
     private ArrayList<String> mItemList;
@@ -48,7 +49,7 @@ public class DetailsActivity extends BaseActivity {
     private boolean mIsFavorite = false;
 
 
-    private TtsEngine mTtsEngine;
+    private Tts mTts;
     private boolean mIsTtsPlaying = false;
     private String mTtsText;
     private MenuItem menuItemTTS;
@@ -65,7 +66,7 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initVar() {
-        mActivity = DetailsActivity.this;
+        mActivity = Details.this;
         mContext = mActivity.getApplicationContext();
 
         mFavoriteList = new ArrayList<>();
@@ -109,7 +110,7 @@ public class DetailsActivity extends BaseActivity {
         mFavoriteList.addAll(mFavoriteDbController.getAllData());
         isFavorite();
 
-        mTtsEngine = new TtsEngine(mActivity);
+        mTts = new Tts(mActivity);
 
         updateCounter();
 
@@ -264,14 +265,14 @@ public class DetailsActivity extends BaseActivity {
 
     private void toggleTtsPlay(boolean isPageScrolledWhilePlaying) {
         if (mIsTtsPlaying & !isPageScrolledWhilePlaying) {
-            mTtsEngine.releaseEngine();
+            mTts.releaseEngine();
             mIsTtsPlaying = false;
         } else if (mIsTtsPlaying & isPageScrolledWhilePlaying) {
-            mTtsEngine.releaseEngine();
-            mTtsEngine.startEngine(mTtsText);
+            mTts.releaseEngine();
+            mTts.startEngine(mTtsText);
             mIsTtsPlaying = true;
         } else {
-            mTtsEngine.startEngine(mTtsText);
+            mTts.startEngine(mTtsText);
             mIsTtsPlaying = true;
         }
         toggleTtsView();
@@ -288,13 +289,13 @@ public class DetailsActivity extends BaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mTtsEngine.releaseEngine();
+        mTts.releaseEngine();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mTtsEngine.releaseEngine();
+        mTts.releaseEngine();
     }
 
     @Override
