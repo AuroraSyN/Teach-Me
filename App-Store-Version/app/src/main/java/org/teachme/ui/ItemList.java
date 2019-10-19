@@ -21,7 +21,7 @@ import org.teachme.listeners.ListItemClickListener;
 import org.teachme.models.content.Contents;
 import org.teachme.models.content.Item;
 import org.teachme.utility.AdsUtilities;
-import org.teachme.utility.ItemSelector;
+import org.teachme.utility.ItemUtilities;
 
 import java.util.ArrayList;
 
@@ -53,7 +53,11 @@ public class ItemList extends Base {
         Intent intent = getIntent();
         if (intent != null) {
             mContent = intent.getParcelableExtra(AppConstant.BUNDLE_KEY_ITEM);
-            mItemList = mContent.getItems();
+            try {
+                mItemList = mContent.getItems();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -93,8 +97,8 @@ public class ItemList extends Base {
             @Override
             public void onItemClick(int position, View view) {
                 Item model = mItemList.get(position);
-                ItemSelector itemSelector = new ItemSelector(mActivity, mItemList, model, position);
-                itemSelector.work();
+                ItemUtilities itemUtilities = new ItemUtilities(mActivity, mItemList, model, position);
+                itemUtilities.work();
             }
         });
     }

@@ -47,7 +47,7 @@
             <ListView
                 android:id="@+id/question_list_view"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/margin_300dp"
+                android:layout_height="@dimen/margin_200dp"
                 android:layout_below="@+id/first_text"
                 android:listSelector="@drawable/list_view_selector"
                 android:choiceMode="singleChoice"
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/third_text"
-                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_10dp"
                 android:background="@drawable/rectangle_blue"
                 android:text="@string/yes"
                 android:textColor="@color/white" />
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btn_yes"
-                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginTop="@dimen/margin_10dp"
                 android:background="@drawable/rectangle_red"
                 android:text="@string/no"
                 android:textColor="@color/white" />

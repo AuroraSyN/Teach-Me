@@ -14,8 +14,8 @@
 
     <string name="privacy_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
     <string name="faq_url">https://docs.google.com/document/d/1EqcU0xmBs1o69w18JIX7BNIFjD0m6IL7nf8f_P5RQaQ/edit?usp=sharing</string>
-    <string name="developer_page"></string>
-    <string name="alternate_dev_page"></string>
+    <string name="developer_page">fill me</string>
+    <string name="alternate_dev_page">fill me</string>
 
     <!-- about developer text  -->
     <string name="developer_name">Aleksandr Soloninov</string>
@@ -25,7 +25,7 @@
         for students at many universities. The app should serve as a tutor, or rather replace
         a tutor. With the help of this app, students should improve their knowledge.
 
-                                     Engine: 2.9.0
+                                     Engine: 2.9.1
                                      Lectures 0.0.1
                                      Exam 0.0.1
                                      Interview 0.0.1
@@ -36,7 +36,7 @@
     <string name="site_menu_delete_all">Delete All</string>
     <string name="site_menu_read_article">Read Article</string>
     <string name="site_menu_stop_reading">Stop Reading</string>
-    <string name="tts_wait_msg">This article will be read in short. Please wait a while...</string>
+    <string name="tts_wait_msg">This article will be read in short. Please wait a while</string>
     <string name="tts_install_msg">Please install Language package from here</string>
     <string name="delete_all_fav_item">Do you want to Delete all the Favorite items?</string>
     <string name="delete_fav_item">Do you want to remove this item from the Favorite list?</string>

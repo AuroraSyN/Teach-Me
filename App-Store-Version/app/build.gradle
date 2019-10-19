@@ -5,10 +5,10 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "org.teachme"
-        minSdkVersion 17
+        minSdkVersion 24
         targetSdkVersion 29
-        versionCode 13
-        versionName "2.9.0"
+        versionCode 14
+        versionName "2.9.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

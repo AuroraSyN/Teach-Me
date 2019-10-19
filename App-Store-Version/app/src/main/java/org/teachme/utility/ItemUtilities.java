@@ -9,14 +9,14 @@ import org.teachme.ui.Details;
 
 import java.util.ArrayList;
 
-public class ItemSelector {
+public class ItemUtilities {
 
-    private ArrayList<Item> mItemList;
     private Activity mActivity;
+    private ArrayList<Item> mItemList;
     private Item model;
     private int position;
 
-    public ItemSelector(Activity mActivity, ArrayList<Item> mItemList, Item model, int position) {
+    public ItemUtilities(Activity mActivity, ArrayList<Item> mItemList, Item model, int position) {
         this.mActivity = mActivity;
         this.mItemList = mItemList;
         this.position = position;

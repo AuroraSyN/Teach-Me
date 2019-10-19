@@ -20,8 +20,8 @@ import org.teachme.adapters.DetailsAdapter;
 import org.teachme.database.constant.AppConstant;
 import org.teachme.engine.Base;
 import org.teachme.listeners.ListItemClickListener;
-import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
+import org.teachme.utility.SearchUtilities;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -82,10 +82,9 @@ public class Search extends Base {
         mAdapter.setItemClickListener(new ListItemClickListener() {
             @Override
             public void onItemClick(int position, View view) {
-                //TODO mSearchList
-                ActivityUtilities.getInstance().invokeDetailsActiviy(mActivity, Details.class, position, mSearchList, false);
+                SearchUtilities searchUtilities = new SearchUtilities(mActivity, mSearchList, position);
+                searchUtilities.work();
             }
-
         });
     }
 

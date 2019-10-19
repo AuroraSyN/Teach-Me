@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,6 +40,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
 
     @Override
+    @NonNull
     public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_recycler, parent, false);
         return new ItemAdapter.ViewHolder(view, viewType, mItemClickListener);
@@ -62,7 +64,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         Random rand = new Random();
         int i = rand.nextInt(6) + 1;
 
-
         switch (i) {
             case 1:
                 mainHolder.img_doc.setBackground(ContextCompat.getDrawable(mContext, R.drawable.circle_blue));
@@ -70,11 +71,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             case 2:
                 mainHolder.img_doc.setBackground(ContextCompat.getDrawable(mContext, R.drawable.circle_red));
                 break;
-
             case 3:
                 mainHolder.img_doc.setBackground(ContextCompat.getDrawable(mContext, R.drawable.circle_orange));
                 break;
-
             case 4:
                 mainHolder.img_doc.setBackground(ContextCompat.getDrawable(mContext, R.drawable.circle_purple));
                 break;
@@ -97,7 +96,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         private ListItemClickListener itemClickListener;
 
 
-        public ViewHolder(View itemView, int viewType, ListItemClickListener itemClickListener) {
+        private ViewHolder(View itemView, int viewType, ListItemClickListener itemClickListener) {
             super(itemView);
 
             this.itemClickListener = itemClickListener;

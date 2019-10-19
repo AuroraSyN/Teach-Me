@@ -2,6 +2,7 @@ package org.teachme.ui;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 
 import org.teachme.R;
@@ -32,10 +33,20 @@ public class Settings extends Base {
                 ActivityUtilities.getInstance().invokeNewActivity(Main.mActivity, Main.class, true);
                 finish();
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+                ActivityUtilities.getInstance().invokeNewActivity(Main.mActivity, Main.class, true);
+                finish();
+                return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     public static class MyPreferenceFragment extends PreferenceFragment {

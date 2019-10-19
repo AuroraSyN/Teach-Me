@@ -15,9 +15,11 @@ import static org.teachme.engine.Base.hideLoader;
 public class Parser {
 
     private static String data;
+    private static boolean flag;
 
-    public Parser(String data) {
+    public Parser(String data, boolean flag) {
         Parser.data = data;
+        Parser.flag = flag;
     }
 
     public static void work() {
@@ -51,6 +53,9 @@ public class Parser {
             e.printStackTrace();
         }
         hideLoader();
-        Main.mAdapter.notifyDataSetChanged();
+
+        if (flag) {
+            Main.mAdapter.notifyDataSetChanged();
+        }
     }
 }
