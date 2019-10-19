@@ -1,0 +1,103 @@
+{
+ "questionnaires": [
+    {
+      "question": "Java 9 Hauptziele sind",
+       "answers": [
+        "Um Prozess und Wartung von java-code-Bibliotheken und großen Anwendungen für eine JAVA SE und EE-Plattformen zu bauen.",
+        "Um ein standard-Java-Plattformmodulsystem zu entwerfen und zu implementieren, das leicht auf Plattform und JDK angewendet werden kann.",
+        "Beide der oben genannten",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Welche der folgenden ist richtig W. R. t Java-Dokumentation?",
+       "answers": [
+        "Java-Dokumentation kann mit javadoc tool generiert werden.",
+        "Java erzeugt derzeit Dokumentation im html 4.0-format.",
+        "In java 9 können wir Dokumentation im html 5-format generieren, indem wir die-html5-option in Befehlszeilenargumenten verwenden.",
+        "Alle oben genannten."
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Welche der folgenden Methoden ist korrekt Über Set in Java 9?",
+       "answers": [
+        "Für Set-Schnittstellen, ab (...) Methode wird überladen, um 0 bis 10 Parameter zu haben.",
+        "Für Set-Schnittstellen, ab (...) Methode wird überladen, um var arg als parameter zu haben.",
+        "Beide oben.",
+        "Keines der oben genannten."
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Welches der folgenden ist ein ungültiges Mitglied von interface zu Java 8?",
+       "answers": [
+        "Private Methode",
+        "Standardmethode",
+        "Eine Statische Methode.",
+        "Alle oben genannten."
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Welche der folgenden ist eine korrekte Aussage über die takeWhile () - Methode der Stream-Klasse in Java 9?",
+       "answers": [
+        "takeWhile-Methode nimmt alle Werte, bis das Prädikat false zurückgibt.",
+        "Im Falle des geordneten Streams gibt es einen stream, der aus dem längsten Präfix von Elementen besteht, die aus diesem stream stammen, der dem gegebenen Prädikat entspricht.",
+        "Beide der oben genannten",
+        "Keines der oben genannten"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "erklären Sie die folgenden allokationsalgorithmen: Best fit",
+       "answers": [
+        "Im best-fit-Ansatz ist es, die erste freie partition oder ein Loch zuzuweisen, die groß genug ist, um den Prozess aufzunehmen. Es endet nach dem finden der ersten geeigneten freien partition.",
+        "Im best-fit-Ansatz ist es möglich, größte verfügbare freie portion zu finden, so dass der restliche Teil groß genug ist, um nützlich zu sein. Es ist die Rückseite der besten Passform.",
+        "The best-fit-befasst sich mit der Zuweisung der kleinsten freien partition, die die Anforderung des anforderungsprozesses erfüllt. "
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Welche der folgenden ist eine korrekte Aussage über try-with-resources-Anweisung in Java 9?",
+       "answers": [
+        "Vor Java 9 müssen Ressourcen vor try oder in try deklariert werden.",
+        "In Java 9 müssen Ressourcen nicht vor try oder inside try-Anweisung deklariert werden.",
+        "Beide oben.",
+        "Keines der oben genannten"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "was ist der Zweck der Optionalen Klasse?",
+       "answers": [
+        "Um null-Prüfungen zu vermeiden ",
+        "Um NullPointerException-Probleme zu vermeiden ",
+        "Beide der oben genannten",
+        "Keines der oben genannten"
+      ],
+      "correct_answer": 2
+    },
+    {
+      "question": "Welche der folgenden beschreibt die getresolution variants () Methode der Multi-resolution image-interface, richtig?",
+       "answers": [
+        "Ruft ein bestimmtes Bild ab, das die beste Möglichkeit ist, dieses logische Bild in der angegebenen Größe anzuzeigen.",
+        "Es ist eine menschlich lesbare Liste aller auflösungsvarianten.",
+        "Beide der oben genannten",
+        "Keines der oben genannten"
+      ],
+      "correct_answer": 0
+    },
+    {
+      "question": "Welche der folgenden beschreibt die defaultExecutor() Methode von CompletableFuture Interface korrekt?",
+       "answers": [
+        "Diese Methode vervollständigt dies CompletableFuture mit dem angegebenen Wert, wenn nicht vor dem angegebenen timeout.",
+        "Dies vervollständigt diese außergewöhnlich vollständige Zukunft mit einer timeout-Ausnahme, wenn Sie nicht vor dem angegebenen timeout abgeschlossen ist.",
+        "Gibt ein neues unvollständig CompletableFuture der Typ zurückgegeben werden, indem eine CompletionStage Methode.",
+        "Keines der oben genannten"
+      ],
+      "correct_answer": 2
+    }
+  ]
+}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!--Difference bellow 21-->
-    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert" />
-    <!--Difference-->
-
-</resources>
