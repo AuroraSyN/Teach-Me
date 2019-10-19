@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="perf_notification"
+        android:summary="@string/pref_notification_summ"
+        android:title="@string/pref_notification_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="perf_widescreen"
+        android:summary="@string/pref_widescreen_summ"
+        android:title="@string/pref_widescreen_title" />
+
+    <ListPreference
+        android:defaultValue="@string/default_text"
+        android:dialogTitle="@string/select_size"
+        android:entries="@array/text_entries"
+        android:entryValues="@array/text_entries"
+        android:key="pref_font_size"
+        android:title="@string/pref_text_title" />
+    <!-->
+    <ListPreference
+        android:defaultValue="@string/default_language"
+        android:dialogTitle="@string/select_language"
+        android:entries="@array/languages_entries"
+        android:entryValues="@array/languages_entries"
+        android:key="pref_language"
+        android:title="@string/pref_language_title" />
+    <-->
+</PreferenceScreen>
