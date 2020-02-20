@@ -14,7 +14,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/adsView"
         android:layout_below="@id/toolbar_container"
         android:background="@color/page_bg">
 
@@ -31,8 +30,8 @@
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/piechart"
-                    android:layout_width="@dimen/margin_240dp"
-                    android:layout_height="@dimen/margin_240dp"
+                    android:layout_width="@dimen/margin_300dp"
+                    android:layout_height="@dimen/margin_300dp"
                     android:layout_centerHorizontal="true"
                     android:layout_margin="@dimen/margin_8dp" />
 
@@ -140,6 +139,7 @@
                 </LinearLayout>
 
                 <View
+                    android:id="@+id/view_1"
                     android:layout_width="match_parent"
                     android:layout_height="0.7dp"
                     android:layout_below="@id/score_container"
@@ -154,8 +154,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/lyt_graph"
                 android:layout_marginLeft="@dimen/margin_15dp"
-                android:layout_marginRight="@dimen/margin_15dp"
                 android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_15dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
@@ -163,7 +163,7 @@
                 tools:text="@string/greeting_text1" />
 
 
-            <org.teachme.PhenomenaTextView
+            <de.hsworms.inf3032.engine.Text
                 android:id="@+id/share_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -220,10 +220,6 @@
         </RelativeLayout>
 
     </ScrollView>
-
-    <include
-        android:id="@+id/adsView"
-        layout="@layout/content_banner_ad" />
 
 
 </RelativeLayout>

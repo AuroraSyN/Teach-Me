@@ -1,0 +1,24 @@
+{
+  "questionnaires": [
+    {
+      "question": "Objektlebenszyklus 1",
+      "answers": [
+        "a) 1",
+        "b) 2",
+        "c) 4",
+        "d) 5"
+      ],
+      "correct_answer": 3
+    },
+    {
+      "question": "Objektlebenszyklus 2",
+      "answers": [
+        "a) BUHAHA",
+        "b) 23412",
+        "c) 4",
+        "d) 6"
+      ],
+      "correct_answer": 3
+    }
+  ]
+}

@@ -27,6 +27,7 @@
             android:layout_below="@id/question_text">
 
             <LinearLayout
+                android:id="@+id/ans_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_4dp"
@@ -88,7 +89,7 @@
         android:layout_marginEnd="@dimen/margin_15dp"
         android:contentDescription="@string/app_name"
         android:padding="@dimen/margin_6dp"
-        tools:src="@drawable/result_1" />
+        tools:src="@drawable/check_all" />
 
     <View
         android:layout_width="match_parent"

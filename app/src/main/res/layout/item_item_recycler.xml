@@ -4,8 +4,8 @@
     android:id="@+id/lyt_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/margin_14dp"
     android:layout_marginTop="@dimen/margin_14dp"
+    android:layout_marginEnd="@dimen/margin_14dp"
     android:padding="@dimen/margin_10dp">
 
     <RelativeLayout
@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/app_name"
             android:padding="@dimen/margin_20dp"
-            android:src="@drawable/ic_doc"
+            android:src="@drawable/ic_file_document_box_multiple_outline_white_48dp"
             tools:background="@drawable/circle_blue" />
 
         <TextView

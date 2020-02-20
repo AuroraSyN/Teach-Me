@@ -40,10 +40,6 @@
 
     </ScrollView>
 
-    <include
-        android:id="@+id/adsView"
-        layout="@layout/content_banner_ad" />
-
     <include layout="@layout/view_common_loader" />
 
 </RelativeLayout>

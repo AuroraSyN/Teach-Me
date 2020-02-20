@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparent_white"
     android:fitsSystemWindows="true">
 
     <include
@@ -22,10 +23,11 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_4dp"
             android:layout_weight="1"
             android:background="@color/white" />
+
 
         <LinearLayout
             android:id="@+id/bottomPanel"
@@ -43,7 +45,7 @@
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/margin_14dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_prev" />
+                android:src="@drawable/ic_chevron_left_black_48dp" />
 
             <ImageButton
                 android:id="@+id/btn_next"
@@ -55,15 +57,11 @@
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/margin_14dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_next" />
+                android:src="@drawable/ic_chevron_right_black_48dp" />
 
         </LinearLayout>
 
     </LinearLayout>
-
-    <include
-        android:id="@+id/adsView"
-        layout="@layout/content_banner_ad" />
 
     <include layout="@layout/view_common_loader" />
 

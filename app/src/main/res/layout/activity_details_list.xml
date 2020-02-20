@@ -14,13 +14,36 @@
         android:id="@+id/rvContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/adsView"
         android:layout_below="@id/toolbarTop" />
 
-    <include
-        android:id="@+id/adsView"
-        layout="@layout/content_banner_ad" />
-
     <include layout="@layout/view_common_loader" />
+
+    <LinearLayout
+        android:id="@+id/btnSpeakContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_splash"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="1dp">
+
+        <ImageButton
+            android:id="@+id/mSpeakButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/mSpeakButtonText"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/common_google_signin_btn_icon_dark_focused" />
+
+        <TextView
+            android:id="@+id/speakTouchmeViever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/speech_hit" />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -23,8 +23,8 @@
             android:padding="@dimen/margin_15dp">
 
             <ImageView
-                android:layout_width="240dp"
-                android:layout_height="240dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_dev"
                 android:contentDescription="@string/about_dev" />
@@ -48,10 +48,89 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_15dp"
                 android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
                 android:gravity="center"
                 android:text="@string/developer_message"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/contentVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:text="@string/contentVersion"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/quizVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:text="@string/questionsVersion"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/appVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginBottom="@dimen/margin_15dp"
+                android:gravity="center"
+                android:text="@string/engineVersion"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
