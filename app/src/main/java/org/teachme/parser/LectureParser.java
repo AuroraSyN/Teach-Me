@@ -12,14 +12,14 @@ import java.util.ArrayList;
 
 import static org.teachme.engine.Base.hideLoader;
 
-public class Parser {
+public class LectureParser {
 
     private static String data;
     private static boolean flag;
 
-    public Parser(String data, boolean flag) {
-        Parser.data = data;
-        Parser.flag = flag;
+    public LectureParser(String data, boolean flag) {
+        LectureParser.data = data;
+        LectureParser.flag = flag;
     }
 
     public static void work() {

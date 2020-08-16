@@ -39,7 +39,7 @@ import org.teachme.loader.TutorialLoader;
 import org.teachme.loader.VideoLoader;
 import org.teachme.models.content.Contents;
 import org.teachme.models.notification.NotificationModel;
-import org.teachme.parser.Parser;
+import org.teachme.parser.LectureParser;
 import org.teachme.utility.ActivityUtilities;
 import org.teachme.utility.AdsUtilities;
 import org.teachme.utility.AppUtilities;
@@ -126,8 +126,8 @@ public class Main extends Base {
 
 
     private static void parseJson(StringBuffer buffer) {
-        Parser parser = new Parser(buffer.toString(), true);
-        Parser.work();
+        LectureParser parser = new LectureParser(buffer.toString(), true);
+        LectureParser.work();
     }
 
     private void initListener() {

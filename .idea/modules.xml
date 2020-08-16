@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/App-Store-Version.iml" filepath="$PROJECT_DIR$/App-Store-Version.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Teach-Me.iml" filepath="$PROJECT_DIR$/.idea/modules/Teach-Me.iml" group="Teach-Me" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Teach-Me-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Teach-Me-app.iml" group="Teach-Me/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
